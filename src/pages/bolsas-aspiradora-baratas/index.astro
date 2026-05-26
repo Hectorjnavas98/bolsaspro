@@ -1,0 +1,149 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+
+const tag = "bolsasaspira-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const allProductsByPrice = [
+  { name: "5 Bolsas Karcher WD3", type: "Microfibra", area: "Karcher WD3/MV3", price: "7,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B07W7MNG2S") },
+  { name: "3 Bolsas + 1 Filtro Karcher WD3", type: "Microfibra + Filtro", area: "Karcher WD3/MV3", price: "8,49 EUR", rating: 4.3, amazonUrl: amazonUrl("B08KFJ25DS") },
+  { name: "5 Bolsas Dexter 20L", type: "Microfibra 20L", area: "Dexter 20L", price: "8,90 EUR", rating: 4.2, amazonUrl: amazonUrl("B098R8K87G") },
+  { name: "5 Bolsas Dexter Aquavac", type: "Microfibra", area: "Dexter/Aquavac", price: "9,49 EUR", rating: 4.3, amazonUrl: amazonUrl("B098QX5B31") },
+  { name: "5 Bolsas 20L Einhell", type: "Microfibra 20L", area: "Einhell TC-VC 1820", price: "9,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B092DGSQCN") },
+  { name: "5 Bolsas Dexter DX99P 30L", type: "Microfibra 30L", area: "Dexter DX99P", price: "10,49 EUR", rating: 4.2, amazonUrl: amazonUrl("B09JZJQZHV") },
+  { name: "10 Bolsas Taurus Golf/Polo", type: "Microfibra", area: "Taurus Golf/Polo", price: "10,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B077N86DY9") },
+  { name: "5 Bolsas 30L Parkside/Einhell", type: "Microfibra 30L", area: "Parkside/Einhell", price: "10,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B0897VM17S") },
+  { name: "10 Bolsas Taurus Focus 1800", type: "Microfibra", area: "Taurus Focus", price: "11,49 EUR", rating: 4.4, amazonUrl: amazonUrl("B093DFKLF8") },
+  { name: "10 Bolsas Taurus Auris/Micra", type: "Microfibra", area: "Taurus Auris/Micra", price: "11,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B077XZXL72") },
+  { name: "8 Bolsas Rowenta RB/RS", type: "Microfibra", area: "Rowenta RB/RS", price: "11,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B09BFCZJ8T") },
+  { name: "10 Bolsas Taurus Tiguan 2000", type: "Microfibra", area: "Taurus Tiguan", price: "11,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B093FZTSHM") },
+  { name: "10 Bolsas Carrefour", type: "Microfibra", area: "Carrefour", price: "11,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B0943NWS7D") },
+  { name: "10 Bolsas Einhell 12L", type: "Microfibra 12L", area: "Einhell TC-VC 1812S", price: "12,49 EUR", rating: 4.3, amazonUrl: amazonUrl("B08V1CYVQK") },
+  { name: "10 Bolsas + Microfiltros LG", type: "Microfibra", area: "LG", price: "12,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B07SVN945X") },
+  { name: "10 Bolsas Karcher WD3", type: "Microfibra", area: "Karcher WD3/MV3", price: "12,90 EUR", rating: 4.5, amazonUrl: amazonUrl("B0784S9VKF") },
+  { name: "10 Bolsas Rowenta Compacteo", type: "Microfibra", area: "Rowenta/Solac", price: "12,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B07R8JNQ42") },
+  { name: "10 Bolsas Electrolux Lux Royal", type: "Microfibra", area: "Electrolux", price: "13,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B07Z83ZHKL") },
+  { name: "10 Bolsas Bosch Tipo G", type: "Microfibra", area: "Bosch/Siemens", price: "13,90 EUR", rating: 4.5, amazonUrl: amazonUrl("B07RHVF8BW") },
+  { name: "10 Bolsas + 2 Filtros Miele", type: "Microfibra", area: "Miele FJM/GN", price: "13,90 EUR", rating: 4.5, amazonUrl: amazonUrl("B07QMZWPFH") },
+  { name: "10 Bolsas Rowenta Silence Force", type: "Microfibra", area: "Rowenta SF/CP", price: "14,90 EUR", rating: 4.6, amazonUrl: amazonUrl("B07QBC255G") },
+  { name: "10 Bolsas Nilfisk G90/GM80", type: "Microfibra", area: "Nilfisk", price: "14,90 EUR", rating: 4.5, amazonUrl: amazonUrl("B07SGFN26G") },
+];
+---
+
+<Layout title="Las Bolsas de Aspiradora Mas Baratas 2026" description="Comparativa de las bolsas de aspiradora mas baratas y con mejor relacion calidad-precio. Desde 7,90 EUR. Todas con envio gratis Prime.">
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas baratas" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Las Bolsas de Aspiradora Mas Baratas 2026</h1>
+    <p class="text-lg text-text-light mb-10">No tienes que gastar una fortuna en bolsas de aspiradora. Aqui encontraras las opciones mas economicas sin sacrificar calidad. Todas las bolsas son de microfibra y tienen envio gratis.</p>
+
+    <InfoBox type="tip" title="Consejo: mira el precio por unidad">
+      No te fijes solo en el precio del pack. Un pack de 10 bolsas a 12,90 EUR (1,29 EUR/bolsa) es mejor oferta que un pack de 5 a 7,90 EUR (1,58 EUR/bolsa). Calcula siempre el precio por unidad.
+    </InfoBox>
+
+    <!-- Top 3 cheapest -->
+    <h2 class="text-2xl font-bold mb-6 mt-10">Las 3 Opciones Mas Economicas</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <ProductCard
+        name="5 Bolsas Karcher WD3 - Pack Economico"
+        image={imgUrl("71wwUXjsyqL")}
+        rating={4.4}
+        price="7,90 EUR"
+        amazonUrl={amazonUrl("B07W7MNG2S")}
+        badge="Mas barato"
+        features={["Solo 7,90 EUR el pack", "5 bolsas de microfibra", "Compatible Karcher WD3/MV3", "Filtracion superior"]}
+      />
+      <ProductCard
+        name="5 Bolsas Dexter 20L"
+        image={imgUrl("819-ZF1I97L")}
+        rating={4.2}
+        price="8,90 EUR"
+        amazonUrl={amazonUrl("B098R8K87G")}
+        features={["8,90 EUR por 5 bolsas", "Para aspirador industrial 20L", "Compatible Dexter", "Microfibra de calidad"]}
+      />
+      <ProductCard
+        name="5 Bolsas Dexter Aquavac"
+        image={imgUrl("41ayxJnK9SL")}
+        rating={4.3}
+        price="9,49 EUR"
+        amazonUrl={amazonUrl("B098QX5B31")}
+        features={["9,49 EUR por 5 bolsas", "Compatible Dexter y Aquavac", "Buena filtracion", "Uso industrial"]}
+      />
+    </div>
+
+    <!-- Full comparison -->
+    <h2 class="text-2xl font-bold mb-6">Todos los Productos Ordenados por Precio</h2>
+    <ComparisonTable products={allProductsByPrice} />
+
+    <!-- Content -->
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Como Ahorrar en Bolsas de Aspiradora</h2>
+      <p class="text-text-light mb-6">Cambiar las bolsas de la aspiradora es un gasto recurrente, pero hay formas de reducir el coste sin perder calidad:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-2">Compra packs grandes</h3>
+          <p class="text-sm text-green-900">Los packs de 10 unidades siempre salen mas baratos por bolsa que los de 3 o 5. La diferencia puede ser de un 20-30% por unidad.</p>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-2">Aprovecha el envio gratis</h3>
+          <p class="text-sm text-green-900">Con Amazon Prime el envio es gratis. Sin Prime, agrupa pedidos de mas de 29 EUR para evitar gastos de envio.</p>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-2">Elige microfibra sobre papel</h3>
+          <p class="text-sm text-green-900">Aunque las bolsas de microfibra cuestan algo mas, duran mas y mantienen mejor la succion. A largo plazo, ahorras.</p>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-2">No esperes a que se llene del todo</h3>
+          <p class="text-sm text-green-900">Cambia la bolsa al 75% de capacidad. Una bolsa llena hace trabajar mas al motor, aumentando el consumo electrico y el desgaste.</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold mb-4">Barato No Significa Mala Calidad</h2>
+      <p class="text-text-light mb-4">Todas las bolsas que recomendamos en esta pagina son de microfibra multicapa, independientemente de su precio. La diferencia de precio se debe principalmente a:</p>
+      <ul class="text-text-light mb-6 space-y-2">
+        <li><strong>Cantidad de bolsas:</strong> Packs de 5 vs packs de 10</li>
+        <li><strong>Accesorios incluidos:</strong> Algunos packs incluyen filtros</li>
+        <li><strong>Marca de la aspiradora:</strong> Las bolsas para marcas premium (Miele, Rowenta) suelen costar algo mas</li>
+        <li><strong>Tamano:</strong> Las bolsas industriales (20L, 30L) son mas grandes y cuestan mas por unidad</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mb-4">Precio Medio por Marca</h2>
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm border border-border rounded-lg overflow-hidden">
+          <thead class="bg-primary text-white">
+            <tr>
+              <th class="p-3 text-left">Marca</th>
+              <th class="p-3 text-center">Precio pack</th>
+              <th class="p-3 text-center">Precio/bolsa</th>
+              <th class="p-3 text-center">Unidades</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-green-50"><td class="p-3 font-medium">Karcher (pack 10)</td><td class="p-3 text-center">12,90 EUR</td><td class="p-3 text-center font-bold text-green-600">1,29 EUR</td><td class="p-3 text-center">10</td></tr>
+            <tr class="bg-white"><td class="p-3 font-medium">Taurus (pack 10)</td><td class="p-3 text-center">10,90-11,90 EUR</td><td class="p-3 text-center font-bold text-green-600">1,09-1,19 EUR</td><td class="p-3 text-center">10</td></tr>
+            <tr class="bg-green-50"><td class="p-3 font-medium">Bosch/Siemens (pack 10)</td><td class="p-3 text-center">13,90 EUR</td><td class="p-3 text-center">1,39 EUR</td><td class="p-3 text-center">10</td></tr>
+            <tr class="bg-white"><td class="p-3 font-medium">Rowenta (pack 10)</td><td class="p-3 text-center">12,90-14,90 EUR</td><td class="p-3 text-center">1,29-1,49 EUR</td><td class="p-3 text-center">10</td></tr>
+            <tr class="bg-green-50"><td class="p-3 font-medium">Miele (pack 10 + filtros)</td><td class="p-3 text-center">13,90 EUR</td><td class="p-3 text-center">1,39 EUR</td><td class="p-3 text-center">10+2</td></tr>
+            <tr class="bg-white"><td class="p-3 font-medium">Industrial (pack 5)</td><td class="p-3 text-center">8,90-10,90 EUR</td><td class="p-3 text-center">1,78-2,18 EUR</td><td class="p-3 text-center">5</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Bolsas de calidad al mejor precio"
+      description="Desde solo 7,90 EUR. Microfibra multicapa con envio gratis Prime. Sin sorpresas."
+      buttonText="Ver las mas baratas"
+      buttonUrl={amazonUrl("B07W7MNG2S")}
+    />
+  </div>
+
+</Layout>

@@ -1,0 +1,175 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+
+const tag = "bolsasaspira-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const comparisonProducts = [
+  { name: "10 Bolsas Taurus Auris/Micra/1800 Compact", type: "Microfibra", area: "Auris, Micra, 1800 Compact", price: "11,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B077XZXL72") },
+  { name: "10 Bolsas Taurus Golf/Polo/TWINGO", type: "Microfibra", area: "Golf, Polo, Twingo", price: "10,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B077N86DY9") },
+  { name: "10 Bolsas Taurus Focus 1800", type: "Microfibra", area: "Focus 1800", price: "11,49 EUR", rating: 4.4, amazonUrl: amazonUrl("B093DFKLF8") },
+  { name: "10 Bolsas Taurus TIGUAN 2000", type: "Microfibra", area: "Tiguan 2000", price: "11,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B093FZTSHM") },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que bolsa necesita mi aspiradora Taurus?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Taurus tiene diferentes modelos que usan bolsas distintas. Los mas comunes son: Auris/Micra (un tipo), Golf/Polo/Twingo (otro tipo), Focus 1800 y Tiguan 2000. Identifica tu modelo exacto para comprar la bolsa correcta." }
+    },
+    {
+      "@type": "Question",
+      "name": "Son las bolsas de Taurus intercambiables entre modelos?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, cada linea de Taurus usa un tipo de bolsa diferente. Las bolsas del Auris no sirven para el Golf, por ejemplo. Es importante verificar el modelo exacto de tu aspiradora." }
+    },
+    {
+      "@type": "Question",
+      "name": "Donde encuentro el modelo de mi aspiradora Taurus?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El modelo esta impreso en una etiqueta en la parte inferior de la aspiradora. Tambien puedes encontrarlo en el manual de instrucciones o en la caja original." }
+    },
+  ]
+};
+---
+
+<Layout title="Mejores Bolsas Aspiradora Taurus 2026" description="Bolsas de aspiradora Taurus: Auris, Micra, Golf, Polo, Twingo, Focus 1800, Tiguan 2000. Comparativa completa con mejores precios. Envio gratis." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Taurus" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Mejores Bolsas de Aspiradora Taurus 2026</h1>
+    <p class="text-lg text-text-light mb-10">Taurus es una de las marcas de aspiradoras mas populares en Espana. Aqui encontraras bolsas compatibles para todos los modelos: Auris, Golf, Polo, Focus, Tiguan y mas.</p>
+
+    <InfoBox type="warning" title="Importante: verifica tu modelo">
+      Cada linea de Taurus usa un tipo de bolsa diferente. Asegurate de conocer tu modelo exacto (esta en la etiqueta inferior de la aspiradora) antes de comprar.
+    </InfoBox>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-12">
+      <ProductCard
+        name="10 Bolsas Taurus Auris/Micra/1800 Compact"
+        image={imgUrl("71MP9MhKSuL")}
+        rating={4.4}
+        price="11,90 EUR"
+        amazonUrl={amazonUrl("B077XZXL72")}
+        badge="Popular"
+        features={["Compatible Auris y Micra", "Tambien 1800 Compact", "Microfibra multicapa", "Pack de 10 unidades"]}
+      />
+      <ProductCard
+        name="10 Bolsas Taurus Golf/Polo/TWINGO"
+        image={imgUrl("71vAmCoaGDL")}
+        rating={4.3}
+        price="10,90 EUR"
+        amazonUrl={amazonUrl("B077N86DY9")}
+        badge="Mejor precio"
+        features={["Compatible Golf y Polo", "Tambien para Twingo", "Material microfibra", "Pack de 10 unidades"]}
+      />
+      <ProductCard
+        name="10 Bolsas Taurus Focus 1800"
+        image={imgUrl("6129eh+XGXL")}
+        rating={4.4}
+        price="11,49 EUR"
+        amazonUrl={amazonUrl("B093DFKLF8")}
+        features={["Especifico para Focus 1800", "Alta filtracion", "Microfibra resistente", "Pack de 10 unidades"]}
+      />
+      <ProductCard
+        name="10 Bolsas Taurus TIGUAN 2000"
+        image={imgUrl("81KSNH80fML")}
+        rating={4.3}
+        price="11,90 EUR"
+        amazonUrl={amazonUrl("B093FZTSHM")}
+        features={["Especifico para Tiguan 2000", "Microfibra de calidad", "Buen sellado", "Pack de 10 unidades"]}
+      />
+    </div>
+
+    <h2 class="text-2xl font-bold mb-6">Comparativa de Bolsas Taurus</h2>
+    <ComparisonTable products={comparisonProducts} />
+
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Guia de Compatibilidad Taurus</h2>
+      <p class="text-text-light mb-6">Taurus tiene una amplia gama de aspiradoras de trineo con nombres variados. Cada modelo utiliza un tamano de bolsa diferente. Aqui te explicamos cual necesitas:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">Taurus Auris / Micra / 1800 Compact</h3>
+          <ul class="text-sm text-green-900 space-y-1">
+            <li>Taurus Auris 1400</li>
+            <li>Taurus Auris 1800</li>
+            <li>Taurus Micra 1800</li>
+            <li>Taurus 1800 Compact</li>
+            <li>Taurus Avensis 1600</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">Taurus Golf / Polo / Twingo</h3>
+          <ul class="text-sm text-green-900 space-y-1">
+            <li>Taurus Golf 1700</li>
+            <li>Taurus Golf 2000</li>
+            <li>Taurus Polo 1500</li>
+            <li>Taurus Twingo 1700</li>
+            <li>Taurus Vitara 2000</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">Taurus Focus 1800</h3>
+          <ul class="text-sm text-green-900 space-y-1">
+            <li>Taurus Focus 1800</li>
+            <li>Taurus Megane 2200</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">Taurus Tiguan 2000</h3>
+          <ul class="text-sm text-green-900 space-y-1">
+            <li>Taurus Tiguan 2000</li>
+            <li>Taurus Tiguan 2200</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="text-xl font-semibold mb-3">Taurus: Buena Calidad a Buen Precio</h3>
+      <p class="text-text-light mb-4">Taurus es una marca espanola muy popular por ofrecer electrodomesticos de buena calidad a precios competitivos. Sus aspiradoras de trineo siguen siendo muy utilizadas en miles de hogares. Las bolsas de repuesto de microfibra que recomendamos ofrecen una filtracion superior a las bolsas de papel originales, a precios muy razonables (desde 10,90 EUR por 10 unidades).</p>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas Taurus</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que bolsa necesita mi aspiradora Taurus?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Cada linea de Taurus usa un tipo diferente. Identifica tu modelo exacto (Auris, Golf, Focus, Tiguan...) y selecciona la bolsa correspondiente de nuestra comparativa.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Son las bolsas de Taurus intercambiables entre modelos?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">No, cada linea de Taurus usa un tipo de bolsa diferente. Las bolsas del Auris no sirven para el Golf, por ejemplo. Es importante verificar el modelo exacto.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Donde encuentro el modelo de mi aspiradora Taurus?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">El modelo esta impreso en una etiqueta en la parte inferior de la aspiradora. Tambien lo puedes encontrar en el manual de instrucciones o en la caja original.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Bolsas para tu Taurus desde 10,90 EUR"
+      description="Packs de 10 bolsas de microfibra para todos los modelos Taurus. Envio gratis Prime."
+      buttonText="Ver ofertas en Amazon"
+      buttonUrl={amazonUrl("B077XZXL72")}
+    />
+  </div>
+
+</Layout>

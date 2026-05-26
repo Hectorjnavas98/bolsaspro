@@ -1,0 +1,164 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "bolsasaspira-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const comparisonProducts = [
+  { name: "10 Bolsas Rowenta Silence Force/Compact Power", type: "Microfibra", area: "Silence Force, Compact Power, X-Trem Power", price: "14,90 EUR", rating: 4.6, amazonUrl: amazonUrl("B07QBC255G") },
+  { name: "10 Bolsas Rowenta Compacteo/Solac", type: "Microfibra", area: "Compacteo, City Space, Solac", price: "12,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B07R8JNQ42") },
+  { name: "8 Bolsas Rowenta RB/RS Series", type: "Microfibra", area: "Series RB, RS", price: "11,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B09BFCZJ8T") },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que bolsa necesita mi aspiradora Rowenta Silence Force?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La Rowenta Silence Force utiliza bolsas tipo ZR200520 o compatibles. Recomendamos las bolsas de alta filtracion multicapa que son compatibles con Silence Force, Compact Power y X-Trem Power." }
+    },
+    {
+      "@type": "Question",
+      "name": "Son compatibles las bolsas de Rowenta con otras marcas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Algunas bolsas Rowenta son compatibles con aspiradoras Moulinex y Solac, ya que comparten el mismo tipo de soporte. Siempre verifica el modelo exacto antes de comprar." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cuantas bolsas trae cada paquete para Rowenta?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Los packs mas habituales son de 8 o 10 bolsas. Los packs de 10 unidades ofrecen mejor relacion calidad-precio, con un coste aproximado de 1,20-1,50 EUR por bolsa." }
+    },
+  ]
+};
+---
+
+<Layout title="Mejores Bolsas Aspiradora Rowenta 2026" description="Encuentra las mejores bolsas para tu aspiradora Rowenta: Silence Force, Compact Power, X-Trem Power, Compacteo. Comparativa, compatibilidad y mejores precios." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Rowenta" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Mejores Bolsas de Aspiradora Rowenta 2026</h1>
+    <p class="text-lg text-text-light mb-10">Comparativa completa de bolsas compatibles con aspiradoras Rowenta. Encuentra la bolsa perfecta para tu modelo: Silence Force, Compact Power, X-Trem Power, Compacteo y mas.</p>
+
+    <InfoBox type="tip" title="Consejo rapido">
+      Si tienes una Rowenta Silence Force o Compact Power, la mejor opcion es el <a href={amazonUrl("B07QBC255G")} target="_blank" rel="nofollow noopener sponsored" class="text-primary font-semibold hover:underline">pack de 10 bolsas de alta filtracion</a> con valoracion de 4.6 estrellas.
+    </InfoBox>
+
+    <!-- Products -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
+      <ProductCard
+        name="10 Bolsas Alta Filtracion Rowenta Silence Force"
+        image={imgUrl("71aqUU5rZFL")}
+        rating={4.6}
+        price="14,90 EUR"
+        amazonUrl={amazonUrl("B07QBC255G")}
+        badge="Mejor valorado"
+        features={["Alta filtracion multicapa", "Compatible Silence Force y Compact Power", "Cierre hermetico anti-polvo", "Pack de 10 unidades"]}
+      />
+      <ProductCard
+        name="10 Bolsas Rowenta Compacteo/Solac"
+        image={imgUrl("71mcQuQhNKL")}
+        rating={4.4}
+        price="12,90 EUR"
+        amazonUrl={amazonUrl("B07R8JNQ42")}
+        features={["Microfibra de alta calidad", "Compatible Compacteo y City Space", "Tambien para Solac", "Pack de 10 unidades"]}
+      />
+      <ProductCard
+        name="8 Bolsas Rowenta Series RB/RS"
+        image={imgUrl("71G6FqFqczL")}
+        rating={4.3}
+        price="11,90 EUR"
+        amazonUrl={amazonUrl("B09BFCZJ8T")}
+        features={["Compatible series RB y RS", "Material microfibra", "Buen sellado", "Pack de 8 unidades"]}
+      />
+    </div>
+
+    <!-- Comparison -->
+    <h2 class="text-2xl font-bold mb-6">Comparativa de Bolsas Rowenta</h2>
+    <ComparisonTable products={comparisonProducts} />
+
+    <ProsConsBox
+      pros={[
+        "Alta filtracion que retiene hasta el 99,5% de particulas",
+        "Compatible con multiples modelos Rowenta",
+        "Packs grandes que duran meses",
+        "Cierre hermetico que evita fugas de polvo",
+        "Buena relacion calidad-precio"
+      ]}
+      cons={[
+        "No son las bolsas originales Rowenta",
+        "Algunos modelos antiguos pueden requerir verificacion",
+        "El pack de 8 unidades es algo mas caro por unidad"
+      ]}
+    />
+
+    <!-- Content -->
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Guia de Compatibilidad Rowenta</h2>
+      <p class="text-text-light mb-6">Rowenta fabrica una amplia gama de aspiradoras de trineo. Cada linea utiliza un tipo de bolsa diferente, por lo que es fundamental saber que modelo tienes antes de comprar.</p>
+
+      <h3 class="text-xl font-semibold mb-3">Rowenta Silence Force / Compact Power / X-Trem Power</h3>
+      <p class="text-text-light mb-4">Estas tres lineas comparten el mismo tipo de bolsa. Son las aspiradoras mas populares de Rowenta y utilizan bolsas tipo ZR200520. Modelos compatibles:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Rowenta Silence Force RO64xx, RO63xx, RO68xx</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Rowenta Compact Power RO39xx, RO38xx</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Rowenta X-Trem Power RO69xx, RO68xx</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Rowenta Compacteo / City Space</h3>
+      <p class="text-text-light mb-4">Estas aspiradoras compactas utilizan un tipo de bolsa mas pequeno. Tambien son compatibles con algunas aspiradoras Solac:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Rowenta Compacteo RO17xx, RO18xx</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Rowenta City Space RO26xx</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Solac AB2723, AB2700</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Como identificar tu modelo Rowenta</h3>
+      <p class="text-text-light mb-4">El numero de modelo de tu Rowenta se encuentra en una etiqueta adhesiva en la parte inferior del aparato. Siempre empieza por "RO" seguido de 4 digitos (ej: RO6432). Con ese numero puedes buscar la bolsa compatible en nuestras fichas de producto.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas Rowenta</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que bolsa necesita mi aspiradora Rowenta Silence Force?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">La Rowenta Silence Force utiliza bolsas tipo ZR200520 o compatibles. Recomendamos las bolsas de alta filtracion multicapa que son compatibles con Silence Force, Compact Power y X-Trem Power.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Son compatibles las bolsas de Rowenta con otras marcas?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Algunas bolsas Rowenta son compatibles con aspiradoras Moulinex y Solac, ya que comparten el mismo tipo de soporte. Siempre verifica el modelo exacto antes de comprar.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Cuantas bolsas trae cada paquete para Rowenta?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Los packs mas habituales son de 8 o 10 bolsas. Los packs de 10 unidades ofrecen mejor relacion calidad-precio, con un coste aproximado de 1,20-1,50 EUR por bolsa.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Consigue las mejores bolsas para tu Rowenta"
+      description="Pack de 10 bolsas de alta filtracion con envio gratis Prime. La opcion preferida por miles de usuarios."
+      buttonText="Ver oferta en Amazon"
+      buttonUrl={amazonUrl("B07QBC255G")}
+    />
+  </div>
+
+</Layout>

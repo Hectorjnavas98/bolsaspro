@@ -1,0 +1,149 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "bolsasaspira-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que tipo de bolsa usa mi aspiradora Miele?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Miele utiliza principalmente dos tipos de bolsas: FJM y GN. Las FJM son para modelos compactos (S200-S600) y las GN para modelos de tamano completo (S400-S800, Complete C2/C3). Las bolsas que recomendamos son compatibles con ambos tipos." }
+    },
+    {
+      "@type": "Question",
+      "name": "Diferencia entre bolsas Miele FJM y GN?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Las bolsas FJM son mas pequenas y se usan en modelos compactos. Las GN son mas grandes y se usan en modelos de tamano completo. Ambas tienen el mismo sistema de cierre automatico, pero difieren en capacidad." }
+    },
+    {
+      "@type": "Question",
+      "name": "Incluyen filtros las bolsas para Miele?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, el pack recomendado incluye 10 bolsas y 2 microfiltros (1 filtro de motor y 1 filtro de salida de aire), ofreciendo un kit completo de mantenimiento para tu aspiradora Miele." }
+    },
+  ]
+};
+---
+
+<Layout title="Mejores Bolsas Aspiradora Miele 2026" description="Bolsas compatibles con aspiradoras Miele FJM y GN. Pack de 10 bolsas + 2 microfiltros. Maxima filtracion para tu Miele. Envio gratis Amazon." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Miele" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Mejores Bolsas de Aspiradora Miele 2026</h1>
+    <p class="text-lg text-text-light mb-10">Miele es sinonimo de calidad y durabilidad. Encuentra las bolsas compatibles con tu aspiradora Miele, incluyendo microfiltros para un mantenimiento completo.</p>
+
+    <InfoBox type="info" title="Kit completo de mantenimiento">
+      El pack recomendado incluye 10 bolsas + 2 microfiltros, todo lo que necesitas para mantener tu Miele en perfecto estado durante meses.
+    </InfoBox>
+
+    <div class="max-w-md mx-auto my-12">
+      <ProductCard
+        name="10 Bolsas + 2 Microfiltros Miele FJM/GN"
+        image={imgUrl("61urnlQryWL")}
+        rating={4.5}
+        price="13,90 EUR"
+        amazonUrl={amazonUrl("B07QMZWPFH")}
+        badge="Kit completo"
+        features={["Pack de 10 bolsas de microfibra", "Incluye 2 microfiltros (motor + salida)", "Compatible con tipos FJM y GN", "Alta filtracion multicapa", "Cierre hermetico automatico"]}
+      />
+    </div>
+
+    <ProsConsBox
+      pros={[
+        "Incluye bolsas Y filtros: kit completo",
+        "Compatible con los dos tipos principales de Miele",
+        "Alta filtracion ideal para alergicos",
+        "10 bolsas duran entre 6-12 meses",
+        "Cierre hermetico que evita escape de polvo al cambiar"
+      ]}
+      cons={[
+        "Solo un pack disponible (no hay opciones de 5 unidades)",
+        "Precio ligeramente superior a otras marcas"
+      ]}
+    />
+
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Tipos de Bolsas Miele: FJM vs GN</h2>
+      <p class="text-text-light mb-6">Miele utiliza un sistema de bolsas propio con cierre automatico. Los dos tipos principales son:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-5">
+          <h3 class="font-semibold text-indigo-800 mb-3">Bolsas Tipo FJM</h3>
+          <p class="text-sm text-indigo-900 mb-3">Para modelos compactos. Capacidad: 3,5 litros</p>
+          <ul class="text-sm text-indigo-900 space-y-1">
+            <li>Miele S200-S299</li>
+            <li>Miele S300-S399</li>
+            <li>Miele S500-S599</li>
+            <li>Miele S700-S799</li>
+            <li>Miele Compact C1/C2</li>
+          </ul>
+        </div>
+        <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-5">
+          <h3 class="font-semibold text-indigo-800 mb-3">Bolsas Tipo GN</h3>
+          <p class="text-sm text-indigo-900 mb-3">Para modelos tamano completo. Capacidad: 4,5 litros</p>
+          <ul class="text-sm text-indigo-900 space-y-1">
+            <li>Miele S400-S499</li>
+            <li>Miele S600-S699</li>
+            <li>Miele S800-S899</li>
+            <li>Miele S2000-S8999</li>
+            <li>Miele Complete C2/C3</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold mb-4">Por que Miele Necesita Bolsas de Calidad?</h2>
+      <p class="text-text-light mb-4">Las aspiradoras Miele estan disenadas para ofrecer un rendimiento excepcional durante anos. Usar bolsas de baja calidad puede:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li>Reducir la potencia de succion</li>
+        <li>Dejar escapar particulas finas y alergenos</li>
+        <li>Danar el motor por filtracion insuficiente</li>
+        <li>Provocar malos olores</li>
+      </ul>
+      <p class="text-text-light mb-6">Las bolsas de microfibra que recomendamos ofrecen una filtracion comparable a las bolsas originales Miele, a un precio mucho mas competitivo.</p>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas Miele</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que tipo de bolsa usa mi aspiradora Miele?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Miele utiliza principalmente dos tipos de bolsas: FJM y GN. Las FJM son para modelos compactos y las GN para modelos de tamano completo. Las bolsas que recomendamos son compatibles con ambos tipos.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Diferencia entre bolsas Miele FJM y GN?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Las FJM son mas pequenas (3,5L) para modelos compactos. Las GN son mas grandes (4,5L) para modelos de tamano completo. Ambas tienen cierre automatico.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Incluyen filtros las bolsas para Miele?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Si, el pack incluye 10 bolsas y 2 microfiltros (1 filtro de motor y 1 filtro de salida de aire), ofreciendo un kit completo de mantenimiento.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Kit completo para tu aspiradora Miele"
+      description="10 bolsas + 2 microfiltros. Todo lo que necesitas para mantener tu Miele en perfecto estado. Envio gratis Prime."
+      buttonText="Ver oferta en Amazon"
+      buttonUrl={amazonUrl("B07QMZWPFH")}
+    />
+  </div>
+
+</Layout>

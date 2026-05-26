@@ -1,0 +1,193 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+
+const tag = "bolsasaspira-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const comparisonProducts = [
+  { name: "5 Bolsas 30L Parkside/Einhell", type: "Microfibra 30L", area: "Parkside PNTS, Einhell TC-VC", price: "10,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B0897VM17S") },
+  { name: "5 Bolsas 20L Einhell", type: "Microfibra 20L", area: "Einhell TC-VC 1820", price: "9,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B092DGSQCN") },
+  { name: "10 Bolsas Einhell 12L TC-VC1812S", type: "Microfibra 12L", area: "Einhell TC-VC 1812S", price: "12,49 EUR", rating: 4.3, amazonUrl: amazonUrl("B08V1CYVQK") },
+  { name: "5 Bolsas Dexter 20L", type: "Microfibra 20L", area: "Dexter 20L", price: "8,90 EUR", rating: 4.2, amazonUrl: amazonUrl("B098R8K87G") },
+  { name: "5 Bolsas Dexter Aquavac", type: "Microfibra", area: "Dexter, Aquavac", price: "9,49 EUR", rating: 4.3, amazonUrl: amazonUrl("B098QX5B31") },
+  { name: "5 Bolsas Dexter DX99P 30L", type: "Microfibra 30L", area: "Dexter DX99P 30L", price: "10,49 EUR", rating: 4.2, amazonUrl: amazonUrl("B09JZJQZHV") },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que bolsa usa mi aspirador industrial Parkside?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Los aspiradores Parkside PNTS (de Lidl) utilizan bolsas de 20L o 30L segun el modelo. Las bolsas de 30L son compatibles con los modelos PNTS 1300, PNTS 1400, PNTS 1500 entre otros." }
+    },
+    {
+      "@type": "Question",
+      "name": "Las bolsas Parkside son compatibles con Einhell?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, muchos modelos de Parkside y Einhell comparten el mismo tipo de bolsa, especialmente en las capacidades de 20L y 30L. Verifica siempre el tamano del deposito de tu aspirador." }
+    },
+    {
+      "@type": "Question",
+      "name": "Necesito bolsa en un aspirador industrial de agua?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Para aspirar liquidos NO se usa bolsa, solo el deposito. Las bolsas son necesarias unicamente para aspiracion en seco, donde filtran el polvo y la suciedad." }
+    },
+  ]
+};
+---
+
+<Layout title="Mejores Bolsas Aspirador Industrial 2026 | Parkside, Einhell, Dexter" description="Bolsas para aspiradores industriales: Parkside (Lidl), Einhell, Dexter, Aquavac. 12L, 20L y 30L. Comparativa y mejores precios con envio gratis." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Industrial" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Mejores Bolsas de Aspirador Industrial 2026</h1>
+    <p class="text-lg text-text-light mb-10">Bolsas para aspiradores industriales de taller, obra y garaje. Compatibles con Parkside (Lidl), Einhell, Dexter y Aquavac en tamanos de 12L, 20L y 30L.</p>
+
+    <InfoBox type="warning" title="Elige el tamano correcto">
+      Los aspiradores industriales vienen en diferentes capacidades (12L, 20L, 30L). Asegurate de elegir bolsas del tamano correcto para tu modelo. El tamano suele estar indicado en el propio aspirador.
+    </InfoBox>
+
+    <h2 class="text-2xl font-bold mb-6 mt-12">Bolsas de 30 Litros</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <ProductCard
+        name="5 Bolsas 30L Parkside/Einhell"
+        image={imgUrl("81gnv+iru7L")}
+        rating={4.4}
+        price="10,90 EUR"
+        amazonUrl={amazonUrl("B0897VM17S")}
+        badge="30 Litros"
+        features={["Capacidad 30 litros", "Compatible Parkside PNTS y Einhell", "Microfibra resistente para taller", "Pack de 5 unidades"]}
+      />
+      <ProductCard
+        name="5 Bolsas Dexter DX99P 30L"
+        image={imgUrl("81gnv+iru7L")}
+        rating={4.2}
+        price="10,49 EUR"
+        amazonUrl={amazonUrl("B09JZJQZHV")}
+        features={["Capacidad 30 litros", "Compatible Dexter DX99P", "Resistente para uso intensivo", "Pack de 5 unidades"]}
+      />
+    </div>
+
+    <h2 class="text-2xl font-bold mb-6">Bolsas de 20 Litros</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <ProductCard
+        name="5 Bolsas 20L Einhell"
+        image={imgUrl("819-ZF1I97L")}
+        rating={4.3}
+        price="9,90 EUR"
+        amazonUrl={amazonUrl("B092DGSQCN")}
+        badge="20 Litros"
+        features={["Capacidad 20 litros", "Compatible Einhell TC-VC 1820", "Material microfibra", "Pack de 5 unidades"]}
+      />
+      <ProductCard
+        name="5 Bolsas Dexter 20L"
+        image={imgUrl("819-ZF1I97L")}
+        rating={4.2}
+        price="8,90 EUR"
+        amazonUrl={amazonUrl("B098R8K87G")}
+        badge="Mejor precio"
+        features={["Capacidad 20 litros", "Compatible Dexter 20L", "Buena filtracion", "Pack de 5 unidades"]}
+      />
+    </div>
+
+    <h2 class="text-2xl font-bold mb-6">Bolsas de 12 Litros y Otros</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <ProductCard
+        name="10 Bolsas Einhell 12L TC-VC1812S"
+        image={imgUrl("81tGWloF6nL")}
+        rating={4.3}
+        price="12,49 EUR"
+        amazonUrl={amazonUrl("B08V1CYVQK")}
+        badge="12 Litros"
+        features={["Capacidad 12 litros", "Especifico TC-VC 1812S", "Pack grande de 10 unidades", "Buen precio por unidad"]}
+      />
+      <ProductCard
+        name="5 Bolsas Dexter Aquavac"
+        image={imgUrl("41ayxJnK9SL")}
+        rating={4.3}
+        price="9,49 EUR"
+        amazonUrl={amazonUrl("B098QX5B31")}
+        features={["Compatible Dexter y Aquavac", "Microfibra de calidad", "Para uso en seco", "Pack de 5 unidades"]}
+      />
+    </div>
+
+    <h2 class="text-2xl font-bold mb-6">Comparativa Completa - Bolsas Industrial</h2>
+    <ComparisonTable products={comparisonProducts} />
+
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Guia de Aspiradores Industriales y sus Bolsas</h2>
+      <p class="text-text-light mb-6">Los aspiradores industriales (tambien llamados aspiradores de taller o de obra) son herramientas potentes disenadas para aspirar todo tipo de suciedad: polvo de obra, virutas de madera, ceniza, escombros ligeros y mas. A diferencia de los aspiradores domesticos, tienen depositos mucho mas grandes y necesitan bolsas especificas.</p>
+
+      <h3 class="text-xl font-semibold mb-3">Parkside (Lidl)</h3>
+      <p class="text-text-light mb-4">Los aspiradores Parkside se venden en Lidl y son muy populares por su relacion calidad-precio. Los modelos mas comunes son:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Parkside PNTS 1300 (20L)</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Parkside PNTS 1400 (30L)</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Parkside PNTS 1500 (30L)</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Parkside PWD 25 A1 (25L)</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Einhell</h3>
+      <p class="text-text-light mb-4">Einhell ofrece una gama completa de aspiradores industriales con diferentes capacidades:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Einhell TC-VC 1812S (12L)</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Einhell TC-VC 1820 (20L)</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Einhell TC-VC 1930 (30L)</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Einhell TE-VC 2230 (30L)</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Dexter / Aquavac</h3>
+      <p class="text-text-light mb-4">Dexter (de Leroy Merlin) y Aquavac son marcas habituales en aspiradores de taller economicos. Comparten algunos tipos de bolsa entre si.</p>
+
+      <h3 class="text-xl font-semibold mb-3">Consejos para Aspiradores Industriales</h3>
+      <ul class="text-text-light mb-6 space-y-2">
+        <li><strong>Usa bolsa siempre en seco:</strong> Para aspirar polvo, escombros o ceniza, usa siempre bolsa. Protege el filtro y facilita el vaciado.</li>
+        <li><strong>Sin bolsa para liquidos:</strong> Para aspirar agua, retira la bolsa y usa solo el deposito.</li>
+        <li><strong>Cambia la bolsa a menudo:</strong> En uso intensivo (obra, taller), cambia la bolsa con mas frecuencia que en uso domestico.</li>
+        <li><strong>No aspires materiales calientes:</strong> Espera a que la ceniza o los residuos esten completamente frios antes de aspirar.</li>
+      </ul>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas Industrial</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que bolsa usa mi aspirador industrial Parkside?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Los aspiradores Parkside PNTS (de Lidl) utilizan bolsas de 20L o 30L segun el modelo. Las bolsas de 30L son compatibles con los modelos PNTS 1400, PNTS 1500 entre otros.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Las bolsas Parkside son compatibles con Einhell?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Si, muchos modelos de Parkside y Einhell comparten el mismo tipo de bolsa, especialmente en las capacidades de 20L y 30L. Verifica siempre el tamano del deposito.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Necesito bolsa en un aspirador industrial de agua?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Para aspirar liquidos NO se usa bolsa, solo el deposito. Las bolsas son necesarias unicamente para aspiracion en seco, donde filtran el polvo y la suciedad.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Bolsas industriales para tu taller o garaje"
+      description="Desde 8,90 EUR. Compatibles con Parkside, Einhell, Dexter y Aquavac. Envio gratis Prime."
+      buttonText="Ver ofertas en Amazon"
+      buttonUrl={amazonUrl("B0897VM17S")}
+    />
+  </div>
+
+</Layout>

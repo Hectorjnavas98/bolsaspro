@@ -1,0 +1,21 @@
+---
+interface Props {
+  type?: 'tip' | 'warning' | 'info';
+  title: string;
+}
+
+const { type = 'info', title } = Astro.props;
+
+const styles = {
+  tip: 'bg-green-50 border-secondary text-green-900',
+  warning: 'bg-amber-50 border-accent text-amber-900',
+  info: 'bg-blue-50 border-primary text-blue-900',
+};
+---
+
+<div class={`border-l-4 rounded-r-lg p-4 my-6 ${styles[type]}`}>
+  <p class="font-semibold mb-1">{title}</p>
+  <div class="text-sm">
+    <slot />
+  </div>
+</div>

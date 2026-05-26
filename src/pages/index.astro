@@ -1,0 +1,325 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+
+const tag = "bolsasaspira-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como saber que bolsa necesita mi aspiradora?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Consulta el modelo exacto de tu aspiradora (normalmente en una pegatina en la parte inferior) y busca bolsas compatibles con ese modelo. En nuestra web organizamos las bolsas por marca para facilitarte la busqueda." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cada cuanto hay que cambiar la bolsa de la aspiradora?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Se recomienda cambiar la bolsa cuando esta llena al 75% de su capacidad. Normalmente cada 1-2 meses con uso regular. Si notas perdida de succion, es hora de cambiarla." }
+    },
+    {
+      "@type": "Question",
+      "name": "Puedo usar bolsas universales en mi aspiradora?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende del modelo. Algunas aspiradoras aceptan bolsas universales, pero siempre es mejor usar bolsas especificas para tu modelo. Garantizan mejor filtracion y ajuste perfecto." }
+    },
+    {
+      "@type": "Question",
+      "name": "Que diferencia hay entre bolsas de papel y de microfibra?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Las bolsas de microfibra ofrecen mejor filtracion (retienen particulas mas pequenas), mayor durabilidad y mantienen mejor la succion. Las de papel son mas economicas pero menos eficientes." }
+    },
+    {
+      "@type": "Question",
+      "name": "Las bolsas de aspiradora tienen envio gratis?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, todos los productos que recomendamos estan disponibles en Amazon con envio gratis para usuarios Prime. Los pedidos superiores a 29 EUR tambien tienen envio gratuito." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cuanto cuestan las bolsas de aspiradora?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El precio varia segun la marca y cantidad. Puedes encontrar packs desde 7,90 EUR (5 bolsas Karcher) hasta 14,90 EUR (10 bolsas Rowenta o Nilfisk). El precio medio es de unos 12 EUR por pack de 10 unidades." }
+    }
+  ]
+};
+
+const topProducts = [
+  { name: "10 Bolsas Alta Filtracion Karcher WD3", type: "Microfibra", area: "Karcher WD3/MV3", price: "12,90 EUR", rating: 4.5, amazonUrl: amazonUrl("B0784S9VKF") },
+  { name: "10 Bolsas Hyperfilter Plus Bosch Tipo G", type: "Microfibra", area: "Bosch/Siemens", price: "13,90 EUR", rating: 4.5, amazonUrl: amazonUrl("B07RHVF8BW") },
+  { name: "10 Bolsas Rowenta Silence Force", type: "Microfibra", area: "Rowenta SF/CP", price: "14,90 EUR", rating: 4.6, amazonUrl: amazonUrl("B07QBC255G") },
+  { name: "10 Bolsas + 2 Microfiltros Miele FJM/GN", type: "Microfibra", area: "Miele", price: "13,90 EUR", rating: 4.5, amazonUrl: amazonUrl("B07QMZWPFH") },
+  { name: "10 Bolsas Taurus Auris/Micra", type: "Microfibra", area: "Taurus", price: "11,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B077XZXL72") },
+  { name: "10 Bolsas Rowenta Compacteo/Solac", type: "Microfibra", area: "Rowenta/Solac", price: "12,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B07R8JNQ42") },
+  { name: "10 Bolsas Electrolux Lux Royal", type: "Microfibra", area: "Electrolux", price: "13,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B07Z83ZHKL") },
+  { name: "10 Bolsas Nilfisk G90/GM80", type: "Microfibra", area: "Nilfisk", price: "14,90 EUR", rating: 4.5, amazonUrl: amazonUrl("B07SGFN26G") },
+];
+---
+
+<Layout title="Mejores Bolsas de Aspiradora 2026 | Comparativas y Guias" description="Encuentra las mejores bolsas de aspiradora para tu modelo. Comparativas, guias de compra y ofertas en bolsas Rowenta, Bosch, Karcher, Miele, Taurus y mas. Envio gratis." schema={schema}>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1 rounded-full mb-6">Actualizado mayo 2026</span>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Las Mejores <span class="text-amber-300">Bolsas de Aspiradora</span> para tu Modelo</h1>
+      <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-10">Comparativas honestas, guias de compatibilidad y los mejores precios. Encuentra la bolsa perfecta para tu aspiradora en segundos.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#top-productos" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-4 px-8 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 inline-flex items-center justify-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Ver mejores bolsas
+        </a>
+        <a href="/como-elegir-bolsas-aspiradora/" class="bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-lg transition-all border border-white/30 inline-flex items-center justify-center gap-2">
+          Guia de compra
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-8 bg-white border-b border-border">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <p class="text-3xl font-bold text-primary">22+</p>
+          <p class="text-sm text-text-light">Productos analizados</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-primary">10+</p>
+          <p class="text-sm text-text-light">Marcas compatibles</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-primary">4.4</p>
+          <p class="text-sm text-text-light">Valoracion media</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-secondary">100%</p>
+          <p class="text-sm text-text-light">Envio gratis Prime</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top 3 Products -->
+  <section id="top-productos" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Top 3 Bolsas de Aspiradora Mas Vendidas</h2>
+        <p class="text-text-light max-w-2xl mx-auto">Las bolsas mejor valoradas por miles de usuarios en Amazon. Calidad, compatibilidad y precio imbatible.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <ProductCard
+          name="10 Bolsas Alta Filtracion Karcher WD3/MV3"
+          image={imgUrl("71wwUXjsyqL")}
+          rating={4.5}
+          price="12,90 EUR"
+          amazonUrl={amazonUrl("B0784S9VKF")}
+          badge="Mas vendido"
+          features={["Filtracion superior de 3 capas", "Compatible WD3, WD3P, MV3", "Material microfibra resistente", "Pack de 10 unidades"]}
+        />
+        <ProductCard
+          name="10 Bolsas Hyperfilter Plus Bosch Tipo G"
+          image={imgUrl("71n23Xp6tyL")}
+          rating={4.5}
+          price="13,90 EUR"
+          amazonUrl={amazonUrl("B07RHVF8BW")}
+          badge="Mejor filtracion"
+          features={["Tecnologia Hyperfilter Plus", "Compatible toda la gama Bosch/Siemens", "Maxima retencion de polvo", "Pack de 10 unidades"]}
+        />
+        <ProductCard
+          name="10 Bolsas Rowenta Silence Force/Compact Power"
+          image={imgUrl("71aqUU5rZFL")}
+          rating={4.6}
+          price="14,90 EUR"
+          amazonUrl={amazonUrl("B07QBC255G")}
+          badge="Mejor valorado"
+          features={["Alta filtracion multicapa", "Compatible Silence Force y Compact Power", "Cierre hermetico", "Pack de 10 unidades"]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Comparativa: Las 8 Mejores Bolsas de Aspiradora</h2>
+      <ComparisonTable products={topProducts} />
+    </div>
+  </section>
+
+  <!-- How to choose -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center">Como Elegir la Bolsa Correcta en 4 Pasos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 text-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+          <h3 class="font-semibold mb-2">Identifica tu modelo</h3>
+          <p class="text-sm text-text-light">Busca la etiqueta en la parte inferior de tu aspiradora con el modelo exacto.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-emerald-100 text-secondary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+          <h3 class="font-semibold mb-2">Busca tu marca</h3>
+          <p class="text-sm text-text-light">Navega a la seccion de tu marca (Rowenta, Bosch, Karcher, etc.).</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-amber-100 text-accent rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+          <h3 class="font-semibold mb-2">Comprueba compatibilidad</h3>
+          <p class="text-sm text-text-light">Verifica que tu modelo aparece en la lista de compatibilidad del producto.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+          <h3 class="font-semibold mb-2">Compra con confianza</h3>
+          <p class="text-sm text-text-light">Todas nuestras recomendaciones tienen envio gratis Prime y devoluciones faciles.</p>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a href="/como-elegir-bolsas-aspiradora/" class="text-primary font-semibold hover:underline inline-flex items-center gap-1">
+          Ver guia completa
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories by brand -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center">Bolsas por Marca de Aspiradora</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {[
+          { name: "Rowenta", url: "/bolsas-aspiradora-rowenta/", count: "3 productos", color: "bg-red-50 border-red-200 text-red-700" },
+          { name: "Bosch / Siemens", url: "/bolsas-aspiradora-bosch/", count: "1 producto", color: "bg-blue-50 border-blue-200 text-blue-700" },
+          { name: "Karcher", url: "/bolsas-aspiradora-karcher/", count: "3 productos", color: "bg-yellow-50 border-yellow-200 text-yellow-700" },
+          { name: "Miele", url: "/bolsas-aspiradora-miele/", count: "1 producto", color: "bg-indigo-50 border-indigo-200 text-indigo-700" },
+          { name: "Taurus", url: "/bolsas-aspiradora-taurus/", count: "4 productos", color: "bg-green-50 border-green-200 text-green-700" },
+          { name: "Industrial", url: "/bolsas-aspiradora-industriales/", count: "6 productos", color: "bg-gray-50 border-gray-200 text-gray-700" },
+          { name: "Electrolux", url: "https://www.amazon.es/dp/B07Z83ZHKL?tag=bolsasaspira-21", count: "Ver en Amazon", color: "bg-orange-50 border-orange-200 text-orange-700" },
+          { name: "LG", url: "https://www.amazon.es/dp/B07SVN945X?tag=bolsasaspira-21", count: "Ver en Amazon", color: "bg-pink-50 border-pink-200 text-pink-700" },
+        ].map((brand) => (
+          <a href={brand.url} target={brand.url.startsWith("http") ? "_blank" : undefined} rel={brand.url.startsWith("http") ? "nofollow noopener sponsored" : undefined} class={`${brand.color} border rounded-xl p-6 text-center hover:shadow-md transition-all group`}>
+            <h3 class="font-bold text-lg mb-1 group-hover:scale-105 transition-transform">{brand.name}</h3>
+            <p class="text-xs opacity-75">{brand.count}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Guides section -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center">Guias y Consejos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <a href="/como-elegir-bolsas-aspiradora/" class="bg-white border border-border rounded-xl p-8 hover:shadow-lg transition-all group">
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Como Elegir las Bolsas de Aspiradora Correctas</h3>
+          <p class="text-text-light text-sm mb-4">Guia completa: tipos de bolsas, como identificar tu modelo, diferencias entre papel y microfibra, y cuando cambiarlas.</p>
+          <span class="text-primary font-semibold text-sm inline-flex items-center gap-1">
+            Leer guia
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a href="/bolsas-aspiradora-baratas/" class="bg-white border border-border rounded-xl p-8 hover:shadow-lg transition-all group">
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Las Bolsas de Aspiradora Mas Baratas</h3>
+          <p class="text-text-light text-sm mb-4">Encuentra bolsas de calidad al mejor precio. Comparativa de las opciones mas economicas sin renunciar a buena filtracion.</p>
+          <span class="text-primary font-semibold text-sm inline-flex items-center gap-1">
+            Ver comparativa
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-10 text-center">Preguntas Frecuentes sobre Bolsas de Aspiradora</h2>
+      <div class="space-y-6">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Como saber que bolsa necesita mi aspiradora?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Consulta el modelo exacto de tu aspiradora (normalmente en una pegatina en la parte inferior) y busca bolsas compatibles con ese modelo. En nuestra web organizamos las bolsas por marca para facilitarte la busqueda.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Cada cuanto hay que cambiar la bolsa de la aspiradora?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Se recomienda cambiar la bolsa cuando esta llena al 75% de su capacidad. Normalmente cada 1-2 meses con uso regular. Si notas perdida de succion, es hora de cambiarla.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Puedo usar bolsas universales en mi aspiradora?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Depende del modelo. Algunas aspiradoras aceptan bolsas universales, pero siempre es mejor usar bolsas especificas para tu modelo. Garantizan mejor filtracion y ajuste perfecto.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que diferencia hay entre bolsas de papel y de microfibra?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Las bolsas de microfibra ofrecen mejor filtracion (retienen particulas mas pequenas), mayor durabilidad y mantienen mejor la succion. Las de papel son mas economicas pero menos eficientes.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Las bolsas de aspiradora tienen envio gratis?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Si, todos los productos que recomendamos estan disponibles en Amazon con envio gratis para usuarios Prime. Los pedidos superiores a 29 EUR tambien tienen envio gratuito.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Cuanto cuestan las bolsas de aspiradora?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">El precio varia segun la marca y cantidad. Puedes encontrar packs desde 7,90 EUR (5 bolsas Karcher) hasta 14,90 EUR (10 bolsas Rowenta o Nilfisk). El precio medio es de unos 12 EUR por pack de 10 unidades.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust section -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-10 text-center border border-blue-100">
+        <h2 class="text-2xl font-bold mb-6">Por que confiar en BolsasPro?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="font-semibold mb-2">Productos verificados</h3>
+            <p class="text-sm text-text-light">Todos los productos estan verificados y disponibles en Amazon.es con garantia de devolucion.</p>
+          </div>
+          <div>
+            <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="font-semibold mb-2">Mejores precios</h3>
+            <p class="text-sm text-text-light">Comparamos opciones para encontrar la mejor relacion calidad-precio en bolsas de aspiradora.</p>
+          </div>
+          <div>
+            <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="font-semibold mb-2">Actualizacion constante</h3>
+            <p class="text-sm text-text-light">Revisamos precios y disponibilidad regularmente para ofrecerte informacion actualizada.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner
+    title="Encuentra las bolsas perfectas para tu aspiradora"
+    description="Mas de 22 productos verificados con envio gratis Prime. Compra segura y devoluciones faciles en Amazon."
+    buttonText="Ver todas las ofertas"
+    buttonUrl={amazonUrl("B0784S9VKF")}
+  />
+
+</Layout>

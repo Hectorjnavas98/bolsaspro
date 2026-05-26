@@ -1,0 +1,277 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+
+const tag = "bolsasaspira-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+---
+
+<Layout title="Como Elegir las Bolsas de Aspiradora Correctas 2026" description="Guia completa para elegir las bolsas de aspiradora correctas: como identificar tu modelo, tipos de bolsas, diferencias entre papel y microfibra, cuando cambiarlas.">
+
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Como elegir bolsas" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Como Elegir las Bolsas de Aspiradora Correctas</h1>
+    <p class="text-lg text-text-light mb-10">Guia completa actualizada a 2026. Todo lo que necesitas saber para encontrar las bolsas compatibles con tu aspiradora, elegir el tipo adecuado y saber cuando cambiarlas.</p>
+
+    <!-- Table of contents -->
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-10">
+      <h2 class="font-bold text-blue-800 mb-3">Contenido de esta guia</h2>
+      <ol class="text-sm text-blue-900 space-y-2">
+        <li><a href="#paso-1" class="hover:underline">1. Como encontrar el numero de modelo de tu aspiradora</a></li>
+        <li><a href="#paso-2" class="hover:underline">2. Tipos de bolsas: papel, microfibra y HEPA</a></li>
+        <li><a href="#paso-3" class="hover:underline">3. Bolsas universales vs especificas</a></li>
+        <li><a href="#paso-4" class="hover:underline">4. Senales de que necesitas cambiar la bolsa</a></li>
+        <li><a href="#recomendaciones" class="hover:underline">5. Nuestras recomendaciones</a></li>
+      </ol>
+    </div>
+
+    <!-- Step 1 -->
+    <section id="paso-1" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">1. Como Encontrar el Numero de Modelo de tu Aspiradora</h2>
+      <p class="text-text-light mb-4">El primer paso es identificar el modelo exacto de tu aspiradora. Sin esta informacion, es imposible saber que bolsa necesitas. Aqui te explicamos donde buscar:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Parte inferior del aparato</h3>
+          <p class="text-sm text-text-light">La mayoria de aspiradoras tienen una etiqueta adhesiva en la parte inferior con el modelo, numero de serie y datos electricos. Es el lugar mas fiable.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Compartimento de la bolsa</h3>
+          <p class="text-sm text-text-light">Al abrir la tapa del compartimento de la bolsa, a veces hay una referencia del tipo de bolsa compatible impresa en el interior.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Manual de instrucciones</h3>
+          <p class="text-sm text-text-light">El manual siempre indica el modelo y el tipo de bolsa recomendada. Si lo has perdido, busca el PDF en la web del fabricante.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">La bolsa actual</h3>
+          <p class="text-sm text-text-light">Si aun tienes la bolsa que vino con la aspiradora, mira la referencia impresa. Esa referencia te servira para buscar repuestos compatibles.</p>
+        </div>
+      </div>
+
+      <InfoBox type="tip" title="Ejemplos de numeros de modelo por marca">
+        <strong>Rowenta:</strong> RO6432, RO3923 | <strong>Bosch:</strong> BGL3A330, BSG62185 | <strong>Karcher:</strong> WD3 P, WD 3 Premium | <strong>Taurus:</strong> Auris 1800, Golf 2000 | <strong>Miele:</strong> S6210, Complete C3
+      </InfoBox>
+    </section>
+
+    <!-- Step 2 -->
+    <section id="paso-2" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">2. Tipos de Bolsas: Papel, Microfibra y HEPA</h2>
+      <p class="text-text-light mb-6">No todas las bolsas son iguales. Existen tres tipos principales, cada uno con sus ventajas:</p>
+
+      <div class="space-y-6">
+        <div class="bg-bg-card border border-border rounded-xl p-6">
+          <h3 class="font-bold text-lg mb-2">Bolsas de Papel</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <p class="text-sm font-semibold text-green-600 mb-1">Ventajas</p>
+              <ul class="text-sm text-text-light space-y-1">
+                <li>+ Precio mas economico</li>
+                <li>+ Faciles de encontrar</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-red-600 mb-1">Desventajas</p>
+              <ul class="text-sm text-text-light space-y-1">
+                <li>- Filtracion basica</li>
+                <li>- Se rompen con facilidad</li>
+                <li>- Pierden succion rapido</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-blue-600 mb-1">Recomendado para</p>
+              <p class="text-sm text-text-light">Uso ocasional, limpieza ligera</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+          <h3 class="font-bold text-lg mb-2 text-blue-800">Bolsas de Microfibra (Recomendadas)</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <p class="text-sm font-semibold text-green-600 mb-1">Ventajas</p>
+              <ul class="text-sm text-text-light space-y-1">
+                <li>+ Excelente filtracion (99%+)</li>
+                <li>+ Muy resistentes</li>
+                <li>+ Mantienen la succion</li>
+                <li>+ Buena relacion calidad/precio</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-red-600 mb-1">Desventajas</p>
+              <ul class="text-sm text-text-light space-y-1">
+                <li>- Algo mas caras que las de papel</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-blue-600 mb-1">Recomendado para</p>
+              <p class="text-sm text-text-light">Uso regular, hogares con mascotas, la mayoria de usuarios</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-bg-card border border-border rounded-xl p-6">
+          <h3 class="font-bold text-lg mb-2">Bolsas HEPA</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <p class="text-sm font-semibold text-green-600 mb-1">Ventajas</p>
+              <ul class="text-sm text-text-light space-y-1">
+                <li>+ Filtracion maxima (99,97%)</li>
+                <li>+ Retienen particulas microscopicas</li>
+                <li>+ Ideales para alergicos</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-red-600 mb-1">Desventajas</p>
+              <ul class="text-sm text-text-light space-y-1">
+                <li>- Precio mas elevado</li>
+                <li>- Menos disponibilidad</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-blue-600 mb-1">Recomendado para</p>
+              <p class="text-sm text-text-light">Alergias severas, asma, entornos sanitarios</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <InfoBox type="info" title="Nuestra recomendacion">
+        Para la gran mayoria de usuarios, las <strong>bolsas de microfibra</strong> son la mejor opcion. Ofrecen una filtracion excelente a un precio razonable. Todos los productos que recomendamos en esta web son de microfibra.
+      </InfoBox>
+    </section>
+
+    <!-- Step 3 -->
+    <section id="paso-3" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">3. Bolsas Universales vs Especificas</h2>
+      <p class="text-text-light mb-6">Existe un debate frecuente: vale la pena comprar bolsas universales o es mejor las especificas para cada modelo?</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Bolsas Universales</h3>
+          <p class="text-sm text-text-light mb-3">Se adaptan a varios modelos mediante diferentes boquillas de acoplamiento.</p>
+          <ul class="text-sm text-text-light space-y-1">
+            <li class="text-green-600">+ Utiles si tienes varias aspiradoras</li>
+            <li class="text-green-600">+ Precio competitivo</li>
+            <li class="text-red-600">- El ajuste puede no ser perfecto</li>
+            <li class="text-red-600">- Posibles fugas de polvo</li>
+            <li class="text-red-600">- No compatibles con todos los modelos</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-semibold text-blue-800 mb-2">Bolsas Especificas (Recomendadas)</h3>
+          <p class="text-sm text-text-light mb-3">Disenadas para un modelo o grupo de modelos concretos.</p>
+          <ul class="text-sm text-text-light space-y-1">
+            <li class="text-green-600">+ Ajuste perfecto garantizado</li>
+            <li class="text-green-600">+ Maxima filtracion y succion</li>
+            <li class="text-green-600">+ Sin fugas de polvo</li>
+            <li class="text-green-600">+ Mayor durabilidad</li>
+            <li class="text-amber-600">~ Algo mas caras (pero merece la pena)</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-text-light">Siempre recomendamos bolsas <strong>especificas para tu modelo</strong>. El ajuste perfecto garantiza maxima filtracion, evita fugas de polvo y prolonga la vida util de tu aspiradora.</p>
+    </section>
+
+    <!-- Step 4 -->
+    <section id="paso-4" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">4. Senales de que Necesitas Cambiar la Bolsa</h2>
+      <p class="text-text-light mb-6">No esperes a que la bolsa reviente. Estas son las senales claras de que es hora de cambiarla:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex items-start gap-3 bg-bg-card border border-border rounded-xl p-4">
+          <div class="w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center shrink-0 font-bold text-sm">1</div>
+          <div>
+            <h3 class="font-semibold text-sm">Perdida de succion</h3>
+            <p class="text-xs text-text-light">La aspiradora ya no aspira con la misma fuerza. Es la senal mas comun.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-bg-card border border-border rounded-xl p-4">
+          <div class="w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center shrink-0 font-bold text-sm">2</div>
+          <div>
+            <h3 class="font-semibold text-sm">Indicador de bolsa llena</h3>
+            <p class="text-xs text-text-light">Muchas aspiradoras tienen un indicador luminoso o mecanico que avisa.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-bg-card border border-border rounded-xl p-4">
+          <div class="w-8 h-8 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center shrink-0 font-bold text-sm">3</div>
+          <div>
+            <h3 class="font-semibold text-sm">Mal olor</h3>
+            <p class="text-xs text-text-light">Si la aspiradora emite un olor desagradable al funcionar, la bolsa necesita cambio.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-bg-card border border-border rounded-xl p-4">
+          <div class="w-8 h-8 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center shrink-0 font-bold text-sm">4</div>
+          <div>
+            <h3 class="font-semibold text-sm">Motor recalentado</h3>
+            <p class="text-xs text-text-light">Si la aspiradora se calienta mas de lo normal o se apaga sola, puede ser la bolsa.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-bg-card border border-border rounded-xl p-4">
+          <div class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0 font-bold text-sm">5</div>
+          <div>
+            <h3 class="font-semibold text-sm">Bolsa llena al 75%</h3>
+            <p class="text-xs text-text-light">No esperes al 100%. Cambia la bolsa cuando este al 75% para mantener el rendimiento.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-bg-card border border-border rounded-xl p-4">
+          <div class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0 font-bold text-sm">6</div>
+          <div>
+            <h3 class="font-semibold text-sm">Cada 1-2 meses</h3>
+            <p class="text-xs text-text-light">Con uso regular (2-3 veces/semana), cambia la bolsa cada 4-8 semanas como norma.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section id="recomendaciones" class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">Nuestras Recomendaciones: Los 3 Mas Vendidos</h2>
+      <p class="text-text-light mb-8">Si buscas bolsas de calidad al mejor precio, estos son los productos mas vendidos y mejor valorados:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <ProductCard
+          name="10 Bolsas Alta Filtracion Karcher WD3"
+          image={imgUrl("71wwUXjsyqL")}
+          rating={4.5}
+          price="12,90 EUR"
+          amazonUrl={amazonUrl("B0784S9VKF")}
+          badge="Mas vendido"
+          features={["Filtracion superior 3 capas", "Compatible Karcher WD3/MV3", "Pack de 10 unidades"]}
+        />
+        <ProductCard
+          name="10 Bolsas Hyperfilter Plus Bosch Tipo G"
+          image={imgUrl("71n23Xp6tyL")}
+          rating={4.5}
+          price="13,90 EUR"
+          amazonUrl={amazonUrl("B07RHVF8BW")}
+          badge="Mejor filtracion"
+          features={["Tecnologia Hyperfilter Plus", "Compatible Bosch/Siemens", "Pack de 10 unidades"]}
+        />
+        <ProductCard
+          name="10 Bolsas Rowenta Silence Force"
+          image={imgUrl("71aqUU5rZFL")}
+          rating={4.6}
+          price="14,90 EUR"
+          amazonUrl={amazonUrl("B07QBC255G")}
+          badge="Mejor valorado"
+          features={["Alta filtracion multicapa", "Compatible SF y Compact Power", "Pack de 10 unidades"]}
+        />
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Encuentra las bolsas para tu aspiradora"
+      description="Mas de 22 productos verificados para todas las marcas. Envio gratis Prime y devoluciones faciles."
+      buttonText="Ver todas las ofertas"
+      buttonUrl={amazonUrl("B0784S9VKF")}
+    />
+  </div>
+
+</Layout>

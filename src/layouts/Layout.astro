@@ -1,0 +1,178 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  schema?: object;
+}
+
+const { title, description, canonical, schema } = Astro.props;
+const siteName = "BolsasPro.es";
+const fullTitle = `${title} | ${siteName}`;
+const siteUrl = "https://bolsaspro.es";
+const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#2563eb" />
+  <title>{fullTitle}</title>
+  <link rel="canonical" href={canonicalUrl} />
+  <link rel="alternate" hreflang="es" href={canonicalUrl} />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content="BolsasPro" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+
+  {schema && (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  )}
+</head>
+<body class="min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-white border-b border-border sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center">
+        <img src="/logo.svg" alt="BolsasPro - Las mejores bolsas para tu aspiradora" width="200" height="52" class="h-10 w-auto" />
+      </a>
+      <ul class="hidden md:flex gap-6 text-sm font-medium text-text-light">
+        <li><a href="/" class="hover:text-primary transition-colors">Inicio</a></li>
+        <li class="relative group">
+          <a href="#" class="hover:text-primary transition-colors">Por Marca</a>
+          <div class="absolute left-0 top-full pt-2 hidden group-hover:block z-50">
+            <div class="bg-white border border-border rounded-lg shadow-lg p-4 min-w-[220px] space-y-2">
+              <a href="/bolsas-aspiradora-rowenta/" class="block text-sm hover:text-primary py-1">Rowenta</a>
+              <a href="/bolsas-aspiradora-bosch/" class="block text-sm hover:text-primary py-1">Bosch / Siemens</a>
+              <a href="/bolsas-aspiradora-karcher/" class="block text-sm hover:text-primary py-1">Karcher</a>
+              <a href="/bolsas-aspiradora-miele/" class="block text-sm hover:text-primary py-1">Miele</a>
+              <a href="/bolsas-aspiradora-taurus/" class="block text-sm hover:text-primary py-1">Taurus</a>
+            </div>
+          </div>
+        </li>
+        <li class="relative group">
+          <a href="/como-elegir-bolsas-aspiradora/" class="hover:text-primary transition-colors">Guias</a>
+          <div class="absolute left-0 top-full pt-2 hidden group-hover:block z-50">
+            <div class="bg-white border border-border rounded-lg shadow-lg p-4 min-w-[250px] space-y-2">
+              <a href="/como-elegir-bolsas-aspiradora/" class="block text-sm hover:text-primary py-1">Como elegir bolsas</a>
+              <a href="/bolsas-aspiradora-baratas/" class="block text-sm hover:text-primary py-1">Bolsas baratas</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="/bolsas-aspiradora-industriales/" class="hover:text-primary transition-colors">Industrial</a></li>
+      </ul>
+      <button id="menu-toggle" class="md:hidden text-text" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+      <ul class="flex flex-col gap-2 text-sm font-medium text-text-light">
+        <li><a href="/" class="hover:text-primary block py-1">Inicio</a></li>
+        <li class="font-semibold text-text pt-2">Por Marca</li>
+        <li><a href="/bolsas-aspiradora-rowenta/" class="hover:text-primary block py-1 pl-3">Rowenta</a></li>
+        <li><a href="/bolsas-aspiradora-bosch/" class="hover:text-primary block py-1 pl-3">Bosch / Siemens</a></li>
+        <li><a href="/bolsas-aspiradora-karcher/" class="hover:text-primary block py-1 pl-3">Karcher</a></li>
+        <li><a href="/bolsas-aspiradora-miele/" class="hover:text-primary block py-1 pl-3">Miele</a></li>
+        <li><a href="/bolsas-aspiradora-taurus/" class="hover:text-primary block py-1 pl-3">Taurus</a></li>
+        <li class="font-semibold text-text pt-2">Guias</li>
+        <li><a href="/como-elegir-bolsas-aspiradora/" class="hover:text-primary block py-1 pl-3">Como elegir bolsas</a></li>
+        <li><a href="/bolsas-aspiradora-baratas/" class="hover:text-primary block py-1 pl-3">Bolsas baratas</a></li>
+        <li><a href="/bolsas-aspiradora-industriales/" class="hover:text-primary block py-1 pl-3">Industrial</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-1">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-border mt-16">
+    <div class="max-w-6xl mx-auto px-4 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="font-bold text-lg mb-3">BolsasPro</h3>
+          <p class="text-sm text-text-light">Tu guia experta en bolsas de aspiradora. Comparativas, reviews y consejos para encontrar la bolsa compatible con tu modelo.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Por Marca</h4>
+          <ul class="text-sm text-text-light space-y-2">
+            <li><a href="/bolsas-aspiradora-rowenta/" class="hover:text-primary">Rowenta</a></li>
+            <li><a href="/bolsas-aspiradora-bosch/" class="hover:text-primary">Bosch / Siemens</a></li>
+            <li><a href="/bolsas-aspiradora-karcher/" class="hover:text-primary">Karcher</a></li>
+            <li><a href="/bolsas-aspiradora-miele/" class="hover:text-primary">Miele</a></li>
+            <li><a href="/bolsas-aspiradora-taurus/" class="hover:text-primary">Taurus</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Mas Categorias</h4>
+          <ul class="text-sm text-text-light space-y-2">
+            <li><a href="/bolsas-aspiradora-industriales/" class="hover:text-primary">Industrial</a></li>
+            <li><a href="/bolsas-aspiradora-baratas/" class="hover:text-primary">Baratas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Guias</h4>
+          <ul class="text-sm text-text-light space-y-2">
+            <li><a href="/como-elegir-bolsas-aspiradora/" class="hover:text-primary">Como elegir bolsas</a></li>
+            <li><a href="/bolsas-aspiradora-baratas/" class="hover:text-primary">Las mas baratas</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-border mt-8 pt-6 text-center text-xs text-text-light">
+        <p>Esta web participa en el Programa de Afiliados de Amazon EU. Al comprar a traves de nuestros enlaces, recibimos una comision sin coste adicional para ti.</p>
+        <p class="mt-2">&copy; {new Date().getFullYear()} BolsasPro.es - Todos los derechos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile CTA bar -->
+  <div id="sticky-cta" class="fixed bottom-0 left-0 right-0 bg-white border-t border-border shadow-[0_-4px_12px_rgba(0,0,0,0.1)] p-3 z-40 md:hidden translate-y-full transition-transform duration-300">
+    <a href="https://www.amazon.es/dp/B0784S9VKF?tag=bolsasaspira-21" target="_blank" rel="nofollow noopener sponsored" class="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold py-3 px-6 rounded-lg w-full text-center shadow-md">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg>
+      Ver bolsas de aspiradora en Amazon
+    </a>
+  </div>
+
+  <script>
+    document.getElementById('menu-toggle')?.addEventListener('click', () => {
+      document.getElementById('mobile-menu')?.classList.toggle('hidden');
+    });
+
+    const stickyCta = document.getElementById('sticky-cta');
+    if (stickyCta) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          stickyCta.classList.remove('translate-y-full');
+        } else {
+          stickyCta.classList.add('translate-y-full');
+        }
+      }, { passive: true });
+    }
+  </script>
+</body>
+</html>

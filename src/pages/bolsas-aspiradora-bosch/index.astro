@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "bolsasaspira-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que bolsa usa mi aspiradora Bosch?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La mayoria de aspiradoras Bosch de trineo utilizan bolsas tipo G (PowerProtect). Estas bolsas son compatibles con toda la gama GL, BSG, BSGL. Tambien son compatibles con aspiradoras Siemens del mismo grupo." }
+    },
+    {
+      "@type": "Question",
+      "name": "Las bolsas Bosch tipo G son compatibles con Siemens?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, las bolsas tipo G son universales para Bosch y Siemens, ya que ambas marcas pertenecen al mismo grupo y comparten el mismo sistema de bolsas." }
+    },
+    {
+      "@type": "Question",
+      "name": "Que es la tecnologia Hyperfilter Plus?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Hyperfilter Plus es una tecnologia de filtracion avanzada que utiliza multiples capas de microfibra para retener hasta el 99,7% de las particulas, incluyendo alergenos y polvo fino." }
+    },
+  ]
+};
+---
+
+<Layout title="Mejores Bolsas Aspiradora Bosch y Siemens 2026" description="Bolsas de aspiradora Bosch tipo G compatibles con toda la gama. Hyperfilter Plus para maxima filtracion. Tambien compatible con Siemens. Envio gratis." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Bosch / Siemens" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Mejores Bolsas de Aspiradora Bosch y Siemens 2026</h1>
+    <p class="text-lg text-text-light mb-10">Las bolsas tipo G son el estandar universal para aspiradoras Bosch y Siemens. Con tecnologia Hyperfilter Plus para la maxima filtracion y retencion de alergenos.</p>
+
+    <InfoBox type="info" title="Compatibilidad universal Bosch/Siemens">
+      Las bolsas tipo G son compatibles con practicamente toda la gama de aspiradoras de trineo Bosch y Siemens. Un solo tipo de bolsa para todas tus necesidades.
+    </InfoBox>
+
+    <!-- Product -->
+    <div class="max-w-md mx-auto my-12">
+      <ProductCard
+        name="10 Bolsas Hyperfilter Plus Bosch Tipo G"
+        image={imgUrl("71n23Xp6tyL")}
+        rating={4.5}
+        price="13,90 EUR"
+        amazonUrl={amazonUrl("B07RHVF8BW")}
+        badge="Recomendado"
+        features={["Tecnologia Hyperfilter Plus multicapa", "Compatible con TODA la gama Bosch/Siemens", "Retencion del 99,7% de particulas", "Pack de 10 unidades", "Ideal para alergicos"]}
+      />
+    </div>
+
+    <ProsConsBox
+      pros={[
+        "Compatibilidad universal con Bosch y Siemens",
+        "Tecnologia Hyperfilter Plus de alta filtracion",
+        "Retiene hasta el 99,7% de particulas finas",
+        "Pack de 10 unidades a buen precio",
+        "Ideal para hogares con mascotas o alergias"
+      ]}
+      cons={[
+        "Solo disponible en pack de 10",
+        "No compatible con modelos Bosch sin bolsa (Relaxx'x)"
+      ]}
+    />
+
+    <!-- Content -->
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Modelos Bosch Compatibles</h2>
+      <p class="text-text-light mb-4">Las bolsas tipo G son compatibles con la inmensa mayoria de aspiradoras de trineo Bosch. Aqui tienes los modelos mas comunes:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-semibold text-blue-800 mb-3">Serie GL (ProEnergy, ProHygienic...)</h3>
+          <ul class="text-sm text-blue-900 space-y-1">
+            <li>Bosch GL-20 (BGS2...)</li>
+            <li>Bosch GL-25 (BGL25...)</li>
+            <li>Bosch GL-30 (BGL3...)</li>
+            <li>Bosch GL-40 (BGL4...)</li>
+            <li>Bosch GL-45 ProSilence (BGL45...)</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-semibold text-blue-800 mb-3">Series BSG / BSGL</h3>
+          <ul class="text-sm text-blue-900 space-y-1">
+            <li>Bosch BSG6... (Logo)</li>
+            <li>Bosch BSG7... (Formula)</li>
+            <li>Bosch BSGL3... (GL-30)</li>
+            <li>Bosch BSGL4... (GL-40)</li>
+            <li>Bosch BSGL5... (In'Genius)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold mb-4">Modelos Siemens Compatibles</h2>
+      <p class="text-text-light mb-4">Siemens pertenece al mismo grupo que Bosch y utiliza el mismo sistema de bolsas tipo G:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Siemens VS06... (Synchropower)</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Siemens VS07... (technopower)</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Siemens VSZ... (Z serie)</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Siemens VSQ... (Q serie)</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mb-4">Que es la Tecnologia Hyperfilter Plus?</h2>
+      <p class="text-text-light mb-4">Las bolsas Hyperfilter Plus utilizan un sistema de filtracion multicapa que ofrece ventajas significativas sobre las bolsas de papel tradicionales:</p>
+      <ul class="text-text-light mb-6 space-y-2">
+        <li><strong>Capa exterior:</strong> Microfibra resistente que evita roturas</li>
+        <li><strong>Capas intermedias:</strong> Filtracion progresiva que retiene particulas cada vez mas pequenas</li>
+        <li><strong>Capa interior:</strong> Retencion final de particulas microscopicas y alergenos</li>
+      </ul>
+      <p class="text-text-light mb-6">El resultado es una filtracion del 99,7% de particulas, ideal para hogares con alergias, asma o mascotas.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas Bosch/Siemens</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que bolsa usa mi aspiradora Bosch?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">La mayoria de aspiradoras Bosch de trineo utilizan bolsas tipo G (PowerProtect). Estas bolsas son compatibles con toda la gama GL, BSG, BSGL. Tambien son compatibles con aspiradoras Siemens.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Las bolsas Bosch tipo G son compatibles con Siemens?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Si, las bolsas tipo G son universales para Bosch y Siemens, ya que ambas marcas pertenecen al mismo grupo y comparten el mismo sistema de bolsas.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que es la tecnologia Hyperfilter Plus?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Hyperfilter Plus es una tecnologia de filtracion avanzada que utiliza multiples capas de microfibra para retener hasta el 99,7% de las particulas, incluyendo alergenos y polvo fino.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="La bolsa definitiva para tu Bosch o Siemens"
+      description="10 bolsas Hyperfilter Plus con filtracion del 99,7%. Compatibles con toda la gama. Envio gratis Prime."
+      buttonText="Ver precio en Amazon"
+      buttonUrl={amazonUrl("B07RHVF8BW")}
+    />
+  </div>
+
+</Layout>

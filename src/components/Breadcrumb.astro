@@ -1,0 +1,45 @@
+---
+interface Crumb {
+  label: string;
+  url?: string;
+}
+
+interface Props {
+  crumbs: Crumb[];
+}
+
+const { crumbs } = Astro.props;
+
+const schemaItems = [
+  { label: "Inicio", url: "/" },
+  ...crumbs,
+].map((crumb, i) => ({
+  "@type": "ListItem",
+  "position": i + 1,
+  "name": crumb.label,
+  ...(crumb.url ? { "item": `https://bolsaspro.es${crumb.url}` } : {}),
+}));
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": schemaItems,
+};
+---
+
+<nav class="text-sm text-text-light mb-6" aria-label="Breadcrumb">
+  <ol class="flex flex-wrap items-center gap-1">
+    <li><a href="/" class="hover:text-primary">Inicio</a></li>
+    {crumbs.map((crumb) => (
+      <li class="flex items-center gap-1">
+        <span class="mx-1">/</span>
+        {crumb.url ? (
+          <a href={crumb.url} class="hover:text-primary">{crumb.label}</a>
+        ) : (
+          <span>{crumb.label}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
