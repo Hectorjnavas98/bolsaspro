@@ -1,0 +1,357 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "espacioseco-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const comparisonProducts = [
+  { name: "10 Bolsas Alta Filtracion Philips/AEG", type: "Microfibra multicapa", area: "Philips FC, HR, Performer, Marathon", price: "14,90 EUR", rating: 4.5, amazonUrl: amazonUrl("B07SGFN26G") },
+  { name: "10 Bolsas Philips/Electrolux Compatible", type: "Microfibra premium", area: "Philips FC, HR, Electrolux", price: "13,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B07Z83ZHKL") },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que bolsa necesita mi aspiradora Philips?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La mayoria de aspiradoras Philips de trineo utilizan bolsas tipo S-Bag o compatibles. Son compatibles con las series FC8000, FC9000, HR6000, HR8000 y gamas como Performer, Marathon, Expression, Universe, Jewel, Studio, Specialist y Mobilo. Las bolsas de microfibra multicapa que recomendamos son compatibles con todos estos modelos." }
+    },
+    {
+      "@type": "Question",
+      "name": "Las bolsas Philips son compatibles con Electrolux y AEG?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, muchas bolsas para Philips son tambien compatibles con aspiradoras Electrolux y AEG, ya que estos fabricantes comparten el sistema S-Bag. Esto significa que con una sola bolsa puedes cubrir varias marcas." }
+    },
+    {
+      "@type": "Question",
+      "name": "Como identifico el modelo exacto de mi aspiradora Philips?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El numero de modelo de tu aspiradora Philips se encuentra en una etiqueta en la parte inferior del aparato. Busca un codigo que empiece por FC (por ejemplo FC8322, FC9060) o HR (por ejemplo HR6300, HR8500). Con ese codigo puedes verificar la compatibilidad en nuestra tabla." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cada cuanto debo cambiar la bolsa de mi aspiradora Philips?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Se recomienda cambiar la bolsa cada 1-2 meses en uso normal, o cuando notes que la potencia de succion disminuye. Con un pack de 10 bolsas tendras suficiente para entre 10 y 20 meses de uso, dependiendo de la frecuencia de aspirado y el tamano del hogar." }
+    },
+  ]
+};
+---
+
+<Layout title="Mejores Bolsas Aspiradora Philips 2026 - Todos los Modelos" description="Bolsas compatibles con tu aspiradora Philips: FC8322, FC8600, FC9000, HR series y mas. Guia completa de compatibilidad y mejores precios." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Philips" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Mejores Bolsas de Aspiradora Philips 2026 - Todos los Modelos</h1>
+    <p class="text-lg text-text-light mb-10">Guia completa de bolsas compatibles con aspiradoras Philips. Encuentra la bolsa perfecta para tu modelo FC o HR: Performer, Marathon, Expression, Universe, Jewel, Studio, Specialist, Mobilo y muchas mas series. Comparativa, compatibilidad detallada y mejores precios.</p>
+
+    <InfoBox type="info" title="Compatibilidad universal Philips / S-Bag">
+      Las bolsas que recomendamos son compatibles con practicamente todas las aspiradoras de trineo Philips que utilizan el sistema S-Bag. Esto incluye las series FC8000, FC9000, HR6000 y HR8000, asi como gamas completas como Performer, Marathon, Expression y Universe. Ademas, son compatibles con aspiradoras Electrolux y AEG que usen el mismo sistema.
+    </InfoBox>
+
+    <!-- Products -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+      <ProductCard
+        name="10 Bolsas Alta Filtracion Philips/AEG"
+        image={imgUrl("71X5T5GNKCL")}
+        rating={4.5}
+        price="14,90 EUR"
+        amazonUrl={amazonUrl("B07SGFN26G")}
+        badge="Mejor valorado"
+        features={["Alta filtracion multicapa", "Compatible Philips FC y HR series", "Cierre hermetico anti-polvo", "Pack de 10 unidades"]}
+      />
+      <ProductCard
+        name="10 Bolsas Philips/Electrolux Compatible"
+        image={imgUrl("71McY5YQPML")}
+        rating={4.4}
+        price="13,90 EUR"
+        amazonUrl={amazonUrl("B07Z83ZHKL")}
+        features={["Compatible Philips y Electrolux", "Microfibra premium", "Maxima retencion", "Pack de 10 unidades"]}
+      />
+    </div>
+
+    <!-- Comparison -->
+    <h2 class="text-2xl font-bold mb-6">Comparativa de Bolsas Philips</h2>
+    <ComparisonTable products={comparisonProducts} />
+
+    <ProsConsBox
+      pros={[
+        "Compatibilidad universal con series FC y HR de Philips",
+        "Tambien compatibles con Electrolux y AEG (sistema S-Bag)",
+        "Alta filtracion multicapa que retiene hasta el 99,5% de particulas",
+        "Pack de 10 unidades con excelente relacion calidad-precio",
+        "Cierre hermetico que evita escape de polvo al cambiar la bolsa",
+        "Ideales para hogares con mascotas o personas alergicas"
+      ]}
+      cons={[
+        "Solo disponibles en pack de 10 unidades",
+        "No compatibles con aspiradoras Philips sin bolsa (PowerPro, SpeedPro)"
+      ]}
+    />
+
+    <!-- Extensive content -->
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Guia Completa: Bolsas para Aspiradoras Philips</h2>
+      <p class="text-text-light mb-4">Philips es una de las marcas de aspiradoras mas populares en Espana y Europa. Con decadas de historia fabricando electrodomesticos de calidad, la gama de aspiradoras Philips abarca desde modelos basicos hasta equipos profesionales de alta succion. Encontrar la bolsa adecuada para tu aspiradora Philips es fundamental para mantener su rendimiento optimo.</p>
+      <p class="text-text-light mb-6">La buena noticia es que la gran mayoria de aspiradoras Philips de trineo utilizan el sistema S-Bag, un estandar compartido con Electrolux y AEG. Esto significa que una bolsa compatible S-Bag funciona en practicamente todos los modelos Philips con bolsa. A continuacion, te ofrecemos la guia mas completa de compatibilidad para que encuentres exactamente la bolsa que necesitas.</p>
+
+      <h2 class="text-2xl font-bold mb-4">Como Encontrar el Modelo de tu Aspiradora Philips</h2>
+      <p class="text-text-light mb-4">Antes de comprar bolsas, es importante identificar el modelo exacto de tu aspiradora. Sigue estos pasos:</p>
+      <ol class="text-text-light mb-6 space-y-2 list-decimal list-inside">
+        <li><strong>Busca la etiqueta del modelo:</strong> Se encuentra en la parte inferior de la aspiradora, normalmente cerca de la rueda trasera.</li>
+        <li><strong>Identifica el codigo:</strong> Los modelos Philips empiezan por FC (modelos recientes) o HR (modelos antiguos). Por ejemplo: FC8322, FC9060, HR6300, HR8500.</li>
+        <li><strong>Consulta la tabla de compatibilidad:</strong> Usa nuestras tablas a continuacion para verificar que tu modelo esta incluido.</li>
+        <li><strong>Nombre comercial:</strong> Si no encuentras el codigo, busca el nombre de la gama (Performer, Marathon, Expression, etc.) en nuestro listado.</li>
+      </ol>
+
+      <InfoBox type="tip" title="Truco para identificar tu modelo rapidamente">
+        Si no encuentras la etiqueta, busca en el manual de usuario o en la caja original. Tambien puedes buscar el codigo en la parte trasera de la manguera, donde a veces aparece impreso.
+      </InfoBox>
+
+      <h2 class="text-2xl font-bold mb-6 mt-10">Tabla de Compatibilidad: Serie FC8000</h2>
+      <p class="text-text-light mb-4">La serie FC8000 abarca modelos de gama media de Philips. Todos los siguientes modelos son compatibles con las bolsas recomendadas:</p>
+
+      <div class="overflow-x-auto mb-8">
+        <table class="min-w-full bg-white border border-gray-200 rounded-xl text-sm">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="px-4 py-3 text-left font-semibold border-b">Modelo</th>
+              <th class="px-4 py-3 text-left font-semibold border-b">Gama</th>
+              <th class="px-4 py-3 text-center font-semibold border-b">Compatible</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC8322</td><td class="px-4 py-2">PowerLife</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC8344</td><td class="px-4 py-2">PowerLife</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC8450</td><td class="px-4 py-2">PowerLife</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC8452</td><td class="px-4 py-2">PowerLife</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC8454</td><td class="px-4 py-2">PowerLife</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC8600</td><td class="px-4 py-2">Expression</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC8602</td><td class="px-4 py-2">Expression</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC8606</td><td class="px-4 py-2">Expression</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC8610</td><td class="px-4 py-2">Expression</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC8612</td><td class="px-4 py-2">Expression</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC8615</td><td class="px-4 py-2">Expression</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC8620</td><td class="px-4 py-2">Expression</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC8650</td><td class="px-4 py-2">Universe</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC8660</td><td class="px-4 py-2">Universe</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC8720</td><td class="px-4 py-2">Jewel</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC8740</td><td class="px-4 py-2">Jewel</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC8912</td><td class="px-4 py-2">HomeHero</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC8916</td><td class="px-4 py-2">HomeHero</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold mb-6">Tabla de Compatibilidad: Serie FC9000</h2>
+      <p class="text-text-light mb-4">La serie FC9000 incluye los modelos mas potentes y avanzados de Philips. Estos son los modelos de aspirador de trineo mas vendidos de la marca y todos son compatibles:</p>
+
+      <div class="overflow-x-auto mb-8">
+        <table class="min-w-full bg-white border border-gray-200 rounded-xl text-sm">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="px-4 py-3 text-left font-semibold border-b">Modelo</th>
+              <th class="px-4 py-3 text-left font-semibold border-b">Gama</th>
+              <th class="px-4 py-3 text-center font-semibold border-b">Compatible</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC9000</td><td class="px-4 py-2">Specialist</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC9050</td><td class="px-4 py-2">Jewel</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC9060</td><td class="px-4 py-2">Jewel</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC9062</td><td class="px-4 py-2">Jewel</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC9064</td><td class="px-4 py-2">Jewel</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC9066</td><td class="px-4 py-2">Jewel</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC9068</td><td class="px-4 py-2">Jewel</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC9070</td><td class="px-4 py-2">Studio</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC9073</td><td class="px-4 py-2">Studio</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC9076</td><td class="px-4 py-2">Studio</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC9078</td><td class="px-4 py-2">Studio</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC9080</td><td class="px-4 py-2">Performer</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC9083</td><td class="px-4 py-2">Performer</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC9084</td><td class="px-4 py-2">Performer</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC9085</td><td class="px-4 py-2">Performer</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC9100</td><td class="px-4 py-2">Performer</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC9150</td><td class="px-4 py-2">Performer</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips FC9160</td><td class="px-4 py-2">Performer</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips FC9170</td><td class="px-4 py-2">Performer</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold mb-6">Tabla de Compatibilidad: Serie HR</h2>
+      <p class="text-text-light mb-4">La serie HR corresponde a modelos mas antiguos de Philips que siguen siendo muy populares en muchos hogares espanoles. Todos utilizan el mismo tipo de bolsa:</p>
+
+      <div class="overflow-x-auto mb-8">
+        <table class="min-w-full bg-white border border-gray-200 rounded-xl text-sm">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="px-4 py-3 text-left font-semibold border-b">Modelo</th>
+              <th class="px-4 py-3 text-left font-semibold border-b">Gama</th>
+              <th class="px-4 py-3 text-center font-semibold border-b">Compatible</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b"><td class="px-4 py-2">Philips HR6300</td><td class="px-4 py-2">Mobilo</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips HR6325</td><td class="px-4 py-2">Mobilo</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips HR6340</td><td class="px-4 py-2">Mobilo</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips HR6370</td><td class="px-4 py-2">Mobilo</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips HR6938</td><td class="px-4 py-2">Marathon</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips HR6940</td><td class="px-4 py-2">Marathon</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips HR6988</td><td class="px-4 py-2">Marathon</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips HR8300</td><td class="px-4 py-2">Expression</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Philips HR8500</td><td class="px-4 py-2">Expression</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Philips HR8700</td><td class="px-4 py-2">Expression</td><td class="px-4 py-2 text-center text-green-600 font-bold">Si</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold mb-4">Compatibilidad por Gama Comercial Philips</h2>
+      <p class="text-text-light mb-6">Ademas de los codigos de modelo, Philips agrupa sus aspiradoras en gamas comerciales. Todas las siguientes gamas son compatibles con las bolsas que recomendamos:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-semibold text-blue-800 mb-3">Philips Performer</h3>
+          <p class="text-sm text-blue-900">Gama de alta potencia con filtro HEPA. Incluye modelos FC9080 a FC9170. Excelente para limpieza profunda de alfombras y suelos duros.</p>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-semibold text-blue-800 mb-3">Philips Marathon</h3>
+          <p class="text-sm text-blue-900">Serie pensada para grandes superficies. Incluye modelos HR6938, HR6940, HR6988. Motor de larga duracion para sesiones intensivas.</p>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-semibold text-blue-800 mb-3">Philips Expression</h3>
+          <p class="text-sm text-blue-900">Gama de gama media-alta. Incluye modelos FC8600-FC8620 y HR8300-HR8700. Equilibrio entre potencia y precio.</p>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-semibold text-blue-800 mb-3">Philips Universe</h3>
+          <p class="text-sm text-blue-900">Incluye modelos FC8650 y FC8660. Versatilidad para distintos tipos de suelo y multiples accesorios incluidos.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">Philips Jewel</h3>
+          <p class="text-sm text-green-900">Gama premium con diseno elegante. Incluye modelos FC8720, FC8740, FC9050-FC9068. Silenciosas y potentes.</p>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">Philips Studio</h3>
+          <p class="text-sm text-green-900">Serie compacta y ligera. Incluye modelos FC9070-FC9078. Ideal para pisos pequenos y almacenamiento facil.</p>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">Philips Specialist</h3>
+          <p class="text-sm text-green-900">Pensada para hogares con mascotas. Incluye modelos FC9000 y variantes. Accesorios especiales para pelo animal.</p>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">Philips Mobilo</h3>
+          <p class="text-sm text-green-900">Serie clasica de Philips. Incluye modelos HR6300-HR6370. Fiable y resistente, aun muy presente en hogares espanoles.</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold mb-4">El Sistema S-Bag de Philips: Que Es y Por Que Importa</h2>
+      <p class="text-text-light mb-4">El S-Bag es un estandar de bolsa para aspiradoras desarrollado originalmente por Electrolux y adoptado por Philips, AEG y otras marcas del grupo. Este sistema ofrece varias ventajas:</p>
+      <ul class="text-text-light mb-6 space-y-2">
+        <li><strong>Universalidad:</strong> Una misma bolsa sirve para decenas de modelos de diferentes marcas</li>
+        <li><strong>Cierre hermetico:</strong> El sistema de cierre automatico evita que el polvo escape al retirar la bolsa</li>
+        <li><strong>Filtracion avanzada:</strong> Las bolsas S-Bag de microfibra retienen particulas microscopicas y alergenos</li>
+        <li><strong>Capacidad optimizada:</strong> El diseno maximiza el volumen de la bolsa para mayor duracion entre cambios</li>
+      </ul>
+      <p class="text-text-light mb-6">Las bolsas compatibles S-Bag que recomendamos mantienen todas estas ventajas del sistema original, con materiales de microfibra multicapa que igualan o superan la filtracion de las bolsas originales de Philips.</p>
+
+      <h2 class="text-2xl font-bold mb-4">Bolsas de Microfibra vs Bolsas de Papel: Diferencias Clave</h2>
+      <p class="text-text-light mb-4">No todas las bolsas son iguales. Las bolsas de microfibra que recomendamos para aspiradoras Philips ofrecen ventajas significativas frente a las bolsas de papel tradicionales:</p>
+      <div class="overflow-x-auto mb-8">
+        <table class="min-w-full bg-white border border-gray-200 rounded-xl text-sm">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="px-4 py-3 text-left font-semibold border-b">Caracteristica</th>
+              <th class="px-4 py-3 text-center font-semibold border-b">Microfibra</th>
+              <th class="px-4 py-3 text-center font-semibold border-b">Papel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b"><td class="px-4 py-2">Filtracion de particulas finas</td><td class="px-4 py-2 text-center text-green-600 font-bold">99,5%</td><td class="px-4 py-2 text-center text-orange-600">85-90%</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Retencion de alergenos</td><td class="px-4 py-2 text-center text-green-600 font-bold">Excelente</td><td class="px-4 py-2 text-center text-orange-600">Media</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Resistencia a roturas</td><td class="px-4 py-2 text-center text-green-600 font-bold">Muy alta</td><td class="px-4 py-2 text-center text-orange-600">Baja</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Mantenimiento de succion</td><td class="px-4 py-2 text-center text-green-600 font-bold">Estable</td><td class="px-4 py-2 text-center text-orange-600">Disminuye rapido</td></tr>
+            <tr class="border-b"><td class="px-4 py-2">Duracion por bolsa</td><td class="px-4 py-2 text-center text-green-600 font-bold">4-8 semanas</td><td class="px-4 py-2 text-center text-orange-600">2-4 semanas</td></tr>
+            <tr class="border-b bg-gray-50"><td class="px-4 py-2">Proteccion del motor</td><td class="px-4 py-2 text-center text-green-600 font-bold">Optima</td><td class="px-4 py-2 text-center text-orange-600">Basica</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold mb-4">Consejos para el Mantenimiento de tu Aspiradora Philips</h2>
+      <p class="text-text-light mb-4">Para sacar el maximo partido a tu aspiradora Philips y prolongar su vida util, sigue estos consejos de mantenimiento:</p>
+      <ul class="text-text-light mb-6 space-y-2">
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span><strong>Cambia la bolsa regularmente:</strong> No esperes a que este completamente llena. Cambiarla cuando esta al 75% mantiene la succion optima.</span></li>
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span><strong>Revisa los filtros:</strong> Ademas de la bolsa, limpia o sustituye los filtros (motor y salida) cada 3-6 meses.</span></li>
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span><strong>Limpia la manguera:</strong> Comprueba periodicamente que no hay obstrucciones en la manguera o el tubo.</span></li>
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span><strong>Limpia el cepillo:</strong> Retira pelos y fibras enredados en el cepillo rotativo para mantener la eficacia en alfombras.</span></li>
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span><strong>Usa bolsas de calidad:</strong> Las bolsas de microfibra protegen mejor el motor que las de papel, alargando la vida de tu aspiradora.</span></li>
+      </ul>
+
+      <InfoBox type="warning" title="No reutilices las bolsas">
+        Nunca intentes vaciar y reutilizar una bolsa de aspiradora. Las bolsas de microfibra pierden su capacidad de filtracion tras el primer uso y pueden liberar particulas finas al aire de tu hogar. Ademas, manipular el polvo acumulado puede ser perjudicial para personas con alergias o problemas respiratorios.
+      </InfoBox>
+
+      <h2 class="text-2xl font-bold mb-4">Por que Elegir Bolsas Compatibles en Vez de Originales?</h2>
+      <p class="text-text-light mb-4">Las bolsas originales Philips (como la S-Bag FC8021) son de excelente calidad, pero su precio es significativamente mas alto. Las bolsas compatibles que recomendamos ofrecen:</p>
+      <ul class="text-text-light mb-6 space-y-2">
+        <li><strong>Ahorro del 40-60%:</strong> Packs de 10 bolsas a partir de 13,90 EUR, frente a los 20-25 EUR de las originales para el mismo numero</li>
+        <li><strong>Misma filtracion:</strong> Microfibra multicapa con retencion del 99,5% de particulas</li>
+        <li><strong>Mismo ajuste:</strong> Disenadas para encajar perfectamente en el soporte S-Bag de tu Philips</li>
+        <li><strong>Cierre hermetico:</strong> Sistema de cierre que impide el escape de polvo al retirar la bolsa</li>
+      </ul>
+      <p class="text-text-light mb-6">Miles de usuarios en Amazon confirman que estas bolsas compatibles funcionan igual de bien que las originales, con valoraciones medias superiores a 4,4 sobre 5.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas Aspiradora Philips</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que bolsa necesita mi aspiradora Philips?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">La mayoria de aspiradoras Philips de trineo utilizan bolsas tipo S-Bag o compatibles. Son compatibles con las series FC8000, FC9000, HR6000 y HR8000, asi como gamas como Performer, Marathon, Expression, Universe, Jewel, Studio, Specialist y Mobilo. Las bolsas de microfibra multicapa que recomendamos son compatibles con todos estos modelos.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Las bolsas Philips son compatibles con Electrolux y AEG?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Si, muchas bolsas para Philips son tambien compatibles con aspiradoras Electrolux y AEG, ya que estos fabricantes comparten el sistema S-Bag. Esto significa que con una sola bolsa puedes cubrir varias marcas.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Como identifico el modelo exacto de mi aspiradora Philips?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">El numero de modelo de tu aspiradora Philips se encuentra en una etiqueta en la parte inferior del aparato. Busca un codigo que empiece por FC (modelos recientes) o HR (modelos antiguos). Con ese codigo puedes verificar la compatibilidad en nuestra tabla.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Cada cuanto debo cambiar la bolsa de mi aspiradora Philips?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Se recomienda cambiar la bolsa cada 1-2 meses en uso normal, o cuando notes que la potencia de succion disminuye. Con un pack de 10 bolsas tendras suficiente para entre 10 y 20 meses de uso, dependiendo de la frecuencia de aspirado y el tamano del hogar.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Encuentra la bolsa perfecta para tu aspiradora Philips"
+      description="Pack de 10 bolsas de alta filtracion compatibles con todos los modelos Philips FC y HR. Cierre hermetico, microfibra multicapa y envio gratis Prime."
+      buttonText="Ver precio en Amazon"
+      buttonUrl={amazonUrl("B07SGFN26G")}
+    />
+  </div>
+
+</Layout>

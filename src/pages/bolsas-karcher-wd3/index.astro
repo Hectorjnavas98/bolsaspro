@@ -1,0 +1,302 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "espacioseco-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const comparisonProducts = [
+  { name: "10 Bolsas Alta Filtracion Karcher WD3", type: "Microfibra 3 capas", area: "Todos los WD3/MV3", price: "12,90 EUR", rating: 4.5, amazonUrl: amazonUrl("B0784S9VKF") },
+  { name: "5 Bolsas Karcher WD3", type: "Microfibra", area: "Todos los WD3/MV3", price: "7,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B07W7MNG2S") },
+  { name: "3 Bolsas + 1 Filtro Karcher WD3", type: "Microfibra + Filtro", area: "Todos los WD3/MV3", price: "8,49 EUR", rating: 4.3, amazonUrl: amazonUrl("B08KFJ25DS") },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que referencia de bolsa usa el Karcher WD3?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La referencia original de Karcher es la 6.959-130.0. Sin embargo, las bolsas compatibles de microfibra ofrecen mejor filtracion y son mas economicas. El pack de 10 bolsas compatibles sale a 1,29 EUR por unidad frente a mas de 2 EUR de las originales." }
+    },
+    {
+      "@type": "Question",
+      "name": "Se puede usar el Karcher WD3 sin bolsa?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, pero solo para aspirar liquidos. Para uso en seco siempre debes usar bolsa, ya que protege el filtro del motor y mejora la succion. Sin bolsa en modo seco, el filtro se obstruye rapidamente y pierde potencia." }
+    },
+    {
+      "@type": "Question",
+      "name": "Que diferencia hay entre WD3, WD3 P y WD3 Premium?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Los tres modelos usan las mismas bolsas. El WD3 P incluye toma de corriente para herramientas electricas. El WD3 Premium tiene mejores accesorios y manguera mas larga. Internamente el sistema de bolsas es identico." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cada cuanto hay que cambiar la bolsa del Karcher WD3?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende del uso. Para uso domestico normal, cada 2-4 semanas. Si aspiras escombros, ceniza o grandes cantidades de polvo, puede ser necesario cambiarla despues de cada uso intensivo. Cambiala cuando notes perdida de succion o la bolsa este al 75% de capacidad." }
+    }
+  ]
+};
+---
+
+<Layout title="Bolsas Karcher WD3: Guia Completa y Mejores Precios 2026" description="Bolsas compatibles Karcher WD3, WD3P, MV3. Pack 10 desde 12,90€. Todos los modelos WD3 compatibles, como instalarlas y mejor opcion." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Karcher", url: "/bolsas-aspiradora-karcher/" }, { label: "WD3" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Bolsas Karcher WD3: Guia Completa y Mejores Precios 2026</h1>
+    <p class="text-lg text-text-light mb-10">El Karcher WD3 es el aspirador de seco y humedo mas popular en Espana. Si tienes uno, necesitas bolsas de calidad al mejor precio. En esta guia completa analizamos las mejores opciones compatibles con todos los modelos WD3, WD3 P, WD3 Premium y MV3, con precios desde 1,29 EUR por bolsa.</p>
+
+    <InfoBox type="tip" title="Mejor precio por bolsa">
+      El <a href={amazonUrl("B0784S9VKF")} target="_blank" rel="nofollow noopener sponsored" class="text-primary font-semibold hover:underline">pack de 10 bolsas de alta filtracion</a> sale a solo 1,29 EUR/unidad. El pack de 5 cuesta 1,58 EUR/unidad. Comprar el pack grande te ahorra un 18% por bolsa.
+    </InfoBox>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
+      <ProductCard
+        name="10 Bolsas Alta Filtracion Karcher WD3"
+        image={imgUrl("71wwUXjsyqL")}
+        rating={4.5}
+        price="12,90 EUR"
+        amazonUrl={amazonUrl("B0784S9VKF")}
+        badge="Mas vendido"
+        features={["Pack 10 uds - 1,29 EUR/bolsa", "Microfibra 3 capas alta filtracion", "Compatible TODOS los WD3 y MV3", "Referencia compatible 6.959-130.0"]}
+      />
+      <ProductCard
+        name="5 Bolsas Karcher WD3"
+        image={imgUrl("71Cgjf-cuTL")}
+        rating={4.4}
+        price="7,90 EUR"
+        amazonUrl={amazonUrl("B07W7MNG2S")}
+        features={["Pack 5 uds - 1,58 EUR/bolsa", "Microfibra resistente", "Compatible WD3, WD3P, MV3", "Ideal si usas poco el aspirador"]}
+      />
+      <ProductCard
+        name="3 Bolsas + 1 Filtro Karcher WD3"
+        image={imgUrl("71Cgjf-cuTL")}
+        rating={4.3}
+        price="8,49 EUR"
+        amazonUrl={amazonUrl("B08KFJ25DS")}
+        features={["3 bolsas + filtro de motor incluido", "Kit completo de mantenimiento", "Compatible WD3, MV3, A2204", "Ideal si necesitas cambiar el filtro"]}
+      />
+    </div>
+
+    <h2 class="text-2xl font-bold mb-6">Comparativa de Bolsas Karcher WD3</h2>
+    <ComparisonTable products={comparisonProducts} />
+
+    <!-- Seccion: Introduccion al Karcher WD3 -->
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">El Karcher WD3: El Aspirador Multiuso Mas Popular de Espana</h2>
+      <p class="text-text-light mb-4">El Karcher WD3 se ha convertido en el aspirador de seco y humedo de referencia en el mercado espanol. Con su motor de 1000W, deposito de 17 litros y su versatilidad para aspirar tanto polvo como liquidos, es la eleccion preferida tanto para uso domestico como para talleres y garajes. Su exito se debe a la combinacion de un precio asequible (normalmente entre 80 y 100 EUR) con una potencia de succion que supera a muchos aspiradores domesticos convencionales.</p>
+      <p class="text-text-light mb-6">Sin embargo, para mantener el rendimiento optimo del WD3, es fundamental utilizar bolsas de filtro de calidad. Las bolsas protegen el filtro del motor, mejoran la succion y facilitan el vaciado. A continuacion te explicamos todo lo que necesitas saber.</p>
+
+      <!-- Lista completa de variantes WD3 -->
+      <h2 class="text-2xl font-bold mb-4">Lista Completa de Modelos Karcher WD3 Compatibles</h2>
+      <p class="text-text-light mb-4">Karcher ha fabricado numerosas variantes del WD3 a lo largo de los anos. Todas utilizan el mismo tipo de bolsa (referencia original 6.959-130.0). Aqui tienes la lista completa:</p>
+
+      <h3 class="text-xl font-semibold mb-3">Serie WD3 actual</h3>
+      <ul class="text-text-light mb-4 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>WD 3</strong> (1.629-800.0) - Modelo base</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>WD 3 P</strong> (1.629-880.0) - Con toma de corriente para herramientas</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>WD 3 Premium</strong> (1.629-841.0) - Con accesorios mejorados</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Serie WD3 clasica (modelos numericos)</h3>
+      <ul class="text-text-light mb-4 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>WD 3.200</strong> - Version basica antigua</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>WD 3.230</strong> - Version con manguera mejorada</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>WD 3.250</strong> - Version intermedia</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>WD 3.300</strong> y <strong>WD 3.300 M</strong> - Con mayor capacidad</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>WD 3.370</strong> - Version con accesorios extra</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>WD 3.500 P</strong> - Con toma de corriente</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>WD 3.600 MP</strong> - Version taller con multiples accesorios</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Serie MV3 (nombre anterior, mismo aspirador)</h3>
+      <ul class="text-text-light mb-4 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>MV 3</strong> - Equivalente exacto del WD3</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>MV 3 Premium</strong> - Equivalente del WD3 Premium</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>MV 3 P Extension Kit</strong> - Con kit de extension</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Otros modelos compatibles</h3>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>A 2204</strong> - Serie A compatible</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>A 2504</strong> - Serie A compatible</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>SE 4001</strong> - Aspirador de tapicerias (tambien compatible)</li>
+      </ul>
+    </section>
+
+    <InfoBox type="info" title="Referencia original: 6.959-130.0">
+      Todas las bolsas que recomendamos son compatibles con la referencia original de Karcher 6.959-130.0. Las bolsas de microfibra compatibles ofrecen mejor filtracion que las originales de papel, a un precio inferior.
+    </InfoBox>
+
+    <!-- Seccion: Analisis precio por unidad -->
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Pack de 10 vs Pack de 5: Analisis de Precio por Unidad</h2>
+      <p class="text-text-light mb-4">Una de las preguntas mas frecuentes es si merece la pena comprar el pack grande. Veamos los numeros:</p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b-2 border-primary/20">
+              <th class="py-3 px-4 font-semibold">Pack</th>
+              <th class="py-3 px-4 font-semibold">Precio total</th>
+              <th class="py-3 px-4 font-semibold">Precio/bolsa</th>
+              <th class="py-3 px-4 font-semibold">Ahorro vs pack 5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-200">
+              <td class="py-3 px-4"><strong>10 bolsas</strong></td>
+              <td class="py-3 px-4">12,90 EUR</td>
+              <td class="py-3 px-4 text-green-600 font-semibold">1,29 EUR</td>
+              <td class="py-3 px-4 text-green-600">-18% por bolsa</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-3 px-4"><strong>5 bolsas</strong></td>
+              <td class="py-3 px-4">7,90 EUR</td>
+              <td class="py-3 px-4">1,58 EUR</td>
+              <td class="py-3 px-4">Referencia</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-3 px-4"><strong>3 bolsas + filtro</strong></td>
+              <td class="py-3 px-4">8,49 EUR</td>
+              <td class="py-3 px-4">2,83 EUR*</td>
+              <td class="py-3 px-4 text-red-500">+79% por bolsa*</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-text-light text-sm mb-6">*El pack de 3+filtro incluye un filtro de motor valorado en aprox. 4-5 EUR, por lo que el precio real por bolsa es similar. Recomendado solo si necesitas cambiar el filtro.</p>
+      <p class="text-text-light mb-6"><strong>Nuestra recomendacion:</strong> Si usas el Karcher WD3 regularmente, el pack de 10 es la mejor opcion sin duda. Ahorras un 18% por bolsa y no te quedaras sin repuestos. Si solo lo usas ocasionalmente (una vez al mes o menos), el pack de 5 es suficiente.</p>
+
+      <!-- Seccion: Papel vs Microfibra -->
+      <h2 class="text-2xl font-bold mb-4">Bolsas de Papel vs Microfibra para el Karcher WD3</h2>
+      <p class="text-text-light mb-4">Las bolsas originales de Karcher son de papel. Las alternativas compatibles suelen ser de microfibra. Estas son las diferencias clave para tu WD3:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-bg rounded-xl p-6">
+          <h3 class="text-lg font-semibold mb-3">Bolsas de papel (originales Karcher)</h3>
+          <ul class="text-text-light space-y-2">
+            <li>Filtracion basica de una capa</li>
+            <li>Se rompen facilmente con escombros o particulas puntiagudas</li>
+            <li>Menor capacidad efectiva</li>
+            <li>Precio mas alto (referencia original)</li>
+            <li>Se humedecen y pierden integridad con la humedad</li>
+          </ul>
+        </div>
+        <div class="bg-bg rounded-xl p-6 border-2 border-primary/30">
+          <h3 class="text-lg font-semibold mb-3">Bolsas de microfibra (compatibles)</h3>
+          <ul class="text-text-light space-y-2">
+            <li>Filtracion de 3 capas superior</li>
+            <li>Resistentes a desgarros y particulas afiladas</li>
+            <li>Mayor capacidad efectiva de llenado</li>
+            <li>Precio inferior por unidad</li>
+            <li>Mejor resistencia a la humedad residual</li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-text-light mb-6">Para el Karcher WD3 especificamente, las bolsas de microfibra son la mejor opcion. El WD3 se usa frecuentemente para tareas exigentes (taller, garaje, ceniza de chimenea) donde las bolsas de papel se rompen con facilidad. La microfibra aguanta mejor estos usos intensivos.</p>
+
+      <!-- Seccion: Como instalar la bolsa -->
+      <h2 class="text-2xl font-bold mb-4">Como Instalar la Bolsa en el Karcher WD3 Correctamente</h2>
+      <p class="text-text-light mb-4">El Karcher WD3 utiliza un sistema de clip para sujetar la bolsa. Sigue estos pasos:</p>
+      <ol class="text-text-light mb-6 space-y-3">
+        <li><strong>1. Retira la cabeza del aspirador:</strong> Desbloquea los cierres laterales y levanta la parte superior del WD3 para acceder al deposito.</li>
+        <li><strong>2. Retira el filtro del cartucho:</strong> El filtro cilindrico plisado se desenrosca o se extrae tirando hacia arriba. Dejalo apartado.</li>
+        <li><strong>3. Localiza el soporte de la bolsa:</strong> Veras un adaptador de plastico con un gancho/clip en el interior del deposito, en la parte superior.</li>
+        <li><strong>4. Coloca la bolsa en el clip:</strong> La bolsa tiene un carton rigido con una abertura. Desliza este carton en el clip hasta que encaje con un "clic". Asegurate de que queda bien sujeto.</li>
+        <li><strong>5. Extiende la bolsa dentro del deposito:</strong> Despliega la bolsa para que ocupe el maximo volumen posible dentro del deposito de 17L.</li>
+        <li><strong>6. Vuelve a colocar el filtro y la cabeza:</strong> Enrosca el filtro en su posicion y cierra la cabeza del aspirador con los cierres laterales.</li>
+      </ol>
+    </section>
+
+    <InfoBox type="warning" title="Error comun al instalar la bolsa">
+      Muchos usuarios no encajan bien el carton de la bolsa en el clip, lo que provoca que se suelte durante el aspirado. Asegurate de oir el "clic" al colocarla. Si la bolsa se suelta, el polvo pasara directamente al filtro y reducira su vida util.
+    </InfoBox>
+
+    <!-- Seccion: Uso sin bolsa -->
+    <section class="prose max-w-none mt-8">
+      <h2 class="text-2xl font-bold mb-4">Se Puede Usar el Karcher WD3 sin Bolsa?</h2>
+      <p class="text-text-light mb-4">Si, pero con matices importantes. El Karcher WD3 tiene dos modos de uso:</p>
+      <ul class="text-text-light mb-4 space-y-2">
+        <li><strong>Aspiracion en seco (con bolsa):</strong> Para polvo, suciedad, pelos, escombros finos. SIEMPRE usa bolsa. Sin ella, el filtro del motor se obstruye rapidamente, pierdes succion y reduces la vida del aspirador.</li>
+        <li><strong>Aspiracion de liquidos (sin bolsa):</strong> Para agua, liquidos derramados. RETIRA la bolsa antes de aspirar liquidos. El agua destruiria la bolsa y podria danar el filtro. El WD3 esta disenado para aspirar liquidos directamente en el deposito.</li>
+      </ul>
+      <p class="text-text-light mb-6">Algunos usuarios intentan usar el WD3 sin bolsa para aspirar polvo y ahorrar en bolsas. Esto es un error: el filtro plisado se satura de polvo fino, pierde toda la succion y limpiar el filtro no lo devuelve a su estado original. A largo plazo gastas mas en filtros que en bolsas.</p>
+
+      <!-- Seccion: Mantenimiento del filtro -->
+      <h2 class="text-2xl font-bold mb-4">Mantenimiento del Filtro del Karcher WD3</h2>
+      <p class="text-text-light mb-4">El filtro del WD3 (filtro de cartucho plisado) es tan importante como las bolsas. Estos consejos te ayudaran a mantenerlo en buen estado:</p>
+      <ul class="text-text-light mb-6 space-y-2">
+        <li><strong>Limpieza regular:</strong> Cada 3-4 cambios de bolsa, retira el filtro y sacudelo al aire libre para eliminar el polvo acumulado entre los pliegues.</li>
+        <li><strong>Lavado ocasional:</strong> Puedes lavar el filtro con agua tibia cada 2-3 meses. Dejalo secar completamente (24-48 horas) antes de volver a usarlo. Nunca lo uses humedo para aspiracion en seco.</li>
+        <li><strong>Sustitucion:</strong> Incluso con buen mantenimiento, el filtro pierde eficacia con el tiempo. Cambialo cada 6-12 meses segun la intensidad de uso. El pack de 3 bolsas + filtro es ideal para esto.</li>
+        <li><strong>Filtro seco vs humedo:</strong> Antes de cambiar de modo seco a humedo o viceversa, asegurate de que el filtro esta en las condiciones adecuadas. Nunca aspires liquidos con el filtro de papel seco; usa la funda protectora de filtro que incluye el WD3.</li>
+      </ul>
+    </section>
+
+    <ProsConsBox
+      pros={[
+        "Pack de 10 bolsas a solo 1,29 EUR/unidad - el mejor precio del mercado",
+        "Microfibra de 3 capas: filtracion superior a las bolsas originales de papel",
+        "Compatibles con TODOS los modelos WD3, WD3P, MV3 y variantes clasicas",
+        "Disponible tambien en pack de 5 o combo con filtro incluido",
+        "El Karcher WD3 es muy popular: nunca faltaran repuestos"
+      ]}
+      cons={[
+        "El pack de 3+filtro tiene un precio por bolsa mas elevado (pero incluye filtro)",
+        "Solo compatibles con la serie WD3/MV3, no con WD4, WD5 u otras series",
+        "Las bolsas no sirven para aspiracion de liquidos (hay que retirarlas)"
+      ]}
+    />
+
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas Karcher WD3</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que referencia de bolsa usa el Karcher WD3?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">La referencia original de Karcher es la 6.959-130.0. Sin embargo, las bolsas compatibles de microfibra ofrecen mejor filtracion y son mas economicas. El pack de 10 bolsas compatibles sale a 1,29 EUR por unidad frente a mas de 2 EUR de las originales.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Se puede usar el Karcher WD3 sin bolsa?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Si, pero solo para aspirar liquidos. Para uso en seco siempre debes usar bolsa, ya que protege el filtro del motor y mejora la succion. Sin bolsa en modo seco, el filtro se obstruye rapidamente y pierde potencia.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que diferencia hay entre WD3, WD3 P y WD3 Premium?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Los tres modelos usan las mismas bolsas. El WD3 P incluye toma de corriente para herramientas electricas. El WD3 Premium tiene mejores accesorios y manguera mas larga. Internamente el sistema de bolsas es identico en los tres.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Cada cuanto hay que cambiar la bolsa del Karcher WD3?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Depende del uso. Para uso domestico normal, cada 2-4 semanas. Si aspiras escombros, ceniza o grandes cantidades de polvo, puede ser necesario cambiarla despues de cada uso intensivo. Cambiala cuando notes perdida de succion o la bolsa este al 75% de capacidad.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Bolsas Karcher WD3 al mejor precio garantizado"
+      description="Pack de 10 bolsas de alta filtracion en microfibra. Compatible con todos los modelos WD3, WD3P, MV3 y variantes. Solo 1,29 EUR por bolsa. Envio gratis con Prime."
+      buttonText="Ver oferta en Amazon"
+      buttonUrl={amazonUrl("B0784S9VKF")}
+    />
+  </div>
+
+</Layout>

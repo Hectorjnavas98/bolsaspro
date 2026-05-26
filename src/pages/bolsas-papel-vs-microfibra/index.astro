@@ -1,0 +1,489 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "espacioseco-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Cual es la diferencia principal entre bolsas de papel y microfibra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La diferencia principal esta en la filtracion y durabilidad. Las bolsas de microfibra filtran el 99-99.5% de las particulas, incluyendo alergenos y polvo fino, mientras que las de papel solo retienen el 85-90%. Ademas, las de microfibra mantienen la succion estable durante mas tiempo y son mas resistentes a roturas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Son mejores las bolsas de microfibra para personas con alergias?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si, las bolsas de microfibra son significativamente mejores para personas con alergias. Su capacidad de filtracion del 99-99.5% retiene alergenos como acaros del polvo, polen y caspa de mascotas que las bolsas de papel dejan escapar. Para alergicos, la microfibra no es opcional, es esencial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Las bolsas de microfibra son mas caras que las de papel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por unidad, si: una bolsa de microfibra cuesta entre 1.00 y 1.50 euros frente a los 0.50-0.80 euros de una de papel. Sin embargo, a largo plazo las de microfibra pueden resultar mas economicas porque duran mas, necesitan cambiarse con menos frecuencia y protegen mejor el motor de la aspiradora, alargando su vida util."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puedo usar bolsas de microfibra en cualquier aspiradora?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La mayoria de aspiradoras de trineo con bolsa tienen opciones de microfibra disponibles. Las principales marcas como Rowenta, Bosch, Siemens, Karcher, Miele, Taurus y AEG ofrecen bolsas de microfibra compatibles con sus modelos. Solo necesitas verificar el numero de modelo de tu aspiradora para encontrar la bolsa de microfibra correcta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cuando merece la pena comprar bolsas de papel en vez de microfibra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las bolsas de papel pueden ser una opcion valida si: usas la aspiradora muy poco (una vez por semana o menos), no tienes alergias ni mascotas, tu presupuesto es muy ajustado, o necesitas una solucion temporal mientras encuentras las de microfibra compatibles con tu modelo."
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="Bolsas de Papel vs Microfibra: Cual es Mejor? Guia 2026"
+  description="Comparativa completa entre bolsas de aspiradora de papel y microfibra. Filtracion, durabilidad, precio, alergias. Descubre cual es mejor para ti."
+  schema={faqSchema}
+>
+
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Guias", url: "/como-elegir-bolsas-aspiradora/" }, { label: "Papel vs Microfibra" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Bolsas de Papel vs Microfibra: Cual es Mejor para tu Aspiradora?</h1>
+    <p class="text-lg text-text-light mb-10">Guia comparativa completa actualizada a 2026. Analizamos filtracion, durabilidad, precio, impacto en alergias y mucho mas para que tomes la mejor decision.</p>
+
+    <!-- Table of contents -->
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-10">
+      <h2 class="font-bold text-blue-800 mb-3">Contenido de esta guia</h2>
+      <ol class="text-sm text-blue-900 space-y-2">
+        <li><a href="#introduccion" class="hover:underline">1. El eterno debate: papel o microfibra</a></li>
+        <li><a href="#bolsas-papel" class="hover:underline">2. Como funcionan las bolsas de papel</a></li>
+        <li><a href="#bolsas-microfibra" class="hover:underline">3. Como funcionan las bolsas de microfibra</a></li>
+        <li><a href="#comparativa" class="hover:underline">4. Tabla comparativa detallada</a></li>
+        <li><a href="#alergias" class="hover:underline">5. Para alergicos: por que la microfibra es esencial</a></li>
+        <li><a href="#mascotas" class="hover:underline">6. Para duenos de mascotas</a></li>
+        <li><a href="#cuando-papel" class="hover:underline">7. Cuando las bolsas de papel son suficientes</a></li>
+        <li><a href="#veredicto" class="hover:underline">8. Nuestro veredicto</a></li>
+        <li><a href="#recomendaciones" class="hover:underline">9. Mejores bolsas de microfibra por marca</a></li>
+        <li><a href="#faq" class="hover:underline">10. Preguntas frecuentes</a></li>
+      </ol>
+    </div>
+
+    <!-- Section 1: Introduction -->
+    <section id="introduccion" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">1. El Eterno Debate: Papel o Microfibra</h2>
+      <p class="text-text-light mb-4">Si tienes una aspiradora con bolsa, tarde o temprano te enfrentaras a esta pregunta: <strong>bolsas de papel o bolsas de microfibra?</strong> Es una decision que parece simple pero que tiene un impacto real en la limpieza de tu hogar, la calidad del aire que respiras y, a largo plazo, en tu bolsillo.</p>
+      <p class="text-text-light mb-4">Las bolsas de papel han sido el estandar durante decadas. Son las que venian con tu aspiradora, las que encontrabas en cualquier ferreteria, las que tu madre siempre usaba. Pero en los ultimos anos, las bolsas de microfibra (tambien llamadas bolsas sinteticas o de tela no tejida) han ganado terreno de forma espectacular.</p>
+      <p class="text-text-light mb-4">En esta guia vamos a analizar en profundidad ambos tipos, comparar sus caracteristicas punto por punto, y ayudarte a decidir cual es la mejor opcion para tu situacion concreta. Spoiler: en la mayoria de casos, la microfibra gana, pero hay excepciones.</p>
+    </section>
+
+    <!-- Section 2: How paper bags work -->
+    <section id="bolsas-papel" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">2. Como Funcionan las Bolsas de Papel</h2>
+      <p class="text-text-light mb-4">Las bolsas de papel para aspiradora estan fabricadas con una o dos capas de papel kraft especial, un papel grueso y poroso que permite el paso del aire mientras retiene las particulas de polvo mas grandes.</p>
+
+      <div class="bg-bg-card border border-border rounded-xl p-6 mb-6">
+        <h3 class="font-bold text-lg mb-3">Construccion y materiales</h3>
+        <ul class="text-sm text-text-light space-y-2">
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">Material:</span> Papel kraft de 60-80 g/m2, a veces con tratamiento antihumedad</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">Capas:</span> Generalmente 1-2 capas de papel</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">Filtracion:</span> Poros de gran tamano que retienen particulas gruesas (polvo visible, migas, pelo)</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">Cierre:</span> Normalmente con carton rigido y goma elastica en la entrada</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">Capacidad:</span> Se reduce efectivamente a medida que se llena por compresion del papel</li>
+        </ul>
+      </div>
+
+      <p class="text-text-light mb-4">El principal problema de las bolsas de papel es su <strong>estructura porosa irregular</strong>. Los poros del papel no tienen un tamano uniforme, lo que significa que muchas particulas finas (menores a 10 micras) pasan a traves de la bolsa y son expulsadas al aire. Esto incluye alergenos como acaros del polvo, esporas de moho y particulas de caspa animal.</p>
+      <p class="text-text-light mb-4">Ademas, a medida que la bolsa se llena, el papel se deforma y pierde su estructura. La succion cae rapidamente, a menudo perdiendo un 30-40% de potencia cuando la bolsa esta solo a la mitad de su capacidad. El papel tambien es propenso a romperse con objetos puntiagudos o si se aspira algo humedo.</p>
+
+      <h3 class="font-semibold text-lg mb-3">Ventajas y desventajas de las bolsas de papel</h3>
+      <ProsConsBox
+        pros={[
+          "Precio por unidad mas bajo (0.50-0.80 euros por bolsa)",
+          "Disponibilidad amplia: se encuentran en ferreterias y supermercados",
+          "Material biodegradable, se descompone facilmente",
+          "Compatibilidad con modelos antiguos de aspiradoras",
+          "Peso ligero, no anade peso a la aspiradora"
+        ]}
+        cons={[
+          "Filtracion baja: solo retienen el 85-90% de particulas",
+          "La succion se pierde rapidamente al llenarse",
+          "Propenso a roturas con objetos afilados o humedad",
+          "No retienen alergenos ni particulas finas",
+          "Necesitan cambiarse con mas frecuencia",
+          "Pueden generar mal olor al acumular humedad",
+          "No protegen adecuadamente el motor de la aspiradora"
+        ]}
+      />
+    </section>
+
+    <!-- Section 3: How microfiber bags work -->
+    <section id="bolsas-microfibra" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">3. Como Funcionan las Bolsas de Microfibra</h2>
+      <p class="text-text-light mb-4">Las bolsas de microfibra (sinteticas) representan la evolucion tecnologica en filtracion de aspiradoras. Estan fabricadas con multiples capas de material sintetico no tejido, creando una estructura de filtracion mucho mas efectiva que el papel.</p>
+
+      <div class="bg-bg-card border border-border rounded-xl p-6 mb-6">
+        <h3 class="font-bold text-lg mb-3">Construccion y tecnologia</h3>
+        <ul class="text-sm text-text-light space-y-2">
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">Material:</span> Polipropileno o poliester no tejido (meltblown), con carga electrostatica</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">Capas:</span> 3-5 capas con diferentes funciones de filtracion</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">Filtracion:</span> Microporosa uniforme con filtracion electrostatica que atrapa particulas de hasta 0.3 micras</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">Cierre:</span> Sellado hermetico con junta de plastico rigido</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">Capacidad:</span> Se mantiene estable gracias a la flexibilidad del material</li>
+        </ul>
+      </div>
+
+      <p class="text-text-light mb-4">La clave de la superioridad de la microfibra esta en su <strong>estructura multicapa</strong>. La primera capa actua como prefiltro, reteniendo las particulas grandes. Las capas intermedias, fabricadas con tecnologia meltblown, crean una red de microfibras con carga electrostatica que atrapa incluso las particulas mas pequenas. La capa exterior proporciona resistencia mecanica.</p>
+      <p class="text-text-light mb-4">Esta estructura permite que el aire fluya de manera constante incluso cuando la bolsa esta bastante llena. La perdida de succion es mucho mas gradual: apenas un 10-15% cuando la bolsa esta al 75% de su capacidad, comparado con el 30-40% de las de papel en el mismo punto.</p>
+      <p class="text-text-light mb-4">Otra ventaja importante es la <strong>resistencia mecanica</strong>. Las bolsas de microfibra no se rompen con facilidad, resisten la humedad y no se deforman con el uso. Esto significa que tu aspiradora mantiene su rendimiento optimo durante mas tiempo entre cambios de bolsa.</p>
+
+      <h3 class="font-semibold text-lg mb-3">Ventajas y desventajas de las bolsas de microfibra</h3>
+      <ProsConsBox
+        pros={[
+          "Filtracion excelente: 99-99.5% de particulas retenidas",
+          "Mantienen la succion estable durante mucho mas tiempo",
+          "Resistentes a roturas, humedad y objetos puntiagudos",
+          "Retienen alergenos, acaros, polen y particulas finas",
+          "Mayor capacidad efectiva de almacenamiento",
+          "Mejor control de olores gracias al sellado superior",
+          "Protegen el motor de la aspiradora, alargando su vida util",
+          "Menos cambios necesarios, ahorro de tiempo"
+        ]}
+        cons={[
+          "Precio por unidad mas alto (1.00-1.50 euros por bolsa)",
+          "Menos disponibles en tiendas fisicas (mas faciles online)",
+          "Material sintetico, no biodegradable (aunque se usan menos)",
+          "Pueden ser dificiles de encontrar para modelos muy antiguos"
+        ]}
+      />
+    </section>
+
+    <!-- Section 4: Comparison table -->
+    <section id="comparativa" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">4. Comparativa Detallada: Papel vs Microfibra</h2>
+      <p class="text-text-light mb-6">Aqui tienes el resumen punto por punto de las diferencias entre ambos tipos de bolsa. Esta tabla te ayudara a ver de un vistazo cual es mejor en cada aspecto.</p>
+
+      <div class="overflow-x-auto rounded-xl border border-border mb-6">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="text-left py-3 px-4 font-semibold">Caracteristica</th>
+              <th class="text-center py-3 px-4 font-semibold">Papel</th>
+              <th class="text-center py-3 px-4 font-semibold">Microfibra</th>
+              <th class="text-center py-3 px-4 font-semibold">Ganador</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-border bg-white">
+              <td class="py-3 px-4 font-medium">Nivel de filtracion</td>
+              <td class="py-3 px-4 text-center text-red-600">85-90%</td>
+              <td class="py-3 px-4 text-center text-green-600 font-semibold">99-99.5%</td>
+              <td class="py-3 px-4 text-center">Microfibra</td>
+            </tr>
+            <tr class="border-b border-border bg-gray-50">
+              <td class="py-3 px-4 font-medium">Durabilidad</td>
+              <td class="py-3 px-4 text-center text-red-600">Baja</td>
+              <td class="py-3 px-4 text-center text-green-600 font-semibold">Alta</td>
+              <td class="py-3 px-4 text-center">Microfibra</td>
+            </tr>
+            <tr class="border-b border-border bg-white">
+              <td class="py-3 px-4 font-medium">Mantenimiento de succion</td>
+              <td class="py-3 px-4 text-center text-red-600">Cae rapido (-30-40%)</td>
+              <td class="py-3 px-4 text-center text-green-600 font-semibold">Estable (-10-15%)</td>
+              <td class="py-3 px-4 text-center">Microfibra</td>
+            </tr>
+            <tr class="border-b border-border bg-gray-50">
+              <td class="py-3 px-4 font-medium">Precio por bolsa</td>
+              <td class="py-3 px-4 text-center text-green-600 font-semibold">0.50 - 0.80 EUR</td>
+              <td class="py-3 px-4 text-center text-amber-600">1.00 - 1.50 EUR</td>
+              <td class="py-3 px-4 text-center">Papel</td>
+            </tr>
+            <tr class="border-b border-border bg-white">
+              <td class="py-3 px-4 font-medium">Coste mensual real</td>
+              <td class="py-3 px-4 text-center text-red-600">Mas caro (cambios frecuentes)</td>
+              <td class="py-3 px-4 text-center text-green-600 font-semibold">Mas barato a largo plazo</td>
+              <td class="py-3 px-4 text-center">Microfibra</td>
+            </tr>
+            <tr class="border-b border-border bg-gray-50">
+              <td class="py-3 px-4 font-medium">Retencion de alergenos</td>
+              <td class="py-3 px-4 text-center text-red-600">Pobre</td>
+              <td class="py-3 px-4 text-center text-green-600 font-semibold">Excelente</td>
+              <td class="py-3 px-4 text-center">Microfibra</td>
+            </tr>
+            <tr class="border-b border-border bg-white">
+              <td class="py-3 px-4 font-medium">Control de olores</td>
+              <td class="py-3 px-4 text-center text-red-600">Pobre</td>
+              <td class="py-3 px-4 text-center text-green-600 font-semibold">Bueno</td>
+              <td class="py-3 px-4 text-center">Microfibra</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="py-3 px-4 font-medium">Impacto ambiental</td>
+              <td class="py-3 px-4 text-center text-green-600">Biodegradable</td>
+              <td class="py-3 px-4 text-center text-amber-600">Menos cambios, menos residuo total</td>
+              <td class="py-3 px-4 text-center">Empate</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-text-light">Como puedes ver, la microfibra gana en <strong>6 de 8 categorias</strong>, empata en una y solo pierde en precio por unidad individual. Pero incluso ese dato es enganoso, ya que al durar mas, el coste real mensual es inferior.</p>
+    </section>
+
+    <!-- Section 5: Allergies -->
+    <section id="alergias" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">5. Para Alergicos: Por Que la Microfibra es Esencial</h2>
+      <p class="text-text-light mb-4">Si tu o alguien de tu familia sufre de alergias, asma o problemas respiratorios, la eleccion de la bolsa de aspiradora no es un detalle menor: es una cuestion de salud.</p>
+
+      <InfoBox type="warning" title="Importante para personas con alergias">
+        Las bolsas de papel pueden expulsar al aire hasta el 15% de las particulas aspiradas, incluyendo acaros del polvo, polen, esporas de moho y caspa de mascotas. Estos alergenos quedan suspendidos en el aire durante horas despues de aspirar, empeorando los sintomas alergicos. Si sufres de alergias, la microfibra no es opcional, es necesaria.
+      </InfoBox>
+
+      <p class="text-text-light mb-4 mt-4">Las bolsas de microfibra con su filtracion del 99-99.5% actuan como un autentico filtro HEPA, reteniendo la inmensa mayoria de particulas microscopicas. Esto significa que al aspirar, realmente estas <strong>eliminando</strong> los alergenos del ambiente en vez de redistribuirlos por la habitacion.</p>
+
+      <div class="bg-bg-card border border-border rounded-xl p-6 mb-4">
+        <h3 class="font-bold mb-3">Alergenos que retiene la microfibra y el papel deja pasar:</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-text-light">
+          <div>
+            <p class="font-semibold text-text mb-2">Retenidos por microfibra:</p>
+            <ul class="space-y-1">
+              <li>- Acaros del polvo (10-30 micras)</li>
+              <li>- Heces de acaros (5-20 micras)</li>
+              <li>- Polen (15-100 micras)</li>
+              <li>- Esporas de moho (2-20 micras)</li>
+              <li>- Caspa animal (2.5-10 micras)</li>
+              <li>- Particulas finas PM2.5</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-text mb-2">Escapan de las bolsas de papel:</p>
+            <ul class="space-y-1">
+              <li>- Heces de acaros (pasan parcialmente)</li>
+              <li>- Esporas de moho pequenas</li>
+              <li>- Caspa animal fina</li>
+              <li>- Particulas PM2.5 y PM10</li>
+              <li>- Polvo fino en general</li>
+              <li>- Bacterias (0.5-5 micras)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-text-light">Para hogares con personas alergicas, nuestra recomendacion es clara: <strong>usa siempre bolsas de microfibra</strong> y, si es posible, complementa con un filtro HEPA en la salida de aire de tu aspiradora.</p>
+    </section>
+
+    <!-- Section 6: Pet owners -->
+    <section id="mascotas" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">6. Para Duenos de Mascotas: Cual Tipo es Mejor?</h2>
+      <p class="text-text-light mb-4">Si tienes perros, gatos u otras mascotas, la aspiradora se convierte en tu mejor aliada. Pero tambien en un reto: el pelo de animal, la caspa y los olores requieren una bolsa que este a la altura.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Problema del pelo de mascotas</h3>
+          <p class="text-sm text-text-light">El pelo de mascotas llena las bolsas rapidamente y se compacta. Las bolsas de papel se saturan antes y pierden succion mas rapido. Las de microfibra mantienen mejor el flujo de aire incluso con grandes cantidades de pelo.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Control de olores</h3>
+          <p class="text-sm text-text-light">Las bolsas de papel son porosas y permiten que los olores del pelo y la caspa animal se escapen. Las bolsas de microfibra sellan mucho mejor, controlando los malos olores incluso despues de varios usos.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Caspa y alergenos animales</h3>
+          <p class="text-sm text-text-light">La caspa de mascotas es una de las principales fuentes de alergenos. Con bolsas de papel, estas particulas microscopicas vuelven al aire. La microfibra las retiene de forma efectiva.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Frecuencia de cambio</h3>
+          <p class="text-sm text-text-light">Con mascotas, necesitaras cambiar la bolsa mas a menudo. Las de microfibra aguantan mejor la carga extra gracias a su mayor capacidad efectiva y mantenimiento de succion.</p>
+        </div>
+      </div>
+
+      <InfoBox type="tip" title="Consejo para duenos de mascotas">
+        Si tienes mascotas de pelo largo, considera aspirar cada 2-3 dias y cambiar la bolsa cuando notes la minima perdida de succion. Una bolsa de microfibra de buena calidad durara 4-6 semanas con uso frecuente, mientras que una de papel apenas aguantara 2-3 semanas.
+      </InfoBox>
+    </section>
+
+    <!-- Section 7: When paper is OK -->
+    <section id="cuando-papel" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">7. Cuando las Bolsas de Papel Son Suficientes</h2>
+      <p class="text-text-light mb-4">Aunque la microfibra es claramente superior en la mayoria de aspectos, hay situaciones en las que las bolsas de papel pueden ser una opcion razonable:</p>
+
+      <div class="bg-bg-card border border-border rounded-xl p-6 mb-6">
+        <ul class="space-y-4 text-text-light">
+          <li class="flex items-start gap-3">
+            <span class="bg-amber-100 text-amber-800 font-bold rounded-full w-6 h-6 flex items-center justify-center shrink-0 text-sm">1</span>
+            <div><strong>Uso muy esporadico:</strong> Si aspiras una vez por semana o menos y vives solo/a en un piso pequeno sin mascotas, la diferencia de filtracion tendra un impacto minimo.</div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="bg-amber-100 text-amber-800 font-bold rounded-full w-6 h-6 flex items-center justify-center shrink-0 text-sm">2</span>
+            <div><strong>Presupuesto muy ajustado:</strong> Si el gasto es una prioridad maxima, las bolsas de papel cumplen la funcion basica de recoger la suciedad visible.</div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="bg-amber-100 text-amber-800 font-bold rounded-full w-6 h-6 flex items-center justify-center shrink-0 text-sm">3</span>
+            <div><strong>Aspiradora secundaria:</strong> Si tienes una aspiradora vieja para el garaje, el trastero o tareas puntuales de obra, las bolsas de papel son suficientes.</div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="bg-amber-100 text-amber-800 font-bold rounded-full w-6 h-6 flex items-center justify-center shrink-0 text-sm">4</span>
+            <div><strong>Solucion temporal:</strong> Si no encuentras bolsas de microfibra para tu modelo especifico, las de papel son mejor que nada mientras buscas la alternativa adecuada.</div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="bg-amber-100 text-amber-800 font-bold rounded-full w-6 h-6 flex items-center justify-center shrink-0 text-sm">5</span>
+            <div><strong>Prioridad medioambiental:</strong> Si te preocupa especialmente el plastico, las bolsas de papel son biodegradables. Aunque ten en cuenta que al usar mas bolsas, generas mas residuo total.</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 8: Verdict -->
+    <section id="veredicto" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">8. Nuestro Veredicto: La Microfibra Gana en Casi Todos los Casos</h2>
+
+      <div class="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6 mb-6">
+        <div class="flex items-start gap-4">
+          <div class="bg-green-100 rounded-full p-3 shrink-0">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-green-800 text-lg mb-2">Recomendacion: Bolsas de microfibra</h3>
+            <p class="text-green-900 mb-3">Despues de analizar todos los factores, nuestra recomendacion es clara: <strong>las bolsas de microfibra son la mejor eleccion para la gran mayoria de hogares</strong>.</p>
+            <ul class="text-sm text-green-800 space-y-1">
+              <li>- Mejor filtracion (99% vs 85%) = aire mas limpio en casa</li>
+              <li>- Succion mas estable = limpieza mas eficiente</li>
+              <li>- Mayor durabilidad = menos cambios, menos molestias</li>
+              <li>- Mejor para alergicos y hogares con mascotas</li>
+              <li>- Coste mensual real inferior al de las bolsas de papel</li>
+              <li>- Proteccion del motor = aspiradora mas longeva</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-text-light mb-4">La unica razon objetiva para elegir papel es un presupuesto extremadamente limitado o un uso muy puntual. En cualquier otro caso, la inversion extra de unos pocos centimos por bolsa se traduce en una mejora tangible en la calidad de limpieza, la salud del aire en tu hogar y la vida util de tu aspiradora.</p>
+      <p class="text-text-light">Piensa en ello de esta forma: <strong>la bolsa de tu aspiradora es su filtro principal</strong>. Comprar una buena bolsa es como poner buen aceite en tu coche. Es un pequeno gasto que marca una gran diferencia en el rendimiento y la durabilidad del aparato.</p>
+    </section>
+
+    <!-- Section 9: Product recommendations -->
+    <section id="recomendaciones" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">9. Mejores Bolsas de Microfibra por Marca</h2>
+      <p class="text-text-light mb-6">Estas son nuestras recomendaciones de bolsas de microfibra con mejor relacion calidad-precio en Amazon. Todas tienen valoraciones excelentes y miles de opiniones positivas.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <ProductCard
+          name="Bolsas Microfibra Rowenta Silence Force"
+          image={imgUrl("71aqUU5rZFL")}
+          rating={4.6}
+          price="14.90 EUR"
+          amazonUrl={amazonUrl("B07QBC255G")}
+          badge="Mejor valoradas"
+          features={[
+            "Compatible con Rowenta Silence Force",
+            "Microfibra multicapa de alta filtracion",
+            "Pack de 10 unidades",
+            "99.5% de retencion de particulas",
+            "Cierre hermetico antiolores"
+          ]}
+        />
+        <ProductCard
+          name="Bolsas Microfibra Bosch Tipo G ALL"
+          image={imgUrl("71n23Xp6tyL")}
+          rating={4.5}
+          price="13.90 EUR"
+          amazonUrl={amazonUrl("B07RHVF8BW")}
+          badge="Mejor relacion calidad-precio"
+          features={[
+            "Compatible con Bosch y Siemens Tipo G",
+            "Microfibra sintetica de 3 capas",
+            "Pack de 8 unidades",
+            "Mantiene la succion estable",
+            "Ideal para alergicos"
+          ]}
+        />
+        <ProductCard
+          name="Bolsas Microfibra Karcher WD3"
+          image={imgUrl("71wwUXjsyqL")}
+          rating={4.5}
+          price="12.90 EUR"
+          amazonUrl={amazonUrl("B0784S9VKF")}
+          features={[
+            "Compatible con Karcher WD3 y MV3",
+            "Material sintetico resistente",
+            "Pack de 10 unidades",
+            "Excelente para polvo fino y escombros",
+            "Resistente a la humedad"
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">10. Preguntas Frecuentes: Papel vs Microfibra</h2>
+
+      <div class="space-y-4">
+        <details class="bg-bg-card border border-border rounded-xl p-5 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Cual es la diferencia principal entre bolsas de papel y microfibra?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="text-text-light mt-3 text-sm">La diferencia principal esta en la filtracion y durabilidad. Las bolsas de microfibra filtran el 99-99.5% de las particulas, incluyendo alergenos y polvo fino, mientras que las de papel solo retienen el 85-90%. Ademas, las de microfibra mantienen la succion estable durante mas tiempo y son mas resistentes a roturas.</p>
+        </details>
+
+        <details class="bg-bg-card border border-border rounded-xl p-5 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Son mejores las bolsas de microfibra para personas con alergias?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="text-text-light mt-3 text-sm">Si, las bolsas de microfibra son significativamente mejores para personas con alergias. Su capacidad de filtracion del 99-99.5% retiene alergenos como acaros del polvo, polen y caspa de mascotas que las bolsas de papel dejan escapar. Para alergicos, la microfibra no es opcional, es esencial.</p>
+        </details>
+
+        <details class="bg-bg-card border border-border rounded-xl p-5 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Las bolsas de microfibra son mas caras que las de papel?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="text-text-light mt-3 text-sm">Por unidad, si: una bolsa de microfibra cuesta entre 1.00 y 1.50 euros frente a los 0.50-0.80 euros de una de papel. Sin embargo, a largo plazo las de microfibra pueden resultar mas economicas porque duran mas, necesitan cambiarse con menos frecuencia y protegen mejor el motor de la aspiradora, alargando su vida util.</p>
+        </details>
+
+        <details class="bg-bg-card border border-border rounded-xl p-5 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Puedo usar bolsas de microfibra en cualquier aspiradora?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="text-text-light mt-3 text-sm">La mayoria de aspiradoras de trineo con bolsa tienen opciones de microfibra disponibles. Las principales marcas como Rowenta, Bosch, Siemens, Karcher, Miele, Taurus y AEG ofrecen bolsas de microfibra compatibles con sus modelos. Solo necesitas verificar el numero de modelo de tu aspiradora para encontrar la bolsa de microfibra correcta.</p>
+        </details>
+
+        <details class="bg-bg-card border border-border rounded-xl p-5 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Cuando merece la pena comprar bolsas de papel en vez de microfibra?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="text-text-light mt-3 text-sm">Las bolsas de papel pueden ser una opcion valida si: usas la aspiradora muy poco (una vez por semana o menos), no tienes alergias ni mascotas, tu presupuesto es muy ajustado, o necesitas una solucion temporal mientras encuentras las de microfibra compatibles con tu modelo.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <CtaBanner
+      title="Encuentra las Mejores Bolsas de Microfibra para tu Aspiradora"
+      description="Miles de usuarios ya han dado el salto de papel a microfibra. Compra con envio gratis en Amazon Prime y empieza a notar la diferencia en la limpieza de tu hogar."
+      buttonText="Ver bolsas de microfibra en Amazon"
+      buttonUrl={amazonUrl("B07QBC255G")}
+    />
+  </div>
+
+</Layout>

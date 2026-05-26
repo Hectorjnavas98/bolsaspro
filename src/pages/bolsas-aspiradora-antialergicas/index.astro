@@ -1,0 +1,379 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "espacioseco-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const comparisonProducts = [
+  { name: "10 Bolsas Rowenta Silence Force", type: "Microfibra antialergica", area: "Rowenta SF/Compact Power", price: "14,90 EUR", rating: 4.6, amazonUrl: amazonUrl("B07QBC255G") },
+  { name: "10 Bolsas Bosch Tipo G Hyperfilter", type: "Microfibra Hyperfilter", area: "Bosch/Siemens", price: "13,90 EUR", rating: 4.5, amazonUrl: amazonUrl("B07RHVF8BW") },
+  { name: "10 Bolsas + 2 Filtros Miele FJM/GN", type: "Microfibra + filtros", area: "Miele FJM/GN", price: "13,90 EUR", rating: 4.5, amazonUrl: amazonUrl("B07QMZWPFH") },
+  { name: "10 Bolsas Nilfisk Power/Select", type: "Microfibra alta filtracion", area: "Nilfisk Power/Select", price: "14,90 EUR", rating: 4.5, amazonUrl: amazonUrl("B07HHXS1KS") },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que diferencia hay entre una bolsa antialergica y una normal?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Las bolsas antialergicas tienen multiples capas de microfibra con capacidad electrostatica que capturan particulas de hasta 0,3 micras, incluyendo acaros, polen y esporas de moho. Las bolsas normales de papel solo retienen particulas mas grandes y dejan escapar alergenos microscopicos al aire." }
+    },
+    {
+      "@type": "Question",
+      "name": "Con que frecuencia debo cambiar la bolsa antialergica si tengo alergia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si sufres de alergias o asma, se recomienda cambiar la bolsa cada 3-4 semanas o cuando alcance el 60-70% de su capacidad. No esperes a que este completamente llena, ya que una bolsa muy llena pierde capacidad de filtracion y puede liberar alergenos." }
+    },
+    {
+      "@type": "Question",
+      "name": "Las bolsas antialergicas son compatibles con cualquier aspiradora?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, cada bolsa antialergica esta disenada para modelos especificos. Debes elegir la bolsa correcta para tu marca y modelo de aspiradora. En esta guia encontraras opciones antialergicas para Rowenta, Bosch, Miele y Nilfisk." }
+    },
+    {
+      "@type": "Question",
+      "name": "Merece la pena pagar mas por bolsas antialergicas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Absolutamente si, especialmente si hay personas con alergias, asma o sensibilidad respiratoria en el hogar. La diferencia de precio es minima (1-3 EUR mas por pack) y la mejora en calidad del aire es significativa. Tambien son recomendables en hogares con mascotas o ninos pequenos." }
+    },
+  ]
+};
+---
+
+<Layout title="Mejores Bolsas Aspiradora Antialergicas 2026" description="Las mejores bolsas de aspiradora antialergicas para alergicos y asmaticos. Filtracion HEPA, eliminan acaros y polen. Comparativa y guia." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Antialergicas" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Mejores Bolsas Aspiradora Antialergicas 2026</h1>
+    <p class="text-lg text-text-light mb-10">Guia completa sobre bolsas de aspiradora antialergicas e hipoalergenicas. Descubre cuales son las mejores para atrapar acaros, polen, pelo de mascota y esporas de moho. Comparativa actualizada con productos verificados.</p>
+
+    <!-- Table of contents -->
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-10">
+      <h2 class="font-bold text-blue-800 mb-3">Contenido de esta guia</h2>
+      <ol class="text-sm text-blue-900 space-y-2">
+        <li><a href="#por-que" class="hover:underline">1. Por que importan las bolsas antialergicas</a></li>
+        <li><a href="#como-funcionan" class="hover:underline">2. Como funcionan las bolsas antialergicas</a></li>
+        <li><a href="#hepa-vs-standard" class="hover:underline">3. HEPA vs filtracion estandar</a></li>
+        <li><a href="#quien-necesita" class="hover:underline">4. Quien necesita bolsas antialergicas</a></li>
+        <li><a href="#caracteristicas" class="hover:underline">5. Caracteristicas a buscar</a></li>
+        <li><a href="#mejores-productos" class="hover:underline">6. Mejores bolsas antialergicas por marca</a></li>
+        <li><a href="#consejos" class="hover:underline">7. Consejos para alergicos mas alla de las bolsas</a></li>
+        <li><a href="#alergenos" class="hover:underline">8. Alergenos comunes y como los atrapan las bolsas</a></li>
+        <li><a href="#faq" class="hover:underline">9. Preguntas frecuentes</a></li>
+      </ol>
+    </div>
+
+    <InfoBox type="warning" title="Importante para personas con alergias">
+      Si sufres de asma o alergia severa, usar bolsas de aspiradora convencionales puede empeorar tus sintomas. Las bolsas de papel dejan escapar particulas microscopicas (acaros, polen, esporas) que vuelven al aire que respiras. Cambiar a bolsas antialergicas de microfibra multicapa es una de las medidas mas efectivas para mejorar la calidad del aire en tu hogar.
+    </InfoBox>
+
+    <!-- Section 1: Why anti-allergy bags matter -->
+    <section id="por-que" class="mt-12 mb-12">
+      <h2 class="text-2xl font-bold mb-4">1. Por Que Importan las Bolsas Antialergicas</h2>
+      <p class="text-text-light mb-6">Cada vez que pasas la aspiradora, remueves millones de particulas microscopicas del suelo y las alfombras. Si tu bolsa no es capaz de retenerlas, esas particulas vuelven al aire y puedes inhalarlas. Los principales alergenos presentes en el polvo domestico son:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Acaros del polvo</h3>
+          <p class="text-sm text-text-light">Son la causa numero uno de alergia en interiores. Se alimentan de celulas muertas de piel y se acumulan en colchones, alfombras y moquetas. Sus excrementos son el verdadero alergeno.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Polen</h3>
+          <p class="text-sm text-text-light">El polen entra por ventanas y puertas, y se deposita en suelos y muebles. Las personas con rinitis alergica pueden sufrir sintomas incluso en interiores si no se filtra correctamente.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Pelo y caspa de mascota</h3>
+          <p class="text-sm text-text-light">El verdadero alergeno no es el pelo en si, sino las proteinas de la saliva y la caspa del animal. Estas particulas son extremadamente pequenas y flotan en el aire durante horas.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Esporas de moho</h3>
+          <p class="text-sm text-text-light">El moho libera esporas microscopicas que se depositan en el polvo. Una bolsa convencional no las retiene y al aspirar las dispersas por toda la casa.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: How they work -->
+    <section id="como-funcionan" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">2. Como Funcionan las Bolsas Antialergicas</h2>
+      <p class="text-text-light mb-6">Las bolsas antialergicas utilizan tecnologias avanzadas de filtracion que van mucho mas alla de una simple bolsa de papel:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 text-center">
+          <h3 class="font-semibold text-blue-800 mb-2">Filtracion multicapa</h3>
+          <p class="text-sm text-blue-900">Varias capas de microfibra sintetica con diferentes densidades atrapan particulas de distintos tamanos, desde polvo grueso hasta microparticulas de 0,3 micras.</p>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 text-center">
+          <h3 class="font-semibold text-blue-800 mb-2">Captura electrostatica</h3>
+          <p class="text-sm text-blue-900">Las fibras tienen carga electrostatica que atrae y retiene particulas ultrafinas que de otro modo pasarian a traves de los poros del material.</p>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 text-center">
+          <h3 class="font-semibold text-blue-800 mb-2">Cierre sellado</h3>
+          <p class="text-sm text-blue-900">Un sistema de cierre hermetico impide que al retirar la bolsa se escape el polvo acumulado. Fundamental para personas con alergias severas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: HEPA vs Standard -->
+    <section id="hepa-vs-standard" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">3. HEPA vs Filtracion Estandar</h2>
+      <p class="text-text-light mb-6">El termino HEPA (High Efficiency Particulate Air) se refiere a un estandar de filtracion que retiene al menos el 99,97% de particulas de 0,3 micras o mayores. Veamos la diferencia:</p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm border border-border rounded-lg overflow-hidden">
+          <thead class="bg-primary text-white">
+            <tr>
+              <th class="p-3 text-left">Caracteristica</th>
+              <th class="p-3 text-center">Bolsa de papel</th>
+              <th class="p-3 text-center">Microfibra estandar</th>
+              <th class="p-3 text-center">Microfibra antialergica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white"><td class="p-3 font-medium">Filtracion</td><td class="p-3 text-center">80-85%</td><td class="p-3 text-center">95-99%</td><td class="p-3 text-center font-bold text-green-600">99,5-99,97%</td></tr>
+            <tr class="bg-green-50"><td class="p-3 font-medium">Particulas minimas</td><td class="p-3 text-center">5+ micras</td><td class="p-3 text-center">1-3 micras</td><td class="p-3 text-center font-bold text-green-600">0,3 micras</td></tr>
+            <tr class="bg-white"><td class="p-3 font-medium">Retiene acaros</td><td class="p-3 text-center">Parcialmente</td><td class="p-3 text-center">Si</td><td class="p-3 text-center font-bold text-green-600">Si, 99%+</td></tr>
+            <tr class="bg-green-50"><td class="p-3 font-medium">Retiene polen</td><td class="p-3 text-center">Parcialmente</td><td class="p-3 text-center">Si</td><td class="p-3 text-center font-bold text-green-600">Si, 99%+</td></tr>
+            <tr class="bg-white"><td class="p-3 font-medium">Retiene esporas moho</td><td class="p-3 text-center">No</td><td class="p-3 text-center">Parcialmente</td><td class="p-3 text-center font-bold text-green-600">Si</td></tr>
+            <tr class="bg-green-50"><td class="p-3 font-medium">Ideal para alergicos</td><td class="p-3 text-center text-red-600">No</td><td class="p-3 text-center text-amber-600">Aceptable</td><td class="p-3 text-center font-bold text-green-600">Si</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <InfoBox type="info" title="Dato importante">
+        Las bolsas de microfibra multicapa que recomendamos en esta pagina ofrecen filtracion equivalente o cercana al nivel HEPA. Son la mejor opcion accesible para hogares con personas alergicas.
+      </InfoBox>
+    </section>
+
+    <!-- Section 4: Who needs them -->
+    <section id="quien-necesita" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">4. Quien Necesita Bolsas Antialergicas</h2>
+      <p class="text-text-light mb-6">Aunque cualquier persona se beneficia de una mejor filtracion, estos grupos deberian considerar las bolsas antialergicas como imprescindibles:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+        <div class="flex items-start gap-3 bg-bg-card border border-border rounded-xl p-4">
+          <div class="w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center shrink-0 font-bold text-sm">1</div>
+          <div>
+            <h3 class="font-semibold text-sm">Personas con asma</h3>
+            <p class="text-xs text-text-light">Los acaros y el polvo son desencadenantes habituales de crisis asmaticas. Una bolsa antialergica reduce drasticamente la exposicion.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-bg-card border border-border rounded-xl p-4">
+          <div class="w-8 h-8 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center shrink-0 font-bold text-sm">2</div>
+          <div>
+            <h3 class="font-semibold text-sm">Rinitis alergica</h3>
+            <p class="text-xs text-text-light">Estornudos, congestion y picor nasal al aspirar son senales claras de que necesitas mejores bolsas.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-bg-card border border-border rounded-xl p-4">
+          <div class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0 font-bold text-sm">3</div>
+          <div>
+            <h3 class="font-semibold text-sm">Duenos de mascotas</h3>
+            <p class="text-xs text-text-light">La caspa y las proteinas de mascotas son alergenos potentes que solo las bolsas de alta filtracion retienen eficazmente.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-bg-card border border-border rounded-xl p-4">
+          <div class="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center shrink-0 font-bold text-sm">4</div>
+          <div>
+            <h3 class="font-semibold text-sm">Hogares con ninos pequenos</h3>
+            <p class="text-xs text-text-light">Los ninos pasan mas tiempo en el suelo y son mas vulnerables a los alergenos. Proteger la calidad del aire es esencial.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-bg-card border border-border rounded-xl p-4">
+          <div class="w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center shrink-0 font-bold text-sm">5</div>
+          <div>
+            <h3 class="font-semibold text-sm">Sensibilidad respiratoria</h3>
+            <p class="text-xs text-text-light">Cualquier persona con vias respiratorias sensibles notara la diferencia al usar bolsas de alta filtracion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Features to look for -->
+    <section id="caracteristicas" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">5. Caracteristicas a Buscar en Bolsas Antialergicas</h2>
+      <p class="text-text-light mb-6">No todas las bolsas etiquetadas como "antialergicas" ofrecen el mismo nivel de proteccion. Busca estas caracteristicas:</p>
+
+      <ul class="text-text-light mb-6 space-y-3">
+        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span><strong>Microfibra multicapa (3+ capas):</strong> Cuantas mas capas, mejor filtracion. Las mejores tienen 4-5 capas de diferentes densidades.</span></li>
+        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span><strong>Filtracion 99%+ de particulas:</strong> Busca bolsas que especifiquen el porcentaje de filtracion. Por debajo del 95% no son verdaderamente antialergicas.</span></li>
+        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span><strong>Cierre hermetico o autosellante:</strong> Evita la dispersion de alergenos al retirar la bolsa.</span></li>
+        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span><strong>Carga electrostatica:</strong> Las fibras con carga electrica atrapan particulas ultrafinas que escaparian de un filtro mecanico normal.</span></li>
+        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span><strong>Compatibilidad exacta con tu modelo:</strong> Una bolsa que no ajusta bien deja huecos por donde escapan los alergenos.</span></li>
+      </ul>
+
+      <ProsConsBox
+        pros={[
+          "Retienen hasta el 99,97% de particulas microscopicas",
+          "Atrapan acaros, polen, caspa de mascota y esporas de moho",
+          "Mejoran significativamente la calidad del aire interior",
+          "Reducen sintomas de alergia y asma",
+          "Cierre hermetico evita contacto con el polvo"
+        ]}
+        cons={[
+          "Precio ligeramente superior a bolsas convencionales (1-3 EUR mas)",
+          "Disponibilidad limitada en tiendas fisicas",
+          "Deben cambiarse con mas frecuencia para maxima eficacia"
+        ]}
+      />
+    </section>
+
+    <!-- Section 6: Best products by brand -->
+    <section id="mejores-productos" class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">6. Mejores Bolsas Antialergicas por Marca</h2>
+      <p class="text-text-light mb-8">Hemos seleccionado las bolsas con mejor filtracion y valoraciones de cada marca principal. Todas son de microfibra multicapa con propiedades antialergicas:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <ProductCard
+          name="10 Bolsas Rowenta Silence Force - Alta Filtracion"
+          image={imgUrl("71aqUU5rZFL")}
+          rating={4.6}
+          price="14,90 EUR"
+          amazonUrl={amazonUrl("B07QBC255G")}
+          badge="Mejor filtracion"
+          features={["Filtracion multicapa superior 99%+", "Compatible Rowenta Silence Force y Compact Power", "Cierre hermetico antialergico", "Pack de 10 unidades"]}
+        />
+        <ProductCard
+          name="10 Bolsas Bosch Tipo G Hyperfilter"
+          image={imgUrl("71n23Xp6tyL")}
+          rating={4.5}
+          price="13,90 EUR"
+          amazonUrl={amazonUrl("B07RHVF8BW")}
+          features={["Tecnologia Hyperfilter Plus multicapa", "Compatible Bosch/Siemens Tipo G", "Retiene acaros y polen eficazmente", "Pack de 10 unidades"]}
+        />
+        <ProductCard
+          name="10 Bolsas + 2 Filtros Miele FJM/GN"
+          image={imgUrl("71Cgjf-cuTL")}
+          rating={4.5}
+          price="13,90 EUR"
+          amazonUrl={amazonUrl("B07QMZWPFH")}
+          features={["Incluye 2 microfiltros extra", "Compatible Miele FJM y GN", "Filtracion avanzada antialergica", "Pack de 10 bolsas + filtros"]}
+        />
+        <ProductCard
+          name="10 Bolsas Nilfisk Power/Select"
+          image={imgUrl("71ECpbjb9NL")}
+          rating={4.5}
+          price="14,90 EUR"
+          amazonUrl={amazonUrl("B07HHXS1KS")}
+          features={["Alta filtracion para alergicos", "Compatible Nilfisk Power y Select", "Microfibra multicapa resistente", "Pack de 10 unidades"]}
+        />
+      </div>
+
+      <h3 class="text-xl font-bold mb-4">Comparativa Completa - Bolsas Antialergicas</h3>
+      <ComparisonTable products={comparisonProducts} />
+
+      <p class="text-text-light mt-6">Consulta tambien nuestras guias especificas por marca: <a href="/bolsas-aspiradora-rowenta/" class="text-primary hover:underline font-medium">bolsas Rowenta</a>, <a href="/bolsas-aspiradora-bosch/" class="text-primary hover:underline font-medium">bolsas Bosch</a>, <a href="/bolsas-aspiradora-miele/" class="text-primary hover:underline font-medium">bolsas Miele</a> y <a href="/bolsas-aspiradora-nilfisk/" class="text-primary hover:underline font-medium">bolsas Nilfisk</a> para ver todos los modelos compatibles.</p>
+    </section>
+
+    <!-- Section 7: Tips beyond bags -->
+    <section id="consejos" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">7. Consejos para Alergicos Mas Alla de las Bolsas</h2>
+      <p class="text-text-light mb-6">Las bolsas antialergicas son fundamentales, pero para una proteccion completa sigue estos consejos adicionales:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-2">Cambia la bolsa con frecuencia</h3>
+          <p class="text-sm text-green-900">No esperes a que se llene. Cambia la bolsa cada 3-4 semanas si eres alergico. Una bolsa al 70% ya pierde parte de su capacidad de filtracion.</p>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-2">Usa mascarilla al cambiar la bolsa</h3>
+          <p class="text-sm text-green-900">Incluso con bolsas de cierre hermetico, al manipularlas se puede liberar algo de polvo. Una mascarilla FFP2 te protege durante el cambio.</p>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-2">Limpia o cambia los filtros</h3>
+          <p class="text-sm text-green-900">La bolsa es solo parte del sistema de filtracion. Limpia el filtro del motor y el filtro de salida segun las instrucciones del fabricante.</p>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-2">Aspira con regularidad</h3>
+          <p class="text-sm text-green-900">Aspira al menos 2-3 veces por semana. En dormitorios y zonas con alfombra, hazlo mas a menudo. Los acaros se reproducen rapidamente.</p>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-2">Ventila despues de aspirar</h3>
+          <p class="text-sm text-green-900">Abre las ventanas durante 10-15 minutos despues de aspirar para renovar el aire y eliminar cualquier particula residual en suspension.</p>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-2">Que aspire otra persona</h3>
+          <p class="text-sm text-green-900">Si tu alergia es severa, lo ideal es que otra persona del hogar se encargue de aspirar. Si no es posible, usa mascarilla mientras aspiras.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Common allergens -->
+    <section id="alergenos" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">8. Alergenos Comunes y Como los Atrapan las Bolsas</h2>
+      <p class="text-text-light mb-6">Cada tipo de alergeno tiene un tamano diferente. Las bolsas antialergicas estan disenadas para capturar incluso los mas pequenos:</p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm border border-border rounded-lg overflow-hidden">
+          <thead class="bg-primary text-white">
+            <tr>
+              <th class="p-3 text-left">Alergeno</th>
+              <th class="p-3 text-center">Tamano</th>
+              <th class="p-3 text-center">Bolsa papel</th>
+              <th class="p-3 text-center">Bolsa antialergica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white"><td class="p-3 font-medium">Acaros del polvo</td><td class="p-3 text-center">200-300 micras</td><td class="p-3 text-center">Retiene parcialmente</td><td class="p-3 text-center font-bold text-green-600">Retiene 99%+</td></tr>
+            <tr class="bg-green-50"><td class="p-3 font-medium">Excrementos de acaro</td><td class="p-3 text-center">10-40 micras</td><td class="p-3 text-center text-red-600">No retiene bien</td><td class="p-3 text-center font-bold text-green-600">Retiene 99%+</td></tr>
+            <tr class="bg-white"><td class="p-3 font-medium">Polen</td><td class="p-3 text-center">10-100 micras</td><td class="p-3 text-center">Parcialmente</td><td class="p-3 text-center font-bold text-green-600">Retiene 99%+</td></tr>
+            <tr class="bg-green-50"><td class="p-3 font-medium">Esporas de moho</td><td class="p-3 text-center">2-10 micras</td><td class="p-3 text-center text-red-600">No retiene</td><td class="p-3 text-center font-bold text-green-600">Retiene 95%+</td></tr>
+            <tr class="bg-white"><td class="p-3 font-medium">Caspa de mascota</td><td class="p-3 text-center">0,5-10 micras</td><td class="p-3 text-center text-red-600">No retiene</td><td class="p-3 text-center font-bold text-green-600">Retiene 90%+</td></tr>
+            <tr class="bg-green-50"><td class="p-3 font-medium">Bacterias</td><td class="p-3 text-center">0,3-5 micras</td><td class="p-3 text-center text-red-600">No retiene</td><td class="p-3 text-center font-bold text-green-600">Retiene 90%+</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-text-light">Como puedes ver, la diferencia entre una bolsa convencional de papel y una bolsa antialergica de microfibra es enorme, especialmente para las particulas mas pequenas y peligrosas. Para una guia completa sobre como elegir bolsas, consulta nuestra <a href="/como-elegir-bolsas-aspiradora/" class="text-primary hover:underline font-medium">guia de seleccion</a>. Si buscas la opcion mas economica, revisa nuestras <a href="/bolsas-aspiradora-baratas/" class="text-primary hover:underline font-medium">bolsas baratas</a>.</p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas Antialergicas</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que diferencia hay entre una bolsa antialergica y una normal?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Las bolsas antialergicas tienen multiples capas de microfibra con capacidad electrostatica que capturan particulas de hasta 0,3 micras, incluyendo acaros, polen y esporas de moho. Las bolsas normales de papel solo retienen particulas mas grandes y dejan escapar alergenos microscopicos al aire.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Con que frecuencia debo cambiar la bolsa antialergica si tengo alergia?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Si sufres de alergias o asma, se recomienda cambiar la bolsa cada 3-4 semanas o cuando alcance el 60-70% de su capacidad. No esperes a que este completamente llena, ya que una bolsa muy llena pierde capacidad de filtracion y puede liberar alergenos.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Las bolsas antialergicas son compatibles con cualquier aspiradora?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">No, cada bolsa antialergica esta disenada para modelos especificos. Debes elegir la bolsa correcta para tu marca y modelo de aspiradora. En esta guia encontraras opciones antialergicas para Rowenta, Bosch, Miele y Nilfisk.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Merece la pena pagar mas por bolsas antialergicas?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Absolutamente si, especialmente si hay personas con alergias, asma o sensibilidad respiratoria en el hogar. La diferencia de precio es minima (1-3 EUR mas por pack) y la mejora en calidad del aire es significativa. Tambien son recomendables en hogares con mascotas o ninos pequenos.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Protege tu hogar de los alergenos"
+      description="Bolsas antialergicas de microfibra multicapa desde 13,90 EUR. Filtracion 99%+, atrapa acaros y polen. Envio gratis Prime."
+      buttonText="Ver bolsas antialergicas"
+      buttonUrl={amazonUrl("B07QBC255G")}
+    />
+  </div>
+
+</Layout>

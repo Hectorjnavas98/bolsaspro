@@ -1,0 +1,225 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "espacioseco-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const comparisonProducts = [
+  { name: "10 Bolsas Compatible Samsung SC/VC", type: "Microfibra", area: "SC4000-SC7000, VC series", price: "11,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B07SVJW8SK") },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que bolsa necesita mi aspiradora Samsung?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La mayoria de aspiradoras Samsung de trineo de las series SC4000, SC5000, SC6000, SC7000 y VC utilizan el mismo tipo de bolsa de microfibra compatible. Verifica tu modelo exacto en nuestra guia de compatibilidad para asegurarte." }
+    },
+    {
+      "@type": "Question",
+      "name": "Las bolsas compatibles Samsung son tan buenas como las originales?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, las bolsas compatibles de microfibra ofrecen una filtracion igual o superior a las originales de papel. Ademas, su cierre hermetico evita fugas de polvo al retirarlas, y su precio es significativamente menor." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cada cuanto debo cambiar la bolsa de mi aspiradora Samsung?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Se recomienda cambiar la bolsa cada 1-2 meses con uso normal, o cuando notes que la aspiradora pierde potencia de succion. Si tienes mascotas o alfombras, puede ser necesario cambiarla con mas frecuencia." }
+    },
+  ]
+};
+---
+
+<Layout title="Mejores Bolsas Aspiradora Samsung 2026 - Todos los Modelos" description="Bolsas compatibles para aspiradora Samsung: SC4000, SC5000, SC6000, SC7000, VC series. Guia completa y mejores precios." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Samsung" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Mejores Bolsas de Aspiradora Samsung 2026 - Todos los Modelos</h1>
+    <p class="text-lg text-text-light mb-10">Guia completa de bolsas compatibles para aspiradoras Samsung. Compatibles con las series SC4000, SC5000, SC6000, SC7000 y VC. Microfibra de alta filtracion a los mejores precios.</p>
+
+    <InfoBox type="info" title="Compatibilidad amplia Samsung">
+      Las bolsas de microfibra compatibles con Samsung cubren practicamente toda la gama de aspiradoras de trineo: series SC4000, SC5000, SC6000, SC7000 y VC. Un solo tipo de bolsa para la mayoria de modelos Samsung.
+    </InfoBox>
+
+    <!-- Product -->
+    <div class="max-w-md mx-auto my-12">
+      <ProductCard
+        name="10 Bolsas Compatible Samsung SC/VC"
+        image={imgUrl("71mcQuQhNKL")}
+        rating={4.3}
+        price="11,90 EUR"
+        amazonUrl={amazonUrl("B07SVJW8SK")}
+        badge="Mejor precio"
+        features={["Compatible Samsung SC y VC series", "Microfibra alta filtracion", "Cierre hermetico", "Pack de 10 unidades"]}
+      />
+    </div>
+
+    <ProsConsBox
+      pros={[
+        "Compatible con todas las series Samsung SC y VC",
+        "Microfibra de alta filtracion que retiene particulas finas",
+        "Cierre hermetico para evitar fugas de polvo",
+        "Pack de 10 unidades a precio economico",
+        "Excelente relacion calidad-precio"
+      ]}
+      cons={[
+        "Solo disponible en pack de 10",
+        "No compatible con modelos Samsung sin bolsa (POWERbot, Jet)"
+      ]}
+    />
+
+    <h2 class="text-2xl font-bold mb-6">Comparativa de Bolsas Samsung</h2>
+    <ComparisonTable products={comparisonProducts} />
+
+    <!-- Compatibility Guide -->
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Guia Completa de Compatibilidad Samsung</h2>
+      <p class="text-text-light mb-6">Estas bolsas de microfibra son compatibles con la inmensa mayoria de aspiradoras de trineo Samsung. Consulta tu modelo en las listas siguientes:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-semibold text-blue-800 mb-3">Serie SC4000</h3>
+          <ul class="text-sm text-blue-900 space-y-1">
+            <li>Samsung SC4010</li>
+            <li>Samsung SC4020</li>
+            <li>Samsung SC4040</li>
+            <li>Samsung SC4130</li>
+            <li>Samsung SC4135</li>
+            <li>Samsung SC4140</li>
+            <li>Samsung SC4147</li>
+            <li>Samsung SC4170</li>
+            <li>Samsung SC4180</li>
+            <li>Samsung SC4190</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-semibold text-blue-800 mb-3">Serie SC5000</h3>
+          <ul class="text-sm text-blue-900 space-y-1">
+            <li>Samsung SC5225</li>
+            <li>Samsung SC5240</li>
+            <li>Samsung SC5250</li>
+            <li>Samsung SC5280</li>
+            <li>Samsung SC5340</li>
+            <li>Samsung SC5345</li>
+            <li>Samsung SC5350</li>
+            <li>Samsung SC5355</li>
+            <li>Samsung SC5370</li>
+            <li>Samsung SC5380</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-semibold text-blue-800 mb-3">Serie SC6000</h3>
+          <ul class="text-sm text-blue-900 space-y-1">
+            <li>Samsung SC6140</li>
+            <li>Samsung SC6160</li>
+            <li>Samsung SC6210</li>
+            <li>Samsung SC6213</li>
+            <li>Samsung SC6216</li>
+            <li>Samsung SC6225</li>
+            <li>Samsung SC6230</li>
+            <li>Samsung SC6240</li>
+            <li>Samsung SC6260</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-semibold text-blue-800 mb-3">Serie SC7000</h3>
+          <ul class="text-sm text-blue-900 space-y-1">
+            <li>Samsung SC7210</li>
+            <li>Samsung SC7220</li>
+            <li>Samsung SC7230</li>
+            <li>Samsung SC7240</li>
+            <li>Samsung SC7270</li>
+            <li>Samsung SC7280</li>
+            <li>Samsung SC7300</li>
+            <li>Samsung SC7340</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold mb-4">Serie VC y Gamas Especiales</h2>
+      <p class="text-text-light mb-4">Ademas de las series SC, estas bolsas son compatibles con los modelos VC y las gamas especiales de Samsung:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">Serie VC</h3>
+          <ul class="text-sm text-green-900 space-y-1">
+            <li>Samsung VC5915</li>
+            <li>Samsung VC6013</li>
+            <li>Samsung VC6014</li>
+            <li>Samsung VC6015</li>
+            <li>Samsung VC6025</li>
+            <li>Samsung VC7050</li>
+            <li>Samsung VC7060</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">Gamas Especiales</h3>
+          <ul class="text-sm text-green-900 space-y-1">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Samsung Easy</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Samsung Clean Force</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Samsung Ecoblue</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Samsung Pet Care</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold mb-4">Ventajas de las Bolsas de Microfibra Samsung</h2>
+      <p class="text-text-light mb-4">Las bolsas de microfibra compatibles con Samsung ofrecen ventajas significativas frente a las bolsas de papel originales:</p>
+      <ul class="text-text-light mb-6 space-y-2">
+        <li><strong>Mayor filtracion:</strong> La microfibra retiene particulas mas finas que el papel, ideal para alergicos</li>
+        <li><strong>Mayor resistencia:</strong> No se rompen ni se humedecen como las bolsas de papel</li>
+        <li><strong>Cierre hermetico:</strong> Al retirar la bolsa, el polvo no se escapa gracias al sistema de cierre</li>
+        <li><strong>Mayor capacidad efectiva:</strong> La microfibra permite un flujo de aire mas constante incluso cuando la bolsa esta casi llena</li>
+      </ul>
+
+      <InfoBox type="tip" title="Consejo para maximizar la vida util">
+        Para que tu aspiradora Samsung mantenga la maxima potencia de succion, cambia la bolsa cuando este llena al 75%. No esperes a que este completamente llena, ya que la potencia disminuye progresivamente.
+      </InfoBox>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas Samsung</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que bolsa necesita mi aspiradora Samsung?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">La mayoria de aspiradoras Samsung de trineo de las series SC4000, SC5000, SC6000, SC7000 y VC utilizan el mismo tipo de bolsa de microfibra compatible. Verifica tu modelo exacto en nuestra guia de compatibilidad para asegurarte.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Las bolsas compatibles Samsung son tan buenas como las originales?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Si, las bolsas compatibles de microfibra ofrecen una filtracion igual o superior a las originales de papel. Ademas, su cierre hermetico evita fugas de polvo al retirarlas, y su precio es significativamente menor.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Cada cuanto debo cambiar la bolsa de mi aspiradora Samsung?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Se recomienda cambiar la bolsa cada 1-2 meses con uso normal, o cuando notes que la aspiradora pierde potencia de succion. Si tienes mascotas o alfombras, puede ser necesario cambiarla con mas frecuencia.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Bolsas compatibles para tu aspiradora Samsung"
+      description="Pack de 10 bolsas de microfibra con cierre hermetico. Compatibles con series SC4000, SC5000, SC6000, SC7000 y VC. Envio gratis Prime."
+      buttonText="Ver precio en Amazon"
+      buttonUrl={amazonUrl("B07SVJW8SK")}
+    />
+  </div>
+
+</Layout>

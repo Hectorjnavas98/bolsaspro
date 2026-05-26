@@ -1,0 +1,506 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "espacioseco-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Las bolsas de aspiradora universales sirven para todas las marcas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, a pesar de su nombre, las bolsas universales no son compatibles con todas las marcas ni todos los modelos. Funcionan con un rango amplio de aspiradoras gracias a adaptadores de boquilla intercambiables, pero hay modelos con compartimentos de tamano o forma especial donde no encajan correctamente. Siempre debes verificar la lista de compatibilidad del fabricante antes de comprar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Es mejor comprar bolsas universales o especificas para mi aspiradora?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En la mayoria de casos, las bolsas especificas son la mejor opcion. Ofrecen un sellado perfecto, maxima filtracion y evitan fugas de polvo. Las bolsas universales pueden ser utiles como solucion temporal o si tienes varias aspiradoras de distintas marcas, pero a largo plazo las especificas protegen mejor el motor y mantienen la potencia de succion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como se si una bolsa universal es compatible con mi aspiradora?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Primero, mide el compartimento de la bolsa de tu aspiradora (alto, ancho y profundidad). Luego, identifica el tipo de boquilla de entrada (redonda, ovalada o rectangular). Compara estas medidas con las especificaciones de la bolsa universal. Tambien puedes buscar tu modelo en la lista de compatibilidad que suele incluir el fabricante en el paquete o en su web."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Las bolsas universales filtran igual que las especificas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generalmente no. Las bolsas especificas de calidad estan disenadas para maximizar la filtracion en un modelo concreto, con un sellado hermetico que evita que el polvo fino escape. Las bolsas universales, al depender de adaptadores, pueden tener pequenas holguras que reducen la eficacia del filtrado. Para personas con alergias o asma, siempre se recomiendan bolsas especificas de microfibra o HEPA."
+      }
+    }
+  ]
+};
+---
+
+<Layout title="Bolsas de Aspiradora Universales: Guia Completa 2026" description="Todo sobre bolsas de aspiradora universales: compatibilidad, ventajas, inconvenientes y alternativas especificas mejores. Guia actualizada 2026.">
+
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Universales" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Bolsas de Aspiradora Universales: Guia Completa 2026</h1>
+    <p class="text-lg text-text-light mb-10">Todo lo que necesitas saber sobre las bolsas de aspiradora universales: que son, cuando usarlas, sus limitaciones y por que en muchos casos las bolsas especificas son una opcion superior. Guia actualizada con datos verificados.</p>
+
+    <!-- Table of contents -->
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-10">
+      <h2 class="font-bold text-blue-800 mb-3">Contenido de esta guia</h2>
+      <ol class="text-sm text-blue-900 space-y-2">
+        <li><a href="#que-son" class="hover:underline">1. Que son las bolsas de aspiradora universales</a></li>
+        <li><a href="#universal-vs-especifica" class="hover:underline">2. Universales vs especificas: pros y contras</a></li>
+        <li><a href="#tipos" class="hover:underline">3. Tipos de bolsas universales por tamano</a></li>
+        <li><a href="#cuando-usar" class="hover:underline">4. Cuando usar bolsas universales vs especificas</a></li>
+        <li><a href="#compatibilidad" class="hover:underline">5. Tabla de compatibilidad: que bolsa para cada marca</a></li>
+        <li><a href="#como-medir" class="hover:underline">6. Como medir el compartimento de tu aspiradora</a></li>
+        <li><a href="#consejos-sellado" class="hover:underline">7. Consejos para un buen sellado con bolsas universales</a></li>
+        <li><a href="#alternativas" class="hover:underline">8. Alternativas especificas recomendadas</a></li>
+        <li><a href="#faq" class="hover:underline">9. Preguntas frecuentes</a></li>
+      </ol>
+    </div>
+
+    <!-- Section 1: What are universal bags -->
+    <section id="que-son" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">1. Que Son las Bolsas de Aspiradora Universales</h2>
+      <p class="text-text-light mb-4">Las bolsas de aspiradora universales son bolsas disenadas para ser compatibles con multiples marcas y modelos de aspiradoras. A diferencia de las bolsas especificas (fabricadas para un modelo concreto), las universales vienen con <strong>adaptadores de boquilla intercambiables</strong> que permiten acoplarlas a diferentes tipos de entrada.</p>
+      <p class="text-text-light mb-4">Normalmente incluyen entre 3 y 5 adaptadores de plastico de diferentes diametros y formas (redondos, ovalados, rectangulares) que se colocan en la entrada de la bolsa para ajustarla al soporte de tu aspiradora.</p>
+
+      <div class="bg-bg-card border border-border rounded-xl p-6 mb-6">
+        <h3 class="font-semibold mb-3">Componentes tipicos de un pack de bolsas universales:</h3>
+        <ul class="text-sm text-text-light space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold">1.</span> Bolsas de papel o microfibra con abertura estandar
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold">2.</span> Set de adaptadores de plastico (3-5 tamanos)
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold">3.</span> Carton soporte recortable para ajuste fino
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold">4.</span> Lista de modelos compatibles (no siempre fiable al 100%)
+          </li>
+        </ul>
+      </div>
+
+      <InfoBox type="warning" title="Atencion: las bolsas universales pueden no sellar correctamente">
+        El principal problema de las bolsas universales es que el ajuste mediante adaptadores <strong>nunca es tan hermetico</strong> como una bolsa disenada para tu modelo exacto. Esto puede provocar fugas de polvo fino, perdida de succion y, a largo plazo, dano en el motor de tu aspiradora por acumulacion de particulas.
+      </InfoBox>
+    </section>
+
+    <!-- Section 2: Universal vs Specific -->
+    <section id="universal-vs-especifica" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">2. Bolsas Universales vs Especificas: Pros y Contras</h2>
+      <p class="text-text-light mb-6">Esta es la comparativa clave que debes conocer antes de decidir que tipo de bolsa comprar para tu aspiradora:</p>
+
+      <h3 class="text-lg font-semibold mb-3">Bolsas Universales</h3>
+      <ProsConsBox
+        pros={[
+          "Compatibles con multiples marcas y modelos",
+          "Utiles si tienes varias aspiradoras diferentes",
+          "Faciles de encontrar en cualquier tienda",
+          "Precio generalmente mas bajo por unidad",
+          "Solucion rapida cuando no encuentras la especifica"
+        ]}
+        cons={[
+          "Sellado imperfecto: posibles fugas de polvo fino",
+          "Menor filtracion que las bolsas especificas",
+          "Los adaptadores pueden soltarse con el uso",
+          "Perdida de succion por holguras en el acople",
+          "Pueden danar el motor a largo plazo",
+          "No compatibles con TODOS los modelos pese al nombre"
+        ]}
+      />
+
+      <h3 class="text-lg font-semibold mb-3 mt-8">Bolsas Especificas (Recomendadas)</h3>
+      <ProsConsBox
+        pros={[
+          "Sellado hermetico perfecto para tu modelo",
+          "Maxima filtracion y retencion de polvo fino",
+          "Mantienen la potencia de succion optima",
+          "Protegen el motor de particulas daninas",
+          "Mayor durabilidad y capacidad real",
+          "Disenadas y testadas para tu aspiradora concreta"
+        ]}
+        cons={[
+          "Precio algo superior (1-2 EUR mas por pack)",
+          "Necesitas conocer tu modelo exacto",
+          "Menos versatiles si tienes varias aspiradoras"
+        ]}
+      />
+
+      <InfoBox type="tip" title="Nuestra recomendacion">
+        <strong>Siempre recomendamos bolsas especificas.</strong> La diferencia de precio es minima (1-2 EUR por pack de 10) y las ventajas en filtracion, sellado y proteccion del motor son muy significativas. Las bolsas universales solo tienen sentido como solucion de emergencia temporal.
+      </InfoBox>
+    </section>
+
+    <!-- Section 3: Types by size -->
+    <section id="tipos" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">3. Tipos de Bolsas Universales por Tamano</h2>
+      <p class="text-text-light mb-6">Las bolsas universales se clasifican principalmente por su tamano, que debe coincidir aproximadamente con el compartimento de tu aspiradora:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-3 font-bold text-lg">S</div>
+          <h3 class="font-semibold mb-2">Tamano Pequeno (S)</h3>
+          <p class="text-sm text-text-light mb-3">Para aspiradoras compactas y de mano. Capacidad aproximada de 1,5 a 2,5 litros.</p>
+          <p class="text-xs text-text-light"><strong>Marcas tipicas:</strong> Aspiradoras compactas de Ufesa, Solac, modelos pequenos de Taurus.</p>
+          <p class="text-xs text-text-light mt-1"><strong>Medidas aprox.:</strong> 20x25 cm</p>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <div class="w-12 h-12 bg-blue-200 text-blue-700 rounded-full flex items-center justify-center mb-3 font-bold text-lg">M</div>
+          <h3 class="font-semibold mb-2 text-blue-800">Tamano Mediano (M) - Mas comun</h3>
+          <p class="text-sm text-text-light mb-3">Para la mayoria de aspiradoras trineo domesticas. Capacidad de 2,5 a 4 litros.</p>
+          <p class="text-xs text-text-light"><strong>Marcas tipicas:</strong> Bosch, Rowenta, Taurus, AEG, Philips, la mayoria de modelos domesticos.</p>
+          <p class="text-xs text-text-light mt-1"><strong>Medidas aprox.:</strong> 25x30 cm</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-3 font-bold text-lg">L</div>
+          <h3 class="font-semibold mb-2">Tamano Grande (L)</h3>
+          <p class="text-sm text-text-light mb-3">Para aspiradoras industriales y de gran capacidad. Capacidad de 4 a 30 litros.</p>
+          <p class="text-xs text-text-light"><strong>Marcas tipicas:</strong> Karcher, Nilfisk, aspiradoras profesionales y de taller.</p>
+          <p class="text-xs text-text-light mt-1"><strong>Medidas aprox.:</strong> 30x40 cm o mas</p>
+        </div>
+      </div>
+
+      <InfoBox type="info" title="Importante sobre los tamanos">
+        Estas clasificaciones son orientativas. Cada fabricante de bolsas universales usa su propia nomenclatura. Lo mas fiable es <strong>medir el compartimento de tu aspiradora</strong> y comparar con las dimensiones de la bolsa. Te explicamos como hacerlo en la seccion 6.
+      </InfoBox>
+    </section>
+
+    <!-- Section 4: When to use -->
+    <section id="cuando-usar" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">4. Cuando Usar Bolsas Universales vs Especificas</h2>
+      <p class="text-text-light mb-6">Hay situaciones concretas en las que cada tipo tiene mas sentido:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <h3 class="font-semibold text-amber-800 mb-3">Usa bolsas universales cuando...</h3>
+          <ul class="text-sm text-text-light space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-amber-500 mt-0.5 shrink-0">&#9679;</span> Te has quedado sin bolsas y necesitas una solucion urgente
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-500 mt-0.5 shrink-0">&#9679;</span> Tu aspiradora es un modelo descatalogado y no encuentras bolsas especificas
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-500 mt-0.5 shrink-0">&#9679;</span> Tienes varias aspiradoras de marcas diferentes y quieres simplificar
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-500 mt-0.5 shrink-0">&#9679;</span> Tu presupuesto es muy ajustado y la diferencia de precio importa
+            </li>
+          </ul>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">Usa bolsas especificas cuando...</h3>
+          <ul class="text-sm text-text-light space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-0.5 shrink-0">&#9679;</span> Quieres el maximo rendimiento de tu aspiradora
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-0.5 shrink-0">&#9679;</span> Hay personas con alergias o asma en tu hogar
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-0.5 shrink-0">&#9679;</span> Tienes mascotas y necesitas maxima filtracion de pelo y alergenos
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-0.5 shrink-0">&#9679;</span> Quieres proteger el motor y alargar la vida de tu aspiradora
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 mt-0.5 shrink-0">&#9679;</span> Usas la aspiradora con frecuencia (2+ veces por semana)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Compatibility chart -->
+    <section id="compatibilidad" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">5. Tabla de Compatibilidad: Que Bolsa para Cada Marca</h2>
+      <p class="text-text-light mb-6">Esta matriz muestra que bolsas especificas son compatibles con multiples marcas y modelos, ofreciendo la versatilidad de las universales pero con un ajuste mucho mejor:</p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-bg-card rounded-xl overflow-hidden border border-border text-sm">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="p-3 text-left font-semibold">Bolsa Especifica</th>
+              <th class="p-3 text-center font-semibold">Bosch</th>
+              <th class="p-3 text-center font-semibold">Siemens</th>
+              <th class="p-3 text-center font-semibold">Karcher</th>
+              <th class="p-3 text-center font-semibold">Taurus</th>
+              <th class="p-3 text-center font-semibold">Rowenta</th>
+              <th class="p-3 text-center font-semibold">AEG</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-border bg-white hover:bg-blue-50">
+              <td class="p-3 font-medium">Tipo G (Bosch/Siemens)</td>
+              <td class="p-3 text-center text-green-600 font-bold">SI</td>
+              <td class="p-3 text-center text-green-600 font-bold">SI</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+            </tr>
+            <tr class="border-t border-border bg-bg hover:bg-blue-50">
+              <td class="p-3 font-medium">Karcher WD3/MV3</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-green-600 font-bold">SI</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+            </tr>
+            <tr class="border-t border-border bg-white hover:bg-blue-50">
+              <td class="p-3 font-medium">Taurus 999.193</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-green-600 font-bold">SI</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+            </tr>
+            <tr class="border-t border-border bg-bg hover:bg-blue-50">
+              <td class="p-3 font-medium">Rowenta ZR200520</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-green-600 font-bold">SI</td>
+              <td class="p-3 text-center text-red-400">No</td>
+            </tr>
+            <tr class="border-t border-border bg-white hover:bg-blue-50">
+              <td class="p-3 font-medium">AEG GR201S</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-green-600 font-bold">SI</td>
+            </tr>
+            <tr class="border-t border-border bg-amber-50 hover:bg-blue-50">
+              <td class="p-3 font-medium text-amber-700">Bolsa "Universal" generica</td>
+              <td class="p-3 text-center text-amber-500 font-bold">~</td>
+              <td class="p-3 text-center text-amber-500 font-bold">~</td>
+              <td class="p-3 text-center text-red-400">No</td>
+              <td class="p-3 text-center text-amber-500 font-bold">~</td>
+              <td class="p-3 text-center text-amber-500 font-bold">~</td>
+              <td class="p-3 text-center text-amber-500 font-bold">~</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-xs text-text-light mt-2"><strong>Leyenda:</strong> SI = Compatible verificada | No = No compatible | ~ = Compatible parcial (puede haber fugas)</p>
+      </div>
+
+      <InfoBox type="info" title="Que significa 'compatible parcial'?">
+        Significa que la bolsa puede colocarse fisicamente en la aspiradora, pero el sellado no es perfecto. Puede funcionar para un uso puntual, pero a largo plazo provocara perdida de succion y posibles fugas de polvo. <strong>Siempre es mejor usar la bolsa especifica de tu marca.</strong>
+      </InfoBox>
+    </section>
+
+    <!-- Section 6: How to measure -->
+    <section id="como-medir" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">6. Como Medir el Compartimento de tu Aspiradora</h2>
+      <p class="text-text-light mb-6">Si decides usar bolsas universales, es fundamental medir correctamente el compartimento. Sigue estos pasos:</p>
+
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center shrink-0 font-bold">1</div>
+          <div>
+            <h3 class="font-semibold mb-1">Abre el compartimento y retira la bolsa actual</h3>
+            <p class="text-sm text-text-light">Desconecta la aspiradora de la corriente. Abre la tapa del compartimento de la bolsa y retira la bolsa usada con cuidado para no derramar polvo.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center shrink-0 font-bold">2</div>
+          <div>
+            <h3 class="font-semibold mb-1">Mide el ancho y alto del compartimento</h3>
+            <p class="text-sm text-text-light">Con una cinta metrica, mide el espacio interior donde se aloja la bolsa. Anota el <strong>ancho</strong> (horizontal), el <strong>alto</strong> (vertical) y la <strong>profundidad</strong> (cuanto entra hacia dentro).</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center shrink-0 font-bold">3</div>
+          <div>
+            <h3 class="font-semibold mb-1">Identifica el tipo de boquilla de entrada</h3>
+            <p class="text-sm text-text-light">Observa la pieza donde se conecta la bolsa al tubo de aspiracion. Puede ser <strong>redonda</strong> (la mas comun, 40-50 mm de diametro), <strong>ovalada</strong> o <strong>rectangular</strong>. Mide el diametro o las dimensiones de esta boquilla.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center shrink-0 font-bold">4</div>
+          <div>
+            <h3 class="font-semibold mb-1">Comprueba el sistema de sujecion</h3>
+            <p class="text-sm text-text-light">Algunas aspiradoras usan un soporte de carton rigido, otras un clip de plastico y otras un sistema de ranura. La bolsa universal debe ser compatible con tu sistema de sujecion.</p>
+          </div>
+        </div>
+      </div>
+
+      <InfoBox type="tip" title="Truco: usa la bolsa vieja como referencia">
+        Si aun tienes una bolsa antigua (aunque este rota), usala como plantilla. Midela cuando este vacia y plana, y anota la referencia impresa. Busca esa referencia en internet para encontrar la bolsa especifica correcta.
+      </InfoBox>
+    </section>
+
+    <!-- Section 7: Sealing tips -->
+    <section id="consejos-sellado" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">7. Consejos para un Buen Sellado con Bolsas Universales</h2>
+      <p class="text-text-light mb-6">Si finalmente decides usar bolsas universales, sigue estos consejos para minimizar los problemas de sellado:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold text-sm mb-2">Elige el adaptador correcto</h3>
+          <p class="text-xs text-text-light">Prueba todos los adaptadores incluidos y usa el que encaje mas ajustado en la boquilla. No debe haber holgura ni moverse al tirar suavemente.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold text-sm mb-2">Usa cinta aislante como refuerzo</h3>
+          <p class="text-xs text-text-light">Si hay una pequena holgura entre el adaptador y la boquilla, envuelve la union con cinta aislante para mejorar el sellado. No es ideal, pero funciona.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold text-sm mb-2">Recorta el carton soporte</h3>
+          <p class="text-xs text-text-light">Muchas bolsas universales incluyen un carton soporte recortable. Ajustalo al tamano exacto del compartimento de tu aspiradora para evitar que la bolsa se mueva.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold text-sm mb-2">Comprueba la bolsa despues de aspirar</h3>
+          <p class="text-xs text-text-light">Tras los primeros usos, abre el compartimento y revisa que no haya polvo fuera de la bolsa. Si lo hay, el sellado no es bueno y deberias cambiar a bolsas especificas.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold text-sm mb-2">No llenes la bolsa al maximo</h3>
+          <p class="text-xs text-text-light">Con bolsas universales, cambia la bolsa cuando este al 60-70% de capacidad. Al no tener sellado perfecto, una bolsa muy llena aumenta el riesgo de fugas.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold text-sm mb-2">Limpia el compartimento regularmente</h3>
+          <p class="text-xs text-text-light">Las bolsas universales dejan mas residuos que las especificas. Limpia el compartimento con un pano humedo cada vez que cambies la bolsa.</p>
+        </div>
+      </div>
+
+      <InfoBox type="warning" title="Si notas polvo fuera de la bolsa, cambia a especifica">
+        Si tras varios intentos sigues encontrando polvo en el compartimento fuera de la bolsa, la universal no sella bien en tu modelo. Es hora de buscar la bolsa especifica. Merece la pena pagar un poco mas para proteger tu aspiradora.
+      </InfoBox>
+    </section>
+
+    <!-- Section 8: Recommended alternatives -->
+    <section id="alternativas" class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">8. Mejor que Universales: Bolsas Especificas Recomendadas</h2>
+      <p class="text-text-light mb-4">Estas bolsas especificas ofrecen un ajuste perfecto, maxima filtracion y una excelente relacion calidad-precio. Son la alternativa superior a las universales para las marcas mas populares:</p>
+
+      <ComparisonTable products={[
+        {
+          name: "10 Bolsas Karcher WD3 Alta Filtracion",
+          type: "Microfibra 3 capas",
+          area: "Karcher WD3, WD3 P, MV3",
+          price: "12,90 EUR",
+          rating: 4.5,
+          amazonUrl: amazonUrl("B0784S9VKF")
+        },
+        {
+          name: "10 Bolsas Bosch Tipo G Hyperfilter",
+          type: "Microfibra Hyperfilter",
+          area: "Bosch GL-30/40, Siemens VS06",
+          price: "13,90 EUR",
+          rating: 4.5,
+          amazonUrl: amazonUrl("B07RHVF8BW")
+        },
+        {
+          name: "10 Bolsas Taurus Auris Microfibra",
+          type: "Microfibra premium",
+          area: "Taurus Auris, Golf, Yaris",
+          price: "11,90 EUR",
+          rating: 4.4,
+          amazonUrl: amazonUrl("B077XZXL72")
+        }
+      ]} />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <ProductCard
+          name="10 Bolsas Alta Filtracion Karcher WD3"
+          image={imgUrl("71wwUXjsyqL")}
+          rating={4.5}
+          price="12,90 EUR"
+          amazonUrl={amazonUrl("B0784S9VKF")}
+          badge="Mas vendido"
+          features={["Filtracion superior 3 capas", "Compatible Karcher WD3/MV3", "Pack de 10 unidades", "Sellado perfecto garantizado"]}
+        />
+        <ProductCard
+          name="10 Bolsas Hyperfilter Bosch Tipo G"
+          image={imgUrl("71n23Xp6tyL")}
+          rating={4.5}
+          price="13,90 EUR"
+          amazonUrl={amazonUrl("B07RHVF8BW")}
+          badge="Mejor filtracion"
+          features={["Tecnologia Hyperfilter Plus", "Compatible Bosch y Siemens", "Pack de 10 unidades", "99%+ retencion de polvo"]}
+        />
+        <ProductCard
+          name="10 Bolsas Taurus Auris Microfibra"
+          image={imgUrl("71mcQuQhNKL")}
+          rating={4.4}
+          price="11,90 EUR"
+          amazonUrl={amazonUrl("B077XZXL72")}
+          badge="Mejor precio"
+          features={["Microfibra premium multicapa", "Compatible Taurus Auris/Golf", "Pack de 10 unidades", "Ajuste perfecto verificado"]}
+        />
+      </div>
+    </section>
+
+    <!-- Section 9: FAQ -->
+    <section id="faq" class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">9. Preguntas Frecuentes sobre Bolsas Universales</h2>
+
+      <div class="space-y-4">
+        <details class="bg-bg-card border border-border rounded-xl p-5 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Las bolsas de aspiradora universales sirven para todas las marcas?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="text-sm text-text-light mt-3">No, a pesar de su nombre, las bolsas universales no son compatibles con todas las marcas ni todos los modelos. Funcionan con un rango amplio de aspiradoras gracias a adaptadores de boquilla intercambiables, pero hay modelos con compartimentos de tamano o forma especial donde no encajan correctamente. Siempre debes verificar la lista de compatibilidad del fabricante antes de comprar.</p>
+        </details>
+
+        <details class="bg-bg-card border border-border rounded-xl p-5 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Es mejor comprar bolsas universales o especificas para mi aspiradora?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="text-sm text-text-light mt-3">En la mayoria de casos, las bolsas especificas son la mejor opcion. Ofrecen un sellado perfecto, maxima filtracion y evitan fugas de polvo. Las bolsas universales pueden ser utiles como solucion temporal o si tienes varias aspiradoras de distintas marcas, pero a largo plazo las especificas protegen mejor el motor y mantienen la potencia de succion.</p>
+        </details>
+
+        <details class="bg-bg-card border border-border rounded-xl p-5 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Como se si una bolsa universal es compatible con mi aspiradora?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="text-sm text-text-light mt-3">Primero, mide el compartimento de la bolsa de tu aspiradora (alto, ancho y profundidad). Luego, identifica el tipo de boquilla de entrada (redonda, ovalada o rectangular). Compara estas medidas con las especificaciones de la bolsa universal. Tambien puedes buscar tu modelo en la lista de compatibilidad que suele incluir el fabricante en el paquete o en su web.</p>
+        </details>
+
+        <details class="bg-bg-card border border-border rounded-xl p-5 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Las bolsas universales filtran igual que las especificas?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="text-sm text-text-light mt-3">Generalmente no. Las bolsas especificas de calidad estan disenadas para maximizar la filtracion en un modelo concreto, con un sellado hermetico que evita que el polvo fino escape. Las bolsas universales, al depender de adaptadores, pueden tener pequenas holguras que reducen la eficacia del filtrado. Para personas con alergias o asma, siempre se recomiendan bolsas especificas de microfibra o HEPA.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Encuentra las bolsas especificas para tu aspiradora"
+      description="Bolsas de calidad con ajuste perfecto para todas las marcas: Bosch, Karcher, Taurus, Rowenta, Miele y mas. Envio gratis Prime y 30 dias de devolucion."
+      buttonText="Ver todas las bolsas especificas"
+      buttonUrl={amazonUrl("B0784S9VKF")}
+    />
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+</Layout>

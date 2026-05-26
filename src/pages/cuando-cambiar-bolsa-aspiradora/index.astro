@@ -1,0 +1,634 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+
+const tag = "espacioseco-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Con que frecuencia debo cambiar la bolsa de la aspiradora?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del uso: con uso ligero (1 vez/semana) cada 2-3 meses, con uso normal (2-3 veces/semana) cada 1-2 meses, y con uso intensivo (diario, mascotas) cada 2-4 semanas. La regla general es no dejar que la bolsa se llene mas del 75%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como se si la bolsa de mi aspiradora esta llena?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las senales mas claras son: perdida de succion, mal olor al aspirar, el motor se calienta mas de lo normal, escapa polvo por la aspiradora, el indicador de bolsa llena se enciende, o puedes palpar la bolsa y notar que esta hinchada y dura."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que pasa si no cambio la bolsa de la aspiradora a tiempo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si no cambias la bolsa a tiempo, el motor trabaja mas forzado y puede sobrecalentarse, reduciendo su vida util. Ademas, la aspiradora pierde eficiencia, puede expulsar polvo y acaros al ambiente, y en casos extremos la bolsa puede reventar dentro del aparato."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Se pueden reutilizar las bolsas de aspiradora vaciandolas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No es recomendable. Las bolsas de aspiradora estan disenadas para un solo uso. Al vaciarlas, se danan las microfibras de filtracion, pierden capacidad de retencion de particulas finas y acaros, y el sellado puede quedar comprometido. Es mejor usar bolsas nuevas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cuanto cuestan las bolsas de aspiradora al ano?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El gasto anual medio en bolsas de aspiradora oscila entre 15 y 50 euros, dependiendo de la marca y la frecuencia de cambio. Comprar packs de 10 unidades de marcas compatibles como las que recomendamos en BolsasPro reduce el coste por bolsa significativamente."
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="Cuando Cambiar la Bolsa de la Aspiradora: Guia Completa"
+  description="Aprende cuando y como cambiar la bolsa de tu aspiradora. Senales, frecuencia segun uso, paso a paso y consejos para alargar la vida de tus bolsas."
+  schema={faqSchema}
+>
+
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Cuando cambiar la bolsa" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Cuando Cambiar la Bolsa de la Aspiradora: Guia Completa 2026</h1>
+    <p class="text-lg text-text-light mb-10">Saber cuando cambiar la bolsa de tu aspiradora es fundamental para mantener una limpieza eficaz, proteger el motor y respirar aire limpio en casa. En esta guia te explicamos todas las senales, la frecuencia ideal segun tu uso, el paso a paso para hacerlo correctamente y trucos para alargar la vida de tus bolsas.</p>
+
+    <!-- Table of contents -->
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-10">
+      <h2 class="font-bold text-blue-800 mb-3">Contenido de esta guia</h2>
+      <ol class="text-sm text-blue-900 space-y-2">
+        <li><a href="#por-que-importa" class="hover:underline">1. Por que es importante cambiar la bolsa de la aspiradora</a></li>
+        <li><a href="#senales" class="hover:underline">2. 6 senales de que tu bolsa necesita un cambio</a></li>
+        <li><a href="#frecuencia" class="hover:underline">3. Cada cuanto cambiar la bolsa segun tu nivel de uso</a></li>
+        <li><a href="#regla-75" class="hover:underline">4. La regla del 75% explicada</a></li>
+        <li><a href="#paso-a-paso" class="hover:underline">5. Como cambiar la bolsa paso a paso</a></li>
+        <li><a href="#errores" class="hover:underline">6. Errores comunes al cambiar la bolsa</a></li>
+        <li><a href="#desechar" class="hover:underline">7. Como desechar las bolsas usadas correctamente</a></li>
+        <li><a href="#consejos-duracion" class="hover:underline">8. Consejos para que tus bolsas duren mas</a></li>
+        <li><a href="#coste-anual" class="hover:underline">9. Analisis de coste: cuanto gastas al ano en bolsas</a></li>
+        <li><a href="#tabla-marcas" class="hover:underline">10. Tabla de referencia rapida por marca</a></li>
+        <li><a href="#faq" class="hover:underline">Preguntas frecuentes</a></li>
+      </ol>
+    </div>
+
+    <!-- Section 1: Introduction -->
+    <section id="por-que-importa" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">1. Por Que Es Importante Cambiar la Bolsa de la Aspiradora</h2>
+      <p class="text-text-light mb-4">Muchos usuarios subestiman la importancia de cambiar la bolsa de la aspiradora a tiempo. Sin embargo, una bolsa llena o saturada afecta directamente al rendimiento de tu aspiradora y a la calidad del aire en tu hogar. Estos son los principales motivos por los que debes prestar atencion al estado de la bolsa:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Proteccion del motor</h3>
+          <p class="text-sm text-text-light">Cuando la bolsa esta llena, el motor de la aspiradora tiene que trabajar mucho mas para generar succion. Este sobreesfuerzo continuo puede acortar la vida util del motor y provocar averias costosas. Un motor de aspiradora puede durar 8-10 anos con un mantenimiento correcto, pero apenas 3-4 si se usa habitualmente con la bolsa saturada.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Eficiencia de limpieza</h3>
+          <p class="text-sm text-text-light">Una bolsa llena al 75% o mas ya empieza a reducir la capacidad de succion de la aspiradora. Esto significa que aunque pases la aspiradora por toda la casa, estars dejando polvo, acaros y alergenos en alfombras, suelos y muebles. Basicamente, pierdes el tiempo aspirando sin resultados reales.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Calidad del aire interior</h3>
+          <p class="text-sm text-text-light">Una bolsa saturada puede expulsar particulas de polvo fino y acaros de vuelta al ambiente. Esto es especialmente problematico para personas con alergias, asma o problemas respiratorios. Las <a href="/bolsas-aspiradora-miele/" class="text-primary hover:underline">bolsas de alta filtracion como las de Miele</a> pierden su efectividad cuando estan demasiado llenas.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">Ahorro economico</h3>
+          <p class="text-sm text-text-light">Puede parecer contradictorio, pero cambiar la bolsa con frecuencia te ahorra dinero a largo plazo. Evitas reparaciones costosas del motor, reduces el consumo electrico (un motor forzado consume mas) y prolongas la vida util de tu aspiradora.</p>
+        </div>
+      </div>
+
+      <p class="text-text-light">Si buscas bolsas de calidad para tu aspiradora, consulta nuestras guias por marca: <a href="/bolsas-aspiradora-rowenta/" class="text-primary hover:underline">Rowenta</a>, <a href="/bolsas-aspiradora-bosch/" class="text-primary hover:underline">Bosch</a>, <a href="/bolsas-aspiradora-karcher/" class="text-primary hover:underline">Karcher</a>, <a href="/bolsas-aspiradora-taurus/" class="text-primary hover:underline">Taurus</a> y <a href="/bolsas-aspiradora-miele/" class="text-primary hover:underline">Miele</a>, entre otras.</p>
+    </section>
+
+    <!-- Section 2: Signs -->
+    <section id="senales" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">2. 6 Senales de Que Tu Bolsa de Aspiradora Necesita un Cambio</h2>
+      <p class="text-text-light mb-6">No siempre es facil saber cuando cambiar la bolsa de la aspiradora. Estas son las senales mas claras de que ha llegado el momento de poner una bolsa nueva:</p>
+
+      <div class="space-y-4">
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-red-100 text-red-600 rounded-full flex items-center justify-center shrink-0 font-bold">1</div>
+          <div>
+            <h3 class="font-semibold mb-1">Perdida de poder de succion</h3>
+            <p class="text-sm text-text-light">Es la senal mas comun y la primera que notaras. Si tu aspiradora ya no recoge migas, pelo de mascota o polvo como antes, lo mas probable es que la bolsa este llena. Antes de llevarla al servicio tecnico, prueba a cambiar la bolsa: en el 80% de los casos, esto soluciona el problema de succion.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-red-100 text-red-600 rounded-full flex items-center justify-center shrink-0 font-bold">2</div>
+          <div>
+            <h3 class="font-semibold mb-1">Mal olor al aspirar</h3>
+            <p class="text-sm text-text-light">Si al encender la aspiradora notas un olor desagradable, rancio o a polvo concentrado, la bolsa lleva demasiado tiempo sin cambiarse. Los restos organicos (pelo, migas, piel muerta) se descomponen dentro de la bolsa y generan bacterias. Este olor se extiende por toda la casa cada vez que aspiras, empeorando la higiene en lugar de mejorarla.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center shrink-0 font-bold">3</div>
+          <div>
+            <h3 class="font-semibold mb-1">La aspiradora se calienta en exceso</h3>
+            <p class="text-sm text-text-light">Cuando la bolsa esta muy llena, el flujo de aire se bloquea y el motor trabaja mas de lo debido, generando calor excesivo. Si notas que tu aspiradora se calienta rapidamente o incluso se apaga sola por proteccion termica, es urgente cambiar la bolsa. Ignorar esta senal puede danar el motor de forma permanente.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center shrink-0 font-bold">4</div>
+          <div>
+            <h3 class="font-semibold mb-1">El polvo escapa de la aspiradora</h3>
+            <p class="text-sm text-text-light">Si ves particulas de polvo salir por las juntas, las rejillas de ventilacion o la zona del compartimento de la bolsa, significa que la bolsa esta tan llena que ya no puede retener mas suciedad. Esto es especialmente peligroso para alergicos. Cambia la bolsa inmediatamente y revisa que los <a href="/como-elegir-bolsas-aspiradora/" class="text-primary hover:underline">filtros esten en buen estado</a>.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0 font-bold">5</div>
+          <div>
+            <h3 class="font-semibold mb-1">El indicador de bolsa llena esta encendido</h3>
+            <p class="text-sm text-text-light">Muchas aspiradoras modernas de marcas como <a href="/bolsas-aspiradora-miele/" class="text-primary hover:underline">Miele</a>, <a href="/bolsas-aspiradora-bosch/" class="text-primary hover:underline">Bosch</a> o <a href="/bolsas-aspiradora-rowenta/" class="text-primary hover:underline">Rowenta</a> incluyen un indicador luminoso o mecanico que cambia de color (normalmente de verde a rojo) cuando la bolsa esta llena. Si tu modelo lo tiene, hazle caso: no esperes a que llegue al maximo.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0 font-bold">6</div>
+          <div>
+            <h3 class="font-semibold mb-1">Puedes notar que la bolsa esta llena al palparla</h3>
+            <p class="text-sm text-text-light">Abre el compartimento y palpa la bolsa. Si esta hinchada, dura o no puedes sentir espacio libre en su interior, ha llegado el momento de cambiarla. Recuerda: no debes esperar a que este completamente llena. La regla del 75% que explicamos mas abajo te ayudara a saber el momento justo.</p>
+          </div>
+        </div>
+      </div>
+
+      <InfoBox type="warning" title="Atencion: no ignores estas senales">
+        Usar la aspiradora con la bolsa saturada no solo reduce la limpieza, sino que puede provocar danos irreversibles en el motor. Una reparacion del motor cuesta entre 80 y 150 euros, mientras que un pack de 10 bolsas nuevas cuesta entre 10 y 20 euros. Cambiar la bolsa a tiempo es la forma mas barata de mantener tu aspiradora en perfecto estado.
+      </InfoBox>
+    </section>
+
+    <!-- Section 3: Frequency -->
+    <section id="frecuencia" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">3. Cada Cuanto Cambiar la Bolsa Segun Tu Nivel de Uso</h2>
+      <p class="text-text-light mb-6">La frecuencia ideal de cambio de bolsa depende de varios factores: cuantas veces aspiras a la semana, el tamano de tu vivienda, si tienes mascotas y el tipo de suelos que tengas. Aqui tienes una guia detallada:</p>
+
+      <div class="space-y-6">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+          <h3 class="font-bold text-green-800 mb-2">Uso ligero: cada 2-3 meses</h3>
+          <p class="text-sm text-green-900 mb-3">Aspiras 1 vez por semana en un apartamento pequeno (40-60 m2), sin mascotas ni alfombras.</p>
+          <ul class="text-sm text-green-800 space-y-1">
+            <li>- Apartamento o estudio sin mascotas</li>
+            <li>- Suelos duros (baldosa, parquet)</li>
+            <li>- 1-2 personas en el hogar</li>
+            <li>- Una bolsa puede durar hasta 3 meses facilmente</li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+          <h3 class="font-bold text-blue-800 mb-2">Uso normal: cada 1-2 meses</h3>
+          <p class="text-sm text-blue-900 mb-3">Aspiras 2-3 veces por semana en una casa mediana (60-120 m2). Es el perfil mas habitual.</p>
+          <ul class="text-sm text-blue-800 space-y-1">
+            <li>- Casa o piso de tamano medio</li>
+            <li>- Mezcla de suelos duros y alguna alfombra</li>
+            <li>- 2-4 personas en el hogar</li>
+            <li>- Cambia la bolsa cada 4-8 semanas</li>
+          </ul>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
+          <h3 class="font-bold text-amber-800 mb-2">Uso intensivo: cada 2-4 semanas</h3>
+          <p class="text-sm text-amber-900 mb-3">Aspiras a diario o casi a diario. Casa grande, mascotas, muchas alfombras o ninos pequenos.</p>
+          <ul class="text-sm text-amber-800 space-y-1">
+            <li>- Casa grande (120+ m2) o con varias plantas</li>
+            <li>- Mascotas que sueltan pelo (perros, gatos)</li>
+            <li>- Muchas alfombras o moqueta</li>
+            <li>- Familia numerosa o ninos pequenos</li>
+            <li>- Necesitaras cambiar la bolsa cada 2-4 semanas</li>
+          </ul>
+        </div>
+
+        <div class="bg-purple-50 border border-purple-200 rounded-xl p-6">
+          <h3 class="font-bold text-purple-800 mb-2">Personas alergicas: cada mes como maximo</h3>
+          <p class="text-sm text-purple-900 mb-3">Si sufres alergias a acaros, polen o polvo, la frecuencia de cambio debe ser mayor independientemente de lo llena que este la bolsa.</p>
+          <ul class="text-sm text-purple-800 space-y-1">
+            <li>- Cambia la bolsa cada 30 dias como maximo</li>
+            <li>- Usa bolsas de microfibra o HEPA de alta filtracion</li>
+            <li>- Las <a href="/bolsas-aspiradora-miele/" class="text-purple-700 hover:underline font-semibold">bolsas Miele</a> son especialmente recomendadas para alergicos</li>
+            <li>- Combina con filtros HEPA en la aspiradora</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: 75% Rule -->
+    <section id="regla-75" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">4. La Regla del 75%: Nunca Llenes la Bolsa Completamente</h2>
+      <p class="text-text-light mb-4">Uno de los errores mas habituales es esperar a que la bolsa este completamente llena para cambiarla. Los fabricantes y expertos en limpieza recomiendan seguir la <strong>regla del 75%</strong>: cambia la bolsa cuando este llena aproximadamente a tres cuartas partes de su capacidad.</p>
+
+      <div class="bg-bg-card border border-border rounded-xl p-6 mb-6">
+        <h3 class="font-semibold mb-4">Por que el 75% y no el 100%?</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="text-center p-4 bg-green-50 rounded-lg">
+            <p class="text-3xl font-bold text-green-600 mb-2">0-50%</p>
+            <p class="text-sm text-text-light">Rendimiento optimo. La aspiradora funciona al maximo de su capacidad de succion. Filtracion perfecta.</p>
+          </div>
+          <div class="text-center p-4 bg-amber-50 rounded-lg">
+            <p class="text-3xl font-bold text-amber-600 mb-2">50-75%</p>
+            <p class="text-sm text-text-light">Rendimiento bueno. Ligera reduccion de succion apenas perceptible. Momento ideal para tener bolsas de repuesto listas.</p>
+          </div>
+          <div class="text-center p-4 bg-red-50 rounded-lg">
+            <p class="text-3xl font-bold text-red-600 mb-2">75-100%</p>
+            <p class="text-sm text-text-light">Rendimiento deficiente. Perdida notable de succion, motor forzado, riesgo de sobrecalentamiento. Cambia la bolsa ya.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-text-light">Si quieres asegurarte de tener siempre bolsas de repuesto disponibles, te recomendamos comprar en packs de 10 unidades. Consulta las <a href="/bolsas-aspiradora-baratas/" class="text-primary hover:underline">mejores ofertas en bolsas de aspiradora baratas</a> para encontrar la mejor relacion calidad-precio.</p>
+    </section>
+
+    <!-- Section 5: Step by step -->
+    <section id="paso-a-paso" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">5. Como Cambiar la Bolsa de la Aspiradora Paso a Paso</h2>
+      <p class="text-text-light mb-6">Cambiar la bolsa de la aspiradora es un proceso sencillo que no requiere herramientas ni conocimientos tecnicos. Estos pasos generales aplican a la mayoria de modelos de <a href="/bolsas-aspiradora-rowenta/" class="text-primary hover:underline">Rowenta</a>, <a href="/bolsas-aspiradora-bosch/" class="text-primary hover:underline">Bosch</a>, <a href="/bolsas-aspiradora-karcher/" class="text-primary hover:underline">Karcher</a>, <a href="/bolsas-aspiradora-taurus/" class="text-primary hover:underline">Taurus</a> y otras marcas:</p>
+
+      <div class="space-y-4">
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center shrink-0 font-bold">1</div>
+          <div>
+            <h3 class="font-semibold mb-1">Apaga y desenchufa la aspiradora</h3>
+            <p class="text-sm text-text-light">Por seguridad, desconecta siempre la aspiradora de la corriente antes de abrir el compartimento de la bolsa. Espera unos minutos si el motor estaba caliente.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center shrink-0 font-bold">2</div>
+          <div>
+            <h3 class="font-semibold mb-1">Abre el compartimento de la bolsa</h3>
+            <p class="text-sm text-text-light">Segun el modelo, tendra un boton de liberacion, un cierre a presion o una tapa que se levanta. En las aspiradoras de trineo, suele estar en la parte superior. En las verticales, en la parte trasera o lateral.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center shrink-0 font-bold">3</div>
+          <div>
+            <h3 class="font-semibold mb-1">Retira la bolsa usada con cuidado</h3>
+            <p class="text-sm text-text-light">Sujeta la bolsa por la pieza de carton o plastico que la conecta al soporte. Tirala con suavidad hacia ti. Muchas bolsas modernas tienen un cierre automatico que sella la apertura al retirarla para evitar que el polvo se escape. No agites ni aprietes la bolsa.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center shrink-0 font-bold">4</div>
+          <div>
+            <h3 class="font-semibold mb-1">Introduce la bolsa usada en una bolsa de basura</h3>
+            <p class="text-sm text-text-light">Mete la bolsa usada directamente en una bolsa de basura y ciérrala. Esto evita que el polvo acumulado se disperse por el ambiente. Es especialmente importante para personas alergicas.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center shrink-0 font-bold">5</div>
+          <div>
+            <h3 class="font-semibold mb-1">Limpia el compartimento (opcional pero recomendado)</h3>
+            <p class="text-sm text-text-light">Aprovecha para limpiar el interior del compartimento con un pano seco o humedo. Retira restos de polvo del soporte de la bolsa y revisa el estado del filtro del motor. Si esta sucio, limpialo o cambial.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center shrink-0 font-bold">6</div>
+          <div>
+            <h3 class="font-semibold mb-1">Coloca la bolsa nueva</h3>
+            <p class="text-sm text-text-light">Inserta la pieza de carton o plastico de la bolsa nueva en la ranura del soporte. Asegurate de que quede bien encajada y alineada. Un mal ajuste puede provocar fugas de polvo o que la bolsa se suelte durante el uso.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-bg-card border border-border rounded-xl p-5">
+          <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center shrink-0 font-bold">7</div>
+          <div>
+            <h3 class="font-semibold mb-1">Cierra el compartimento y prueba</h3>
+            <p class="text-sm text-text-light">Cierra la tapa firmemente hasta oir el clic de cierre. Enchufa la aspiradora y enciendela brevemente para comprobar que todo funciona correctamente y la succion ha vuelto a la normalidad.</p>
+          </div>
+        </div>
+      </div>
+
+      <InfoBox type="tip" title="Consejo: ten siempre bolsas de repuesto en casa">
+        No hay nada peor que descubrir que necesitas una bolsa nueva y no tener repuesto. Recomendamos comprar siempre un <strong>pack de 10 bolsas</strong> para tener existencias para varios meses. Ademas, sale mas economico por unidad. Usa nuestro <a href="/buscador-bolsas-aspiradora/" class="text-green-800 hover:underline font-semibold">buscador de bolsas por marca</a> para encontrar las compatibles con tu modelo.
+      </InfoBox>
+    </section>
+
+    <!-- Section 6: Common mistakes -->
+    <section id="errores" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">6. Errores Comunes al Cambiar la Bolsa de la Aspiradora</h2>
+      <p class="text-text-light mb-6">Estos son los fallos mas frecuentes que comete la gente al cambiar la bolsa. Evitalos para sacar el maximo partido a tu aspiradora:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+          <h3 class="font-semibold text-red-800 mb-2">Esperar a que la bolsa este al 100%</h3>
+          <p class="text-sm text-red-900">Como hemos explicado, una bolsa al 100% ya ha estado danando el motor durante un tiempo. Cambiala al 75% para mantener el rendimiento optimo y proteger tu aspiradora.</p>
+        </div>
+        <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+          <h3 class="font-semibold text-red-800 mb-2">Usar bolsas incompatibles</h3>
+          <p class="text-sm text-red-900">Cada modelo de aspiradora necesita un tipo de bolsa especifico. Usar una bolsa que no es compatible puede provocar fugas de polvo, mal ajuste o incluso danos en el aparato. Consulta nuestra <a href="/como-elegir-bolsas-aspiradora/" class="text-red-700 hover:underline font-semibold">guia para elegir bolsas</a>.</p>
+        </div>
+        <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+          <h3 class="font-semibold text-red-800 mb-2">Reutilizar bolsas vaciandolas</h3>
+          <p class="text-sm text-red-900">Las bolsas de aspiradora estan disenadas para un solo uso. Vaciar y reutilizar una bolsa dana las microfibras, reduce la filtracion drasticamente y puede liberar acaros y bacterias al ambiente.</p>
+        </div>
+        <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+          <h3 class="font-semibold text-red-800 mb-2">No limpiar el compartimento</h3>
+          <p class="text-sm text-red-900">Al cambiar la bolsa, muchos usuarios olvidan limpiar el polvo residual del compartimento y revisar los filtros. Estos restos pueden obstruir el flujo de aire incluso con una bolsa nueva.</p>
+        </div>
+        <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+          <h3 class="font-semibold text-red-800 mb-2">Comprar bolsas de muy baja calidad</h3>
+          <p class="text-sm text-red-900">Las bolsas extremadamente baratas pueden parecer un ahorro, pero suelen tener peor filtracion y menor capacidad. A la larga, necesitas cambiarlas mas a menudo. Mejor invertir en <a href="/bolsas-aspiradora-baratas/" class="text-red-700 hover:underline font-semibold">bolsas baratas pero de calidad</a>.</p>
+        </div>
+        <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+          <h3 class="font-semibold text-red-800 mb-2">No colocar bien la bolsa nueva</h3>
+          <p class="text-sm text-red-900">Si la bolsa queda mal encajada en el soporte, el aire puede escapar por los laterales sin pasar por la bolsa. Esto significa que el polvo se acumula en el interior de la aspiradora en lugar de en la bolsa.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Disposal -->
+    <section id="desechar" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">7. Como Desechar las Bolsas Usadas Correctamente</h2>
+      <p class="text-text-light mb-4">Desechar correctamente las bolsas usadas de la aspiradora es importante tanto para la higiene como para el medio ambiente. Sigue estas recomendaciones:</p>
+
+      <div class="bg-bg-card border border-border rounded-xl p-6 mb-6">
+        <ul class="space-y-3 text-text-light">
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold shrink-0">1.</span>
+            <span><strong>Sella la bolsa antes de tirarla.</strong> La mayoria de bolsas modernas de <a href="/bolsas-aspiradora-bosch/" class="text-primary hover:underline">Bosch</a>, <a href="/bolsas-aspiradora-miele/" class="text-primary hover:underline">Miele</a> y <a href="/bolsas-aspiradora-rowenta/" class="text-primary hover:underline">Rowenta</a> tienen un cierre automatico. Si la tuya no lo tiene, cierra la apertura doblando el carton.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold shrink-0">2.</span>
+            <span><strong>Metela en una bolsa de plastico cerrada.</strong> Esto evita que el polvo fino se disperse en la basura y al manipular la bolsa de residuos.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold shrink-0">3.</span>
+            <span><strong>Deposita en el contenedor de residuos generales (gris/verde).</strong> Las bolsas de aspiradora no son reciclables porque contienen polvo, pelo y residuos organicos mezclados con material sintetico.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold shrink-0">4.</span>
+            <span><strong>Si has aspirado sustancias peligrosas</strong> (cristales rotos, productos quimicos, cenizas), consulta las normativas locales de residuos. Puede que debas llevar la bolsa a un punto limpio.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary font-bold shrink-0">5.</span>
+            <span><strong>Para aspiradoras industriales:</strong> las <a href="/bolsas-aspiradora-industriales/" class="text-primary hover:underline">bolsas industriales</a> de <a href="/bolsas-aspiradora-karcher/" class="text-primary hover:underline">Karcher</a> o <a href="/bolsas-aspiradora-nilfisk/" class="text-primary hover:underline">Nilfisk</a> que han recogido materiales de construccion deben gestionarse como residuos de obra.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 8: Tips to make bags last -->
+    <section id="consejos-duracion" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">8. 8 Consejos Para Que Tus Bolsas de Aspiradora Duren Mas</h2>
+      <p class="text-text-light mb-6">Con estos trucos sencillos puedes alargar la vida util de cada bolsa de aspiradora y ahorrar dinero a lo largo del ano:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">1. Recoge la suciedad grande antes de aspirar</h3>
+          <p class="text-sm text-text-light">Antes de pasar la aspiradora, recoge a mano los trozos grandes de suciedad: papeles, migas grandes, juguetes pequenos, etc. Estos objetos ocupan mucho espacio en la bolsa sin necesidad y reducen su capacidad util.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">2. Aspira en la direccion correcta</h3>
+          <p class="text-sm text-text-light">En alfombras, aspira siempre en la direccion del pelo de la tela, haciendo pasadas lentas y uniformes. Las pasadas rapidas y erraticas levantan mas polvo del necesario y llenan la bolsa mas rapido sin recoger mas suciedad.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">3. Usa el nivel de succion adecuado</h3>
+          <p class="text-sm text-text-light">No uses siempre la maxima potencia. Para suelos duros, un nivel bajo o medio es suficiente. Reserva la potencia maxima para alfombras gruesas y tapicerias. Menos potencia = menos aire movido = la bolsa se llena mas lentamente.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">4. Limpia los filtros regularmente</h3>
+          <p class="text-sm text-text-light">Un filtro sucio obliga al motor a trabajar mas, lo que puede afectar al flujo de aire y al llenado de la bolsa. Limpia el filtro del motor cada 2-3 cambios de bolsa y el filtro HEPA segun las instrucciones del fabricante.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">5. Usa el accesorio correcto para cada superficie</h3>
+          <p class="text-sm text-text-light">Los cepillos y boquillas especificas para cada tipo de suelo recogen la suciedad de forma mas eficiente. Una limpieza mas eficiente llena la bolsa de forma mas uniforme y aprovecha mejor su capacidad.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">6. Ventila la casa antes de aspirar</h3>
+          <p class="text-sm text-text-light">Ventilar durante 10-15 minutos antes de aspirar permite que parte del polvo en suspension salga por las ventanas. Asi la aspiradora recoge menos polvo fino y la bolsa dura mas.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">7. Cepilla las mascotas regularmente</h3>
+          <p class="text-sm text-text-light">Si tienes perros o gatos, cepillarlos 2-3 veces por semana reduce drasticamente la cantidad de pelo suelto en casa. Menos pelo en el suelo significa que la bolsa de la aspiradora se llena mucho mas lentamente.</p>
+        </div>
+        <div class="bg-bg-card border border-border rounded-xl p-5">
+          <h3 class="font-semibold mb-2">8. Compra bolsas de calidad</h3>
+          <p class="text-sm text-text-light">Las bolsas de microfibra de buena calidad retienen mas polvo fino sin obstruirse. Esto permite que el aire circule mejor incluso cuando la bolsa esta medio llena, manteniendo la succion mas tiempo. Visita nuestra pagina de <a href="/bolsas-aspiradora-baratas/" class="text-primary hover:underline">bolsas baratas y de calidad</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Cost analysis -->
+    <section id="coste-anual" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">9. Cuanto Gastas al Ano en Bolsas de Aspiradora</h2>
+      <p class="text-text-light mb-6">El coste anual de bolsas de aspiradora es uno de los gastos de mantenimiento del hogar que muchos olvidan calcular. Aqui tienes un analisis detallado segun el nivel de uso:</p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-bg-card rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="text-left p-3 text-sm font-semibold">Nivel de uso</th>
+              <th class="text-center p-3 text-sm font-semibold">Bolsas/ano</th>
+              <th class="text-center p-3 text-sm font-semibold">Coste/bolsa</th>
+              <th class="text-center p-3 text-sm font-semibold">Coste anual</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-border">
+              <td class="p-3 text-sm">Uso ligero (1x/semana)</td>
+              <td class="p-3 text-sm text-center">4-6</td>
+              <td class="p-3 text-sm text-center">1,20 - 1,80 EUR</td>
+              <td class="p-3 text-sm text-center font-semibold text-green-600">5 - 11 EUR</td>
+            </tr>
+            <tr class="border-b border-border bg-blue-50">
+              <td class="p-3 text-sm">Uso normal (2-3x/semana)</td>
+              <td class="p-3 text-sm text-center">6-12</td>
+              <td class="p-3 text-sm text-center">1,20 - 1,80 EUR</td>
+              <td class="p-3 text-sm text-center font-semibold text-blue-600">7 - 22 EUR</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-3 text-sm">Uso intensivo (diario)</td>
+              <td class="p-3 text-sm text-center">12-24</td>
+              <td class="p-3 text-sm text-center">1,20 - 1,80 EUR</td>
+              <td class="p-3 text-sm text-center font-semibold text-amber-600">15 - 43 EUR</td>
+            </tr>
+            <tr>
+              <td class="p-3 text-sm">Alergicos (mensual fijo)</td>
+              <td class="p-3 text-sm text-center">12</td>
+              <td class="p-3 text-sm text-center">1,20 - 1,80 EUR</td>
+              <td class="p-3 text-sm text-center font-semibold text-purple-600">15 - 22 EUR</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-text-light mb-4">Como puedes ver, el gasto anual en bolsas de aspiradora es muy asumible, especialmente si compras en <strong>packs de 10 unidades</strong> que reducen el precio por bolsa. Comparado con el coste de reparar un motor danado (80-150 EUR) o comprar una aspiradora nueva (100-400 EUR), cambiar las bolsas a tiempo es una inversion minima que protege tu aparato.</p>
+
+      <p class="text-text-light">Para encontrar las bolsas mas economicas con buena calidad, visita nuestra seccion de <a href="/bolsas-aspiradora-baratas/" class="text-primary hover:underline">bolsas de aspiradora baratas</a> o busca por marca en nuestro <a href="/buscador-bolsas-aspiradora/" class="text-primary hover:underline">buscador de bolsas</a>.</p>
+    </section>
+
+    <!-- Section 10: Brand reference table -->
+    <section id="tabla-marcas" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">10. Tabla de Referencia Rapida: Frecuencia de Cambio por Marca</h2>
+      <p class="text-text-light mb-6">Cada marca y modelo puede tener particularidades. Esta tabla resume las recomendaciones generales de cambio de bolsa para las marcas mas populares en Espana:</p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-bg-card rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="text-left p-3 text-sm font-semibold">Marca</th>
+              <th class="text-center p-3 text-sm font-semibold">Tipo de bolsa habitual</th>
+              <th class="text-center p-3 text-sm font-semibold">Frecuencia recomendada</th>
+              <th class="text-center p-3 text-sm font-semibold">Indicador incluido</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-border">
+              <td class="p-3 text-sm"><a href="/bolsas-aspiradora-rowenta/" class="text-primary hover:underline font-semibold">Rowenta</a></td>
+              <td class="p-3 text-sm text-center">Microfibra ZR200520</td>
+              <td class="p-3 text-sm text-center">Cada 1-2 meses</td>
+              <td class="p-3 text-sm text-center">Si (la mayoria)</td>
+            </tr>
+            <tr class="border-b border-border bg-blue-50">
+              <td class="p-3 text-sm"><a href="/bolsas-aspiradora-bosch/" class="text-primary hover:underline font-semibold">Bosch</a></td>
+              <td class="p-3 text-sm text-center">Tipo G / PowerProtect</td>
+              <td class="p-3 text-sm text-center">Cada 1-2 meses</td>
+              <td class="p-3 text-sm text-center">Si</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-3 text-sm"><a href="/bolsas-aspiradora-karcher/" class="text-primary hover:underline font-semibold">Karcher</a></td>
+              <td class="p-3 text-sm text-center">Fieltro WD3/WD4</td>
+              <td class="p-3 text-sm text-center">Cada 2-4 semanas (industrial)</td>
+              <td class="p-3 text-sm text-center">No</td>
+            </tr>
+            <tr class="border-b border-border bg-blue-50">
+              <td class="p-3 text-sm"><a href="/bolsas-aspiradora-miele/" class="text-primary hover:underline font-semibold">Miele</a></td>
+              <td class="p-3 text-sm text-center">HyClean GN/FJM</td>
+              <td class="p-3 text-sm text-center">Cada 1-3 meses</td>
+              <td class="p-3 text-sm text-center">Si (TimeStrip)</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-3 text-sm"><a href="/bolsas-aspiradora-taurus/" class="text-primary hover:underline font-semibold">Taurus</a></td>
+              <td class="p-3 text-sm text-center">Microfibra / Papel</td>
+              <td class="p-3 text-sm text-center">Cada 1-2 meses</td>
+              <td class="p-3 text-sm text-center">Algunos modelos</td>
+            </tr>
+            <tr class="border-b border-border bg-blue-50">
+              <td class="p-3 text-sm"><a href="/bolsas-aspiradora-nilfisk/" class="text-primary hover:underline font-semibold">Nilfisk</a></td>
+              <td class="p-3 text-sm text-center">Microfibra / Industrial</td>
+              <td class="p-3 text-sm text-center">Cada 2-6 semanas</td>
+              <td class="p-3 text-sm text-center">Si (modelos nuevos)</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-3 text-sm"><a href="/bolsas-aspiradora-aeg-electrolux/" class="text-primary hover:underline font-semibold">AEG / Electrolux</a></td>
+              <td class="p-3 text-sm text-center">s-bag / Microfibra</td>
+              <td class="p-3 text-sm text-center">Cada 1-2 meses</td>
+              <td class="p-3 text-sm text-center">Si</td>
+            </tr>
+            <tr class="border-b border-border bg-blue-50">
+              <td class="p-3 text-sm"><a href="/bolsas-aspiradora-ufesa/" class="text-primary hover:underline font-semibold">Ufesa</a></td>
+              <td class="p-3 text-sm text-center">Microfibra / Papel</td>
+              <td class="p-3 text-sm text-center">Cada 1-2 meses</td>
+              <td class="p-3 text-sm text-center">Pocos modelos</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-3 text-sm"><a href="/bolsas-aspiradora-fagor/" class="text-primary hover:underline font-semibold">Fagor</a></td>
+              <td class="p-3 text-sm text-center">Microfibra / Papel</td>
+              <td class="p-3 text-sm text-center">Cada 1-2 meses</td>
+              <td class="p-3 text-sm text-center">Pocos modelos</td>
+            </tr>
+            <tr>
+              <td class="p-3 text-sm"><a href="/bolsas-aspiradora-solac/" class="text-primary hover:underline font-semibold">Solac</a></td>
+              <td class="p-3 text-sm text-center">Microfibra / Papel</td>
+              <td class="p-3 text-sm text-center">Cada 1-2 meses</td>
+              <td class="p-3 text-sm text-center">No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-text-light">Haz clic en el nombre de cada marca para ver las bolsas compatibles, precios actualizados y recomendaciones especificas para tu modelo de aspiradora.</p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes Sobre el Cambio de Bolsa de Aspiradora</h2>
+
+      <div class="space-y-4">
+        <details class="bg-bg-card border border-border rounded-xl p-5 group" open>
+          <summary class="font-semibold cursor-pointer list-none flex items-center justify-between">
+            <span>Con que frecuencia debo cambiar la bolsa de la aspiradora?</span>
+            <svg class="w-5 h-5 text-text-light shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="text-sm text-text-light mt-3">Depende de tu nivel de uso. Con uso ligero (1 vez por semana en un piso pequeno), cada 2-3 meses. Con uso normal (2-3 veces por semana), cada 1-2 meses. Con uso intensivo (diario, con mascotas o casa grande), cada 2-4 semanas. Si eres alergico, cambiala cada mes como maximo independientemente de lo llena que este.</p>
+        </details>
+
+        <details class="bg-bg-card border border-border rounded-xl p-5 group">
+          <summary class="font-semibold cursor-pointer list-none flex items-center justify-between">
+            <span>Como se si la bolsa de mi aspiradora esta llena?</span>
+            <svg class="w-5 h-5 text-text-light shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="text-sm text-text-light mt-3">Las senales mas claras son: perdida de succion, mal olor al aspirar, el motor se calienta mas de lo normal, escapa polvo por la aspiradora, el indicador de bolsa llena se enciende, o puedes palpar la bolsa y notar que esta hinchada y dura. Si notas cualquiera de estas senales, cambia la bolsa cuanto antes.</p>
+        </details>
+
+        <details class="bg-bg-card border border-border rounded-xl p-5 group">
+          <summary class="font-semibold cursor-pointer list-none flex items-center justify-between">
+            <span>Que pasa si no cambio la bolsa de la aspiradora a tiempo?</span>
+            <svg class="w-5 h-5 text-text-light shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="text-sm text-text-light mt-3">Si no cambias la bolsa a tiempo, el motor trabaja mas forzado y puede sobrecalentarse, reduciendo su vida util considerablemente. Ademas, la aspiradora pierde eficiencia de limpieza, puede expulsar polvo y acaros al ambiente (muy perjudicial para alergicos), y en casos extremos la bolsa puede reventar dentro del aparato, ensuciando todo el compartimento interno.</p>
+        </details>
+
+        <details class="bg-bg-card border border-border rounded-xl p-5 group">
+          <summary class="font-semibold cursor-pointer list-none flex items-center justify-between">
+            <span>Se pueden reutilizar las bolsas de aspiradora vaciandolas?</span>
+            <svg class="w-5 h-5 text-text-light shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="text-sm text-text-light mt-3">No es recomendable. Las bolsas de aspiradora estan disenadas para un solo uso. Al vaciarlas, se danan las microfibras de filtracion, pierden capacidad de retencion de particulas finas y acaros, y el sellado puede quedar comprometido. Es mucho mejor usar bolsas nuevas. Compra en packs de 10 para reducir el coste por unidad.</p>
+        </details>
+
+        <details class="bg-bg-card border border-border rounded-xl p-5 group">
+          <summary class="font-semibold cursor-pointer list-none flex items-center justify-between">
+            <span>Cuanto cuestan las bolsas de aspiradora al ano?</span>
+            <svg class="w-5 h-5 text-text-light shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="text-sm text-text-light mt-3">El gasto anual medio en bolsas de aspiradora oscila entre 15 y 50 euros, dependiendo de la marca, el tipo de bolsa y la frecuencia de cambio. Comprando packs de 10 unidades de marcas compatibles de calidad, el coste por bolsa baja a 1,20-1,80 EUR, lo que convierte el mantenimiento de la aspiradora en un gasto muy asumible.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <CtaBanner
+      title="Encuentra las bolsas perfectas para tu aspiradora"
+      description="Bolsas de alta filtracion compatibles con todas las marcas. Packs de 10 unidades al mejor precio con envio gratis Prime."
+      buttonText="Ver ofertas en Amazon"
+      buttonUrl={amazonUrl("B0784S9VKF")}
+    />
+
+    <!-- Related guides -->
+    <section class="mt-12 mb-8">
+      <h2 class="text-2xl font-bold mb-6">Guias Relacionadas</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="/como-elegir-bolsas-aspiradora/" class="bg-bg-card border border-border rounded-xl p-5 hover:border-primary transition-colors group">
+          <h3 class="font-semibold group-hover:text-primary transition-colors mb-2">Como Elegir Bolsas de Aspiradora</h3>
+          <p class="text-sm text-text-light">Aprende a identificar tu modelo y elegir entre bolsas de papel, microfibra y HEPA.</p>
+        </a>
+        <a href="/bolsas-aspiradora-baratas/" class="bg-bg-card border border-border rounded-xl p-5 hover:border-primary transition-colors group">
+          <h3 class="font-semibold group-hover:text-primary transition-colors mb-2">Bolsas de Aspiradora Baratas</h3>
+          <p class="text-sm text-text-light">Las mejores bolsas con buena relacion calidad-precio para todas las marcas.</p>
+        </a>
+        <a href="/buscador-bolsas-aspiradora/" class="bg-bg-card border border-border rounded-xl p-5 hover:border-primary transition-colors group">
+          <h3 class="font-semibold group-hover:text-primary transition-colors mb-2">Buscador por Marca</h3>
+          <p class="text-sm text-text-light">Encuentra bolsas compatibles con tu modelo de aspiradora en segundos.</p>
+        </a>
+      </div>
+    </section>
+  </div>
+
+</Layout>

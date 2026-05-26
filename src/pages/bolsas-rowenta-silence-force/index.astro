@@ -1,0 +1,280 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "espacioseco-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que bolsa lleva la Rowenta Silence Force?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La Rowenta Silence Force utiliza bolsas tipo ZR200520 como referencia original. Las bolsas compatibles de alta filtracion multicapa funcionan igual de bien y cuestan mucho menos. Son validas para todos los modelos RO64xx, RO63xx y RO68xx." }
+    },
+    {
+      "@type": "Question",
+      "name": "Las bolsas de Silence Force sirven para Silence Force Compact y Extreme?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las variantes de la gama Silence Force (Silence Force, Silence Force Compact y Silence Force Extreme) utilizan el mismo tipo de bolsa ZR200520 o compatible. La diferencia entre estos modelos esta en la potencia y el tamano del cuerpo, no en el compartimento de la bolsa." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cada cuanto tiempo hay que cambiar la bolsa de la Rowenta Silence Force?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Se recomienda cambiar la bolsa cada 1-2 meses en uso normal o cuando el indicador de llenado del aspirador se encienda. Con un pack de 10 bolsas tienes para casi un ano completo de uso domestico regular." }
+    },
+    {
+      "@type": "Question",
+      "name": "Donde encuentro el numero de modelo de mi Rowenta Silence Force?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El numero de modelo esta en una etiqueta adhesiva en la parte inferior (base) del aspirador. Empieza siempre por RO seguido de 4 digitos y una barra con dos numeros mas, por ejemplo RO6432/11. Solo necesitas los 4 primeros digitos tras RO para identificar la bolsa compatible." }
+    }
+  ]
+};
+---
+
+<Layout title="Bolsas Rowenta Silence Force: Compatibilidad Completa 2026" description="Bolsas compatibles Rowenta Silence Force: RO64xx, RO63xx, RO68xx. Todos los modelos, guia de cambio y mejor precio. Pack 10 unidades 14,90€." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Rowenta", url: "/bolsas-aspiradora-rowenta/" }, { label: "Silence Force" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Bolsas Rowenta Silence Force: Compatibilidad Completa 2026</h1>
+    <p class="text-lg text-text-light mb-10">La Rowenta Silence Force es una de las aspiradoras de trineo mas vendidas en Espana gracias a su potencia de succion y su bajo nivel de ruido. Si buscas <strong>bolsas compatibles para tu Rowenta Silence Force</strong>, aqui encontraras la guia definitiva con todos los modelos compatibles, instrucciones de cambio y la mejor opcion calidad-precio.</p>
+
+    <InfoBox type="tip" title="Dato clave sobre la Silence Force">
+      Todas las variantes de Rowenta Silence Force (estandar, Compact y Extreme) usan el mismo tipo de bolsa: la referencia original es <strong>ZR200520</strong>. La bolsa compatible que recomendamos ofrece la misma filtracion a un precio mucho menor: <a href={amazonUrl("B07QBC255G")} target="_blank" rel="nofollow noopener sponsored" class="text-primary font-semibold hover:underline">ver pack de 10 unidades a 14,90 EUR</a>.
+    </InfoBox>
+
+    <!-- Producto recomendado -->
+    <div class="grid grid-cols-1 md:grid-cols-1 max-w-md mx-auto gap-8 my-12">
+      <ProductCard
+        name="10 Bolsas Alta Filtracion Rowenta Silence Force"
+        image={imgUrl("71aqUU5rZFL")}
+        rating={4.6}
+        price="14,90 EUR"
+        amazonUrl={amazonUrl("B07QBC255G")}
+        badge="Recomendado"
+        features={["Alta filtracion multicapa", "Compatible con TODOS los Silence Force", "Cierre hermetico anti-polvo", "Pack de 10 unidades", "Equivalente a bolsa original ZR200520"]}
+      />
+    </div>
+
+    <!-- Introduccion a la linea Silence Force -->
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">La gama Rowenta Silence Force: todo lo que debes saber</h2>
+      <p class="text-text-light mb-4">La linea Silence Force de Rowenta fue disenada con un objetivo claro: ofrecer la maxima potencia de aspiracion con el menor ruido posible. Desde su lanzamiento, se ha convertido en una de las gamas de referencia en el mercado europeo de aspiradoras de trineo con bolsa.</p>
+      <p class="text-text-light mb-4">Rowenta ha ido ampliando la familia Silence Force con tres sub-lineas principales: la <strong>Silence Force estandar</strong>, la <strong>Silence Force Compact</strong> (mas pequena y ligera) y la <strong>Silence Force Extreme</strong> (maxima potencia). A pesar de las diferencias en tamano y potencia, todas comparten el mismo sistema de bolsa, lo que facilita enormemente encontrar recambios compatibles.</p>
+      <p class="text-text-light mb-6">El nivel sonoro de la Silence Force se situa entre 64 y 68 dB, muy por debajo de la media de aspiradoras de trineo que ronda los 76-80 dB. Esto la convierte en la opcion preferida para hogares con bebes, mascotas sensibles al ruido o personas que aspiran a horas inusuales.</p>
+
+      <!-- Lista completa de modelos compatibles -->
+      <h2 class="text-2xl font-bold mb-4">Lista completa de modelos Rowenta Silence Force compatibles</h2>
+      <p class="text-text-light mb-4">A continuacion detallamos <strong>todos los modelos Silence Force</strong> que utilizan la bolsa tipo ZR200520 o su equivalente compatible. Busca tu modelo en la lista para confirmar la compatibilidad:</p>
+
+      <h3 class="text-xl font-semibold mb-3">Serie RO64xx - Silence Force (gama principal)</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-6">
+        {["RO6432/11", "RO6441/11", "RO6451/11", "RO6455/11", "RO6457/11", "RO6466/11", "RO6477/11", "RO6486/11", "RO6491/11", "RO6493/11", "RO6495/11", "RO6497/11"].map(model => (
+          <span class="bg-bg rounded-lg px-3 py-2 text-sm font-mono text-center">{model}</span>
+        ))}
+      </div>
+
+      <h3 class="text-xl font-semibold mb-3">Serie RO63xx - Silence Force Compact</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-6">
+        {["RO6327/11", "RO6331/11", "RO6350/11", "RO6355/11", "RO6357/11", "RO6361/11", "RO6371/11", "RO6373/11", "RO6381/11", "RO6383/11"].map(model => (
+          <span class="bg-bg rounded-lg px-3 py-2 text-sm font-mono text-center">{model}</span>
+        ))}
+      </div>
+
+      <h3 class="text-xl font-semibold mb-3">Serie RO68xx - Silence Force Extreme</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-6">
+        {["RO6811/11", "RO6821/11", "RO6831/11", "RO6843/11", "RO6851/11", "RO6855/11", "RO6864/11", "RO6870/11", "RO6885/11", "RO6886/11", "RO6890/11"].map(model => (
+          <span class="bg-bg rounded-lg px-3 py-2 text-sm font-mono text-center">{model}</span>
+        ))}
+      </div>
+
+      <InfoBox type="info" title="No encuentras tu modelo?">
+        Si tu Rowenta Silence Force no aparece en la lista pero su referencia empieza por RO63, RO64 o RO68, es muy probable que tambien sea compatible. El sistema de bolsa es el mismo para toda la gama Silence Force. En caso de duda, comprueba la referencia ZR200520 en el manual de tu aspirador.
+      </InfoBox>
+
+      <!-- Diferencias entre variantes -->
+      <h2 class="text-2xl font-bold mb-4 mt-10">Silence Force vs Silence Force Compact vs Silence Force Extreme</h2>
+      <p class="text-text-light mb-4">Aunque las tres sub-lineas comparten el tipo de bolsa, existen diferencias importantes entre ellas que conviene conocer:</p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b-2 border-gray-200">
+              <th class="py-3 px-4 font-semibold">Caracteristica</th>
+              <th class="py-3 px-4 font-semibold">Silence Force</th>
+              <th class="py-3 px-4 font-semibold">SF Compact</th>
+              <th class="py-3 px-4 font-semibold">SF Extreme</th>
+            </tr>
+          </thead>
+          <tbody class="text-text-light text-sm">
+            <tr class="border-b border-gray-100">
+              <td class="py-3 px-4 font-medium">Serie</td>
+              <td class="py-3 px-4">RO64xx</td>
+              <td class="py-3 px-4">RO63xx</td>
+              <td class="py-3 px-4">RO68xx</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-3 px-4 font-medium">Potencia</td>
+              <td class="py-3 px-4">550-750W</td>
+              <td class="py-3 px-4">550-650W</td>
+              <td class="py-3 px-4">650-900W</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-3 px-4 font-medium">Nivel sonoro</td>
+              <td class="py-3 px-4">64-66 dB</td>
+              <td class="py-3 px-4">66-68 dB</td>
+              <td class="py-3 px-4">64-67 dB</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-3 px-4 font-medium">Capacidad bolsa</td>
+              <td class="py-3 px-4">4,5 L</td>
+              <td class="py-3 px-4">3,5 L</td>
+              <td class="py-3 px-4">4,5 L</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-3 px-4 font-medium">Peso</td>
+              <td class="py-3 px-4">~8,5 kg</td>
+              <td class="py-3 px-4">~6,5 kg</td>
+              <td class="py-3 px-4">~8,8 kg</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-medium">Tipo de bolsa</td>
+              <td class="py-3 px-4 text-green-600 font-semibold">ZR200520</td>
+              <td class="py-3 px-4 text-green-600 font-semibold">ZR200520</td>
+              <td class="py-3 px-4 text-green-600 font-semibold">ZR200520</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-text-light mb-6">Como puedes ver, la bolsa es identica en los tres casos. La Silence Force Compact es mas ligera y manejable pero tiene menos capacidad. La Extreme ofrece mas potencia para alfombras y suelos dificiles. La estandar es el equilibrio perfecto entre ambas.</p>
+
+      <!-- Referencia original ZR200520 -->
+      <h2 class="text-2xl font-bold mb-4">Bolsa original Rowenta ZR200520: referencia y alternativa</h2>
+      <p class="text-text-light mb-4">La referencia <strong>ZR200520</strong> es el codigo oficial de Rowenta para las bolsas de la gama Silence Force. El pack original de Rowenta incluye 4 bolsas por un precio que suele superar los 15 EUR, lo que equivale a mas de 3,75 EUR por bolsa.</p>
+      <p class="text-text-light mb-6">La alternativa compatible que recomendamos ofrece <strong>10 bolsas por 14,90 EUR</strong>, es decir, aproximadamente 1,49 EUR por bolsa. Esto supone un ahorro superior al 60% respecto a la bolsa original, manteniendo una calidad de filtracion equivalente gracias a su material multicapa de microfibra.</p>
+
+      <!-- Por que la compatible es igual de buena -->
+      <h2 class="text-2xl font-bold mb-4">Por que esta bolsa compatible es tan buena como la original</h2>
+      <p class="text-text-light mb-4">Las bolsas compatibles de alta filtracion han mejorado enormemente en los ultimos anos. Estas son las razones por las que las recomendamos con total confianza:</p>
+      <ul class="text-text-light mb-6 space-y-2">
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>Material multicapa:</strong> fabricadas con microfibra de varias capas que retiene particulas finas, incluyendo alergenos y acaros del polvo.</li>
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>Cierre hermetico:</strong> el sistema de cierre impide que el polvo se escape al retirar la bolsa, algo que no todas las compatibles ofrecen.</li>
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>Ajuste perfecto:</strong> el soporte de carton esta disenado con las mismas dimensiones que la original ZR200520, por lo que encaja sin holguras en el compartimento.</li>
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>Valoracion de 4,6 estrellas:</strong> con miles de opiniones verificadas en Amazon, los usuarios confirman que el rendimiento es identico al de la original.</li>
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <strong>Precio imbatible:</strong> 10 bolsas por 14,90 EUR frente a 4 bolsas originales por 15+ EUR. Mas del doble de bolsas por menos dinero.</li>
+      </ul>
+    </section>
+
+    <ProsConsBox
+      pros={[
+        "Pack de 10 unidades: casi un ano de uso por 14,90 EUR",
+        "Alta filtracion multicapa equivalente a la original ZR200520",
+        "Compatible con TODOS los modelos Silence Force (RO63xx, RO64xx, RO68xx)",
+        "Cierre hermetico que evita fugas al retirar la bolsa",
+        "4,6 estrellas con miles de valoraciones positivas"
+      ]}
+      cons={[
+        "No es la marca original Rowenta (aunque la calidad es equivalente)",
+        "El embalaje puede variar segun el lote",
+        "No incluye filtro de motor (se compra por separado)"
+      ]}
+    />
+
+    <!-- Como cambiar la bolsa -->
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Como cambiar la bolsa de tu Rowenta Silence Force paso a paso</h2>
+      <p class="text-text-light mb-4">El proceso de cambio de bolsa en la Silence Force es muy sencillo y no requiere herramientas. Sigue estos pasos:</p>
+      <ol class="text-text-light mb-6 space-y-3">
+        <li class="flex items-start gap-3">
+          <span class="bg-primary text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold shrink-0">1</span>
+          <span><strong>Apaga y desenchufa</strong> completamente el aspirador. Espera unos segundos antes de manipularlo.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-primary text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold shrink-0">2</span>
+          <span><strong>Pulsa el boton de apertura</strong> situado en la parte superior del aspirador para abrir la tapa del compartimento de la bolsa.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-primary text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold shrink-0">3</span>
+          <span><strong>Retira la bolsa usada</strong> tirando de la lengueta del soporte de carton hacia arriba. El cierre hermetico se activara automaticamente para evitar que salga polvo.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-primary text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold shrink-0">4</span>
+          <span><strong>Introduce la bolsa nueva</strong> deslizando el soporte de carton en la guia del compartimento. Asegurate de que queda bien encajada y nivelada.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-primary text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold shrink-0">5</span>
+          <span><strong>Cierra la tapa</strong> hasta escuchar un clic. Verifica que queda bien cerrada antes de enchufar y encender el aspirador.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-primary text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold shrink-0">6</span>
+          <span><strong>Desecha la bolsa usada</strong> en la basura convencional. Al tener cierre hermetico, no saldra polvo durante su eliminacion.</span>
+        </li>
+      </ol>
+
+      <InfoBox type="warning" title="Consejo importante">
+        Nunca reutilices una bolsa vaciandola manualmente. Las bolsas de microfibra pierden su capacidad de filtracion tras el primer uso y no se pueden lavar. Reutilizar una bolsa usada puede danar el motor de tu aspirador por falta de filtracion adecuada.
+      </InfoBox>
+
+      <!-- Como identificar tu modelo -->
+      <h2 class="text-2xl font-bold mb-4 mt-10">Como identificar tu modelo exacto de Silence Force</h2>
+      <p class="text-text-light mb-4">Si no estas seguro de que modelo de Silence Force tienes, sigue estos pasos para averiguarlo:</p>
+      <ul class="text-text-light mb-6 space-y-2">
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-primary shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> <strong>Etiqueta inferior:</strong> dale la vuelta al aspirador. En la base encontraras una etiqueta plateada o blanca con el numero de modelo (formato ROxxxx/xx).</li>
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-primary shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> <strong>Interior del compartimento:</strong> en algunos modelos, la referencia tambien aparece dentro del compartimento de la bolsa, en una pegatina pegada al chasis.</li>
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-primary shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> <strong>Manual de instrucciones:</strong> la portada o las primeras paginas del manual siempre incluyen el modelo exacto.</li>
+        <li class="flex items-start gap-2"><svg class="w-4 h-4 text-primary shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> <strong>Factura de compra:</strong> si conservas el ticket o factura, el modelo suele aparecer en la descripcion del producto.</li>
+      </ul>
+      <p class="text-text-light mb-6">Recuerda: si tu modelo empieza por <strong>RO63</strong>, <strong>RO64</strong> o <strong>RO68</strong>, la bolsa compatible que recomendamos es la correcta para tu aspirador.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas Rowenta Silence Force</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que bolsa lleva la Rowenta Silence Force?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">La Rowenta Silence Force utiliza bolsas tipo ZR200520 como referencia original. Las bolsas compatibles de alta filtracion multicapa funcionan igual de bien y cuestan mucho menos. Son validas para todos los modelos RO64xx, RO63xx y RO68xx.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Las bolsas de Silence Force sirven para Silence Force Compact y Extreme?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Si. Todas las variantes de la gama Silence Force (Silence Force, Silence Force Compact y Silence Force Extreme) utilizan el mismo tipo de bolsa ZR200520 o compatible. La diferencia entre estos modelos esta en la potencia y el tamano del cuerpo, no en el compartimento de la bolsa.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Cada cuanto tiempo hay que cambiar la bolsa de la Rowenta Silence Force?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Se recomienda cambiar la bolsa cada 1-2 meses en uso normal o cuando el indicador de llenado del aspirador se encienda. Con un pack de 10 bolsas tienes para casi un ano completo de uso domestico regular.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Donde encuentro el numero de modelo de mi Rowenta Silence Force?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">El numero de modelo esta en una etiqueta adhesiva en la parte inferior (base) del aspirador. Empieza siempre por RO seguido de 4 digitos y una barra con dos numeros mas, por ejemplo RO6432/11. Solo necesitas los 4 primeros digitos tras RO para identificar la bolsa compatible.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Bolsas Rowenta Silence Force - Pack 10 unidades"
+      description="La mejor opcion calidad-precio para tu Silence Force. 10 bolsas de alta filtracion multicapa por solo 14,90 EUR con envio gratis Prime. Compatible con todos los modelos RO63xx, RO64xx y RO68xx."
+      buttonText="Ver precio en Amazon"
+      buttonUrl={amazonUrl("B07QBC255G")}
+    />
+  </div>
+
+</Layout>

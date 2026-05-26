@@ -1,0 +1,209 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "espacioseco-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const comparisonProducts = [
+  { name: "10 Bolsas Alta Filtracion LG/Fagor", type: "Alta filtracion multicapa", area: "LG V-series, Fagor VCE", price: "12,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B09KC3QSQY") },
+  { name: "10 Bolsas + Microfiltros LG", type: "Microfibra resistente", area: "LG VC series", price: "12,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B07SVN945X") },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que bolsa necesita mi aspiradora LG?",
+      "acceptedAnswer": { "@type": "Answer", "text": "LG utiliza principalmente dos tipos de bolsas segun la serie de tu aspiradora. Los modelos V-3300, V-3310, V-3500, V-3700 y V-3900 usan un tipo compatible con Fagor VCE. Los modelos VC (VC3016, VC3118, VC5420, VC7050, etc.) usan otro tipo. Verifica el modelo exacto en la etiqueta de tu aspiradora para elegir la bolsa correcta." }
+    },
+    {
+      "@type": "Question",
+      "name": "Las bolsas de LG son compatibles con Fagor?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, muchas bolsas de aspiradora LG son compatibles con modelos Fagor, especialmente la serie VCE. Esto se debe a que ambas marcas comparten dimensiones y sistemas de anclaje similares en varios de sus modelos de trineo. Las bolsas de alta filtracion que recomendamos son compatibles con ambas marcas." }
+    },
+    {
+      "@type": "Question",
+      "name": "Con que frecuencia debo cambiar la bolsa de mi aspiradora LG?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Se recomienda cambiar la bolsa cada 1-2 meses de uso regular, o cuando notes que la aspiradora pierde potencia de succion. Con un pack de 10 bolsas tendras suministro para entre 10 y 20 meses. Tambien es aconsejable cambiar los microfiltros cada 5 cambios de bolsa para mantener una filtracion optima." }
+    },
+  ]
+};
+---
+
+<Layout title="Mejores Bolsas Aspiradora LG 2026 - Todos los Modelos" description="Bolsas compatibles con tu aspiradora LG: V-3300, V-3310, VC series y mas. Guia de compatibilidad completa y mejores precios." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas LG" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Mejores Bolsas de Aspiradora LG 2026 - Todos los Modelos</h1>
+    <p class="text-lg text-text-light mb-10">LG es una marca de referencia en electrodomesticos con una amplia gama de aspiradoras de trineo. Aqui encontraras bolsas compatibles con todas las series: V-3300, V-3500, V-3700, V-3900, V-4000, VC3000, VC5000, VC7000 y muchas mas. Guia completa de compatibilidad y mejores precios.</p>
+
+    <InfoBox type="warning" title="Importante: identifica tu modelo LG">
+      Las aspiradoras LG utilizan diferentes tipos de bolsa segun la serie. Busca el modelo exacto en la etiqueta inferior de tu aspiradora (empieza por V- o VC) antes de comprar. Mas abajo encontraras una guia de compatibilidad completa por modelo.
+    </InfoBox>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+      <ProductCard
+        name="10 Bolsas Alta Filtracion LG/Fagor"
+        image={imgUrl("71mcQuQhNKL")}
+        rating={4.3}
+        price="12,90 EUR"
+        amazonUrl={amazonUrl("B09KC3QSQY")}
+        badge="Mejor valorado"
+        features={["Alta filtracion multicapa", "Compatible LG V-series", "Cierre hermetico", "Pack de 10 unidades"]}
+      />
+      <ProductCard
+        name="10 Bolsas + Microfiltros LG"
+        image={imgUrl("71mcQuQhNKL")}
+        rating={4.3}
+        price="12,90 EUR"
+        amazonUrl={amazonUrl("B07SVN945X")}
+        features={["Incluye 2 microfiltros", "Compatible LG VC series", "Microfibra resistente", "Pack de 10 unidades"]}
+      />
+    </div>
+
+    <ProsConsBox
+      pros={[
+        "Alta filtracion multicapa ideal para alergicos",
+        "Compatibilidad amplia con modelos LG y Fagor",
+        "Pack de 10 unidades: suministro para 10-20 meses",
+        "Cierre hermetico que evita escape de polvo al cambiar",
+        "Opcion con microfiltros incluidos para filtracion extra"
+      ]}
+      cons={[
+        "Solo disponibles en pack de 10 unidades",
+        "Ambos productos al mismo precio, sin opcion economica"
+      ]}
+    />
+
+    <h2 class="text-2xl font-bold mb-6 mt-12">Comparativa de Bolsas LG</h2>
+    <ComparisonTable products={comparisonProducts} />
+
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Guia Completa de Compatibilidad LG</h2>
+      <p class="text-text-light mb-6">LG fabrica multitud de modelos de aspiradoras de trineo agrupados en diferentes series. A continuacion te mostramos todos los modelos compatibles organizados por familia para que encuentres facilmente el tuyo.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">LG Serie V-3000</h3>
+          <ul class="text-sm text-green-900 space-y-1">
+            <li>LG V-3300</li>
+            <li>LG V-3310</li>
+            <li>LG V-3311</li>
+            <li>LG V-3314</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">LG Serie V-3500 / V-3700</h3>
+          <ul class="text-sm text-green-900 space-y-1">
+            <li>LG V-3500</li>
+            <li>LG V-3510</li>
+            <li>LG V-3700</li>
+            <li>LG V-3710</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">LG Serie V-3900 / V-4000</h3>
+          <ul class="text-sm text-green-900 space-y-1">
+            <li>LG V-3900</li>
+            <li>LG V-3910</li>
+            <li>LG V-4000</li>
+            <li>LG V-4010</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">LG Serie VC3000</h3>
+          <ul class="text-sm text-green-900 space-y-1">
+            <li>LG VC3016</li>
+            <li>LG VC3018</li>
+            <li>LG VC3116</li>
+            <li>LG VC3118</li>
+            <li>LG VC3320</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">LG Serie VC5000 / VC7000</h3>
+          <ul class="text-sm text-green-900 space-y-1">
+            <li>LG VC5420</li>
+            <li>LG VC7050</li>
+            <li>LG VC7070</li>
+            <li>LG VC7920</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">LG Gamas Especiales y Fagor</h3>
+          <ul class="text-sm text-green-900 space-y-1">
+            <li>LG Kompressor</li>
+            <li>LG Turbo</li>
+            <li>LG Limpieza Profunda</li>
+            <li>Fagor VCE series (compatible)</li>
+          </ul>
+        </div>
+      </div>
+
+      <InfoBox type="info" title="Compatibilidad cruzada LG y Fagor">
+        Las bolsas de alta filtracion que recomendamos son compatibles tanto con aspiradoras LG como con modelos Fagor de la serie VCE. Esto se debe a que ambas marcas utilizan un sistema de anclaje y dimensiones muy similares en sus aspiradoras de trineo. Si tienes una Fagor VCE, estas bolsas tambien te serviran.
+      </InfoBox>
+
+      <h3 class="text-xl font-semibold mb-3 mt-8">Como Elegir la Bolsa Correcta para tu LG</h3>
+      <p class="text-text-light mb-4">Para elegir correctamente la bolsa de tu aspiradora LG, sigue estos pasos:</p>
+      <ol class="list-decimal list-inside text-text-light mb-6 space-y-2">
+        <li><strong>Localiza el modelo:</strong> busca la etiqueta en la parte inferior de tu aspiradora. El numero de modelo empieza por V- o VC.</li>
+        <li><strong>Consulta la guia de arriba:</strong> identifica a que serie pertenece tu modelo (V-3000, V-3500, VC3000, etc.).</li>
+        <li><strong>Elige la bolsa adecuada:</strong> los modelos de la serie V usan las bolsas de alta filtracion LG/Fagor. Los modelos VC funcionan mejor con las bolsas + microfiltros.</li>
+        <li><strong>En caso de duda:</strong> ambos productos son compatibles con la mayoria de modelos LG de trineo. Comprueba las dimensiones de tu bolsa actual.</li>
+      </ol>
+
+      <h3 class="text-xl font-semibold mb-3">Ventajas de las Bolsas de Microfibra frente a las de Papel</h3>
+      <p class="text-text-light mb-4">Las bolsas de microfibra que recomendamos ofrecen ventajas significativas frente a las bolsas de papel originales de LG. La microfibra multicapa proporciona una filtracion superior, reteniendo particulas mucho mas finas que el papel convencional. Esto resulta especialmente beneficioso para personas con alergias o asma, ya que se reduce drasticamente la cantidad de polvo que escapa de nuevo al ambiente.</p>
+      <p class="text-text-light mb-4">Ademas, las bolsas de microfibra son mas resistentes y mantienen mejor la potencia de succion a medida que se llenan. El cierre hermetico evita que el polvo se escape al retirar la bolsa, haciendo el proceso de cambio mucho mas limpio e higienico.</p>
+
+      <h3 class="text-xl font-semibold mb-3">LG: Calidad Coreana en Aspiracion</h3>
+      <p class="text-text-light mb-4">LG es uno de los mayores fabricantes de electrodomesticos del mundo, con una larga trayectoria en aspiradoras de trineo fiables y potentes. Aunque la marca ha evolucionado hacia aspiradoras sin bolsa en sus modelos mas recientes, millones de hogares en Espana siguen utilizando modelos clasicos de las series V y VC que requieren bolsas de repuesto. Con nuestras bolsas compatibles de alta filtracion, puedes mantener tu aspiradora LG funcionando como el primer dia a un precio muy competitivo.</p>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas LG</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que bolsa necesita mi aspiradora LG?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">LG utiliza principalmente dos tipos de bolsas segun la serie. Los modelos V-3300, V-3310, V-3500, V-3700 y V-3900 usan un tipo compatible con Fagor VCE. Los modelos VC (VC3016, VC3118, VC5420, VC7050, etc.) usan otro tipo. Verifica el modelo exacto en la etiqueta inferior de tu aspiradora.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Las bolsas de LG son compatibles con Fagor?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Si, muchas bolsas de aspiradora LG son compatibles con modelos Fagor, especialmente la serie VCE. Ambas marcas comparten dimensiones y sistemas de anclaje similares en varios de sus modelos de trineo.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Con que frecuencia debo cambiar la bolsa de mi aspiradora LG?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Se recomienda cambiar la bolsa cada 1-2 meses de uso regular, o cuando notes que pierde potencia de succion. Con un pack de 10 bolsas tendras suministro para entre 10 y 20 meses. Cambia los microfiltros cada 5 cambios de bolsa.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Bolsas para tu LG desde 12,90 EUR"
+      description="Packs de 10 bolsas de alta filtracion compatibles con todos los modelos LG y Fagor. Envio gratis Prime."
+      buttonText="Ver ofertas en Amazon"
+      buttonUrl={amazonUrl("B09KC3QSQY")}
+    />
+  </div>
+
+</Layout>

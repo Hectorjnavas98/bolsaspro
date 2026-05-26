@@ -85,11 +85,11 @@ const topProducts = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div>
-          <p class="text-3xl font-bold text-primary">30+</p>
+          <p class="text-3xl font-bold text-primary">40+</p>
           <p class="text-sm text-text-light">Productos analizados</p>
         </div>
         <div>
-          <p class="text-3xl font-bold text-primary">15+</p>
+          <p class="text-3xl font-bold text-primary">20+</p>
           <p class="text-sm text-text-light">Marcas compatibles</p>
         </div>
         <div>
@@ -202,6 +202,10 @@ const topProducts = [
           { name: "Fagor", url: "/bolsas-aspiradora-fagor/", count: "3 productos", color: "bg-purple-50 border-purple-200 text-purple-700" },
           { name: "Ufesa", url: "/bolsas-aspiradora-ufesa/", count: "1 producto", color: "bg-rose-50 border-rose-200 text-rose-700" },
           { name: "Solac", url: "/bolsas-aspiradora-solac/", count: "2 productos", color: "bg-teal-50 border-teal-200 text-teal-700" },
+          { name: "Philips", url: "/bolsas-aspiradora-philips/", count: "2 productos", color: "bg-sky-50 border-sky-200 text-sky-700" },
+          { name: "LG", url: "/bolsas-aspiradora-lg/", count: "2 productos", color: "bg-pink-50 border-pink-200 text-pink-700" },
+          { name: "Samsung", url: "/bolsas-aspiradora-samsung/", count: "1 producto", color: "bg-slate-50 border-slate-200 text-slate-700" },
+          { name: "Moulinex", url: "/bolsas-aspiradora-moulinex/", count: "2 productos", color: "bg-amber-50 border-amber-200 text-amber-700" },
           { name: "Industrial", url: "/bolsas-aspiradora-industriales/", count: "6 productos", color: "bg-gray-50 border-gray-200 text-gray-700" },
           { name: "Buscar por modelo", url: "/buscador-bolsas-aspiradora/", count: "Todas las marcas", color: "bg-blue-50 border-blue-300 text-blue-700" },
         ].map((brand) => (
@@ -218,22 +222,64 @@ const topProducts = [
   <section class="py-16">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold mb-12 text-center">Guias y Consejos</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <a href="/como-elegir-bolsas-aspiradora/" class="bg-white border border-border rounded-xl p-8 hover:shadow-lg transition-all group">
-          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Como Elegir las Bolsas de Aspiradora Correctas</h3>
-          <p class="text-text-light text-sm mb-4">Guia completa: tipos de bolsas, como identificar tu modelo, diferencias entre papel y microfibra, y cuando cambiarlas.</p>
-          <span class="text-primary font-semibold text-sm inline-flex items-center gap-1">
-            Leer guia
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </span>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Como Elegir las Bolsas Correctas</h3>
+          <p class="text-text-light text-sm mb-4">Guia completa: tipos de bolsas, como identificar tu modelo y diferencias entre materiales.</p>
+          <span class="text-primary font-semibold text-sm inline-flex items-center gap-1">Leer guia <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="/bolsas-papel-vs-microfibra/" class="bg-white border border-border rounded-xl p-8 hover:shadow-lg transition-all group">
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Papel vs Microfibra: Cual es Mejor?</h3>
+          <p class="text-text-light text-sm mb-4">Comparativa detallada entre bolsas de papel y microfibra. Filtracion, durabilidad, precio y alergias.</p>
+          <span class="text-primary font-semibold text-sm inline-flex items-center gap-1">Ver comparativa <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="/cuando-cambiar-bolsa-aspiradora/" class="bg-white border border-border rounded-xl p-8 hover:shadow-lg transition-all group">
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Cuando Cambiar la Bolsa</h3>
+          <p class="text-text-light text-sm mb-4">Senales claras de que tu bolsa necesita cambio. Frecuencia recomendada segun uso y trucos para que dure mas.</p>
+          <span class="text-primary font-semibold text-sm inline-flex items-center gap-1">Leer guia <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="/bolsas-aspiradora-antialergicas/" class="bg-white border border-border rounded-xl p-8 hover:shadow-lg transition-all group">
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Bolsas Antialergicas</h3>
+          <p class="text-text-light text-sm mb-4">Las mejores bolsas para alergicos y asmaticos. Filtracion HEPA que elimina acaros, polen y alergenos.</p>
+          <span class="text-primary font-semibold text-sm inline-flex items-center gap-1">Ver bolsas <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="/bolsas-aspiradora-universales/" class="bg-white border border-border rounded-xl p-8 hover:shadow-lg transition-all group">
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Bolsas Universales: Guia</h3>
+          <p class="text-text-light text-sm mb-4">Todo sobre bolsas universales: cuando usarlas, compatibilidad y por que las especificas son mejores.</p>
+          <span class="text-primary font-semibold text-sm inline-flex items-center gap-1">Leer guia <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
         </a>
         <a href="/bolsas-aspiradora-baratas/" class="bg-white border border-border rounded-xl p-8 hover:shadow-lg transition-all group">
-          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Las Bolsas de Aspiradora Mas Baratas</h3>
-          <p class="text-text-light text-sm mb-4">Encuentra bolsas de calidad al mejor precio. Comparativa de las opciones mas economicas sin renunciar a buena filtracion.</p>
-          <span class="text-primary font-semibold text-sm inline-flex items-center gap-1">
-            Ver comparativa
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </span>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Las Mas Baratas</h3>
+          <p class="text-text-light text-sm mb-4">Comparativa de las bolsas mas economicas. Desde 7,90 EUR el pack sin renunciar a buena filtracion.</p>
+          <span class="text-primary font-semibold text-sm inline-flex items-center gap-1">Ver precios <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular models -->
+  <section class="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4 text-center">Modelos Mas Buscados</h2>
+      <p class="text-text-light text-center mb-12 max-w-2xl mx-auto">Guias especificas para los modelos de aspiradora mas populares en Espana. Con listas completas de compatibilidad.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a href="/bolsas-rowenta-silence-force/" class="bg-white rounded-xl p-6 border border-border hover:shadow-lg transition-all group flex items-center gap-4">
+          <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center shrink-0">
+            <span class="text-red-600 font-bold text-lg">R</span>
+          </div>
+          <div>
+            <h3 class="font-bold group-hover:text-primary transition-colors">Bolsas Rowenta Silence Force</h3>
+            <p class="text-sm text-text-light">RO64xx, RO63xx, RO68xx - Todos los modelos compatibles</p>
+          </div>
+        </a>
+        <a href="/bolsas-karcher-wd3/" class="bg-white rounded-xl p-6 border border-border hover:shadow-lg transition-all group flex items-center gap-4">
+          <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center shrink-0">
+            <span class="text-yellow-600 font-bold text-lg">K</span>
+          </div>
+          <div>
+            <h3 class="font-bold group-hover:text-primary transition-colors">Bolsas Karcher WD3 / MV3</h3>
+            <p class="text-sm text-text-light">WD3, WD3P, MV3 - Pack 10 desde 12,90 EUR</p>
+          </div>
         </a>
       </div>
     </div>

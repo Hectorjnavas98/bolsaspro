@@ -1,0 +1,182 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "espacioseco-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const comparisonProducts = [
+  { name: "10 Bolsas Moulinex/Rowenta Compacteo", type: "Microfibra", area: "Compacteo, City Space, Accessimo", price: "12,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B07R8JNQ42") },
+  { name: "10 Bolsas Moulinex/Ufesa Compatible", type: "Microfibra", area: "Compacteo, Zelio, Ufesa", price: "11,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B07Q3QQBBR") },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que bolsa necesita mi aspiradora Moulinex Compacteo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La Moulinex Compacteo (modelos MO151, MO152, MO153, MO154, MO1513, MO1514, MO1517, MO1521, MO1523, MO1526) utiliza bolsas compatibles de microfibra. Recomendamos el pack de 10 bolsas Moulinex/Rowenta Compacteo con valoracion de 4.4 estrellas." }
+    },
+    {
+      "@type": "Question",
+      "name": "Las bolsas de Moulinex son compatibles con Rowenta?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, muchas bolsas Moulinex son compatibles con aspiradoras Rowenta Compacteo y tambien con algunos modelos Solac y Ufesa, ya que comparten el mismo sistema de soporte y tamano de bolsa. Verifica siempre el modelo exacto antes de comprar." }
+    },
+    {
+      "@type": "Question",
+      "name": "Donde encuentro el numero de modelo de mi aspiradora Moulinex?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El numero de modelo de tu aspiradora Moulinex se encuentra en una etiqueta adhesiva en la parte inferior del aparato. Siempre empieza por 'MO' seguido de numeros (ej: MO1523). Con ese numero puedes buscar la bolsa compatible exacta." }
+    },
+  ]
+};
+---
+
+<Layout title="Mejores Bolsas Aspiradora Moulinex 2026 - Todos los Modelos" description="Bolsas compatibles para aspiradora Moulinex: Compacteo, City Space, Accessimo. Guia completa de compatibilidad y precios." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Moulinex" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Mejores Bolsas de Aspiradora Moulinex 2026</h1>
+    <p class="text-lg text-text-light mb-10">Guia completa de bolsas compatibles para aspiradoras Moulinex. Encuentra la bolsa perfecta para tu modelo: Compacteo, City Space, Accessimo, Zelio y mas. Compatibilidad verificada con todos los modelos.</p>
+
+    <InfoBox type="tip" title="Consejo rapido">
+      Si tienes una Moulinex Compacteo o City Space, la mejor opcion es el <a href={amazonUrl("B07R8JNQ42")} target="_blank" rel="nofollow noopener sponsored" class="text-primary font-semibold hover:underline">pack de 10 bolsas Moulinex/Rowenta Compacteo</a> con valoracion de 4.4 estrellas y cierre hermetico.
+    </InfoBox>
+
+    <!-- Products -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+      <ProductCard
+        name="10 Bolsas Moulinex/Rowenta Compacteo"
+        image={imgUrl("71mcQuQhNKL")}
+        rating={4.4}
+        price="12,90 EUR"
+        amazonUrl={amazonUrl("B07R8JNQ42")}
+        badge="Mejor valorado"
+        features={["Compatible Moulinex y Rowenta", "Microfibra alta calidad", "Cierre hermetico", "Pack de 10 unidades"]}
+      />
+      <ProductCard
+        name="10 Bolsas Moulinex/Ufesa Compatible"
+        image={imgUrl("613quKCq2pL")}
+        rating={4.3}
+        price="11,90 EUR"
+        amazonUrl={amazonUrl("B07Q3QQBBR")}
+        features={["Compatible Moulinex Compacteo", "Microfibra resistente", "Buen sellado", "Pack de 10 unidades"]}
+      />
+    </div>
+
+    <!-- Comparison -->
+    <h2 class="text-2xl font-bold mb-6">Comparativa de Bolsas Moulinex</h2>
+    <ComparisonTable products={comparisonProducts} />
+
+    <ProsConsBox
+      pros={[
+        "Compatibles con multiples modelos Moulinex, Rowenta, Ufesa y Solac",
+        "Microfibra de alta calidad que retiene particulas finas",
+        "Cierre hermetico que evita fugas de polvo al retirar la bolsa",
+        "Packs de 10 unidades con excelente relacion calidad-precio",
+        "Facil instalacion sin necesidad de adaptadores"
+      ]}
+      cons={[
+        "No son las bolsas originales Moulinex",
+        "Es necesario verificar el modelo exacto antes de comprar",
+        "Algunos modelos muy antiguos pueden no ser compatibles"
+      ]}
+    />
+
+    <!-- Compatibility Guide -->
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Guia Completa de Compatibilidad Moulinex</h2>
+      <p class="text-text-light mb-6">Moulinex ofrece varias lineas de aspiradoras de trineo. Cada linea utiliza un tipo de bolsa especifico, por lo que es fundamental conocer tu modelo exacto antes de comprar. A continuacion te mostramos todos los modelos compatibles organizados por gama.</p>
+
+      <h3 class="text-xl font-semibold mb-3">Moulinex Compacteo</h3>
+      <p class="text-text-light mb-4">La gama Compacteo es la mas popular de Moulinex. Estas aspiradoras compactas y ligeras comparten el mismo tipo de bolsa. Modelos compatibles:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Moulinex Compacteo MO151, MO152, MO153, MO154</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Moulinex Compacteo MO1513, MO1514, MO1517</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Moulinex Compacteo MO1521, MO1523, MO1526</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Moulinex City Space</h3>
+      <p class="text-text-light mb-4">La linea City Space esta disenada para espacios reducidos. Utiliza el mismo tipo de bolsa que la gama Compacteo:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Moulinex City Space MO242, MO2423</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Moulinex City Space MO2441, MO244, MO2443</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Moulinex Accessimo</h3>
+      <p class="text-text-light mb-4">La gama Accessimo es una de las mas economicas de Moulinex. Tambien es compatible con las mismas bolsas:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Moulinex Accessimo MO151101, MO151511</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Moulinex Accessimo MO150</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Moulinex Zelio</h3>
+      <p class="text-text-light mb-4">La linea Zelio tambien es compatible con estas bolsas de microfibra:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Moulinex Zelio MO4000, MO4010, MO4020</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Compatibilidad con otras marcas</h3>
+      <p class="text-text-light mb-4">Al pertenecer Moulinex al grupo SEB (mismo que Rowenta), muchas bolsas son intercambiables entre ambas marcas. Ademas, algunos modelos de Solac y Ufesa tambien utilizan el mismo formato de bolsa:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Rowenta Compacteo RO17xx, RO18xx</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Solac AB2723, AB2700 y modelos similares</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Ufesa AT4200, AT4210 y compatibles</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Como identificar tu modelo Moulinex</h3>
+      <p class="text-text-light mb-4">El numero de modelo de tu aspiradora Moulinex se encuentra en una etiqueta adhesiva en la parte inferior del aparato. Siempre empieza por "MO" seguido de numeros (ej: MO1523). Con ese numero puedes buscar la bolsa compatible exacta en nuestras fichas de producto.</p>
+
+      <h3 class="text-xl font-semibold mb-3">Cada cuanto cambiar la bolsa de tu Moulinex</h3>
+      <p class="text-text-light mb-4">Recomendamos cambiar la bolsa de tu aspiradora Moulinex cada 1-2 meses en uso normal, o cuando notes que la potencia de succion disminuye. Las bolsas de microfibra mantienen la filtracion optima durante mas tiempo que las bolsas de papel. Con un pack de 10 unidades tendras bolsas para casi un ano completo.</p>
+
+      <InfoBox type="warning" title="Importante">
+        Antes de comprar, verifica siempre el numero de modelo exacto de tu aspiradora Moulinex en la etiqueta inferior del aparato. Aunque la mayoria de modelos Compacteo, City Space, Accessimo y Zelio usan el mismo tipo de bolsa, algunos modelos especiales pueden requerir un formato diferente.
+      </InfoBox>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas Moulinex</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que bolsa necesita mi aspiradora Moulinex Compacteo?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">La Moulinex Compacteo (modelos MO151, MO152, MO153, MO154, MO1513, MO1514, MO1517, MO1521, MO1523, MO1526) utiliza bolsas compatibles de microfibra. Recomendamos el pack de 10 bolsas Moulinex/Rowenta Compacteo con valoracion de 4.4 estrellas.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Las bolsas de Moulinex son compatibles con Rowenta?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Si, muchas bolsas Moulinex son compatibles con aspiradoras Rowenta Compacteo y tambien con algunos modelos Solac y Ufesa, ya que comparten el mismo sistema de soporte y tamano de bolsa. Verifica siempre el modelo exacto antes de comprar.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Donde encuentro el numero de modelo de mi aspiradora Moulinex?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">El numero de modelo de tu aspiradora Moulinex se encuentra en una etiqueta adhesiva en la parte inferior del aparato. Siempre empieza por "MO" seguido de numeros (ej: MO1523). Con ese numero puedes buscar la bolsa compatible exacta.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Consigue las mejores bolsas para tu Moulinex"
+      description="Pack de 10 bolsas de microfibra con cierre hermetico y envio gratis Prime. Compatible con Compacteo, City Space, Accessimo y Zelio."
+      buttonText="Ver oferta en Amazon"
+      buttonUrl={amazonUrl("B07R8JNQ42")}
+    />
+  </div>
+
+</Layout>
