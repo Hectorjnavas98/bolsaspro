@@ -1,0 +1,178 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "espacioseco-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const comparisonProducts = [
+  { name: "10 Bolsas Alta Filtracion Electrolux Lux Royal", type: "Microfibra", area: "Electrolux Lux, Royal D790", price: "13,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B07Z83ZHKL") },
+  { name: "10 Bolsas AEG/Electrolux Vampyr", type: "Microfibra premium", area: "AEG Vampyr, Smart 300-485", price: "14,90 EUR", rating: 4.5, amazonUrl: amazonUrl("B07SGFN26G") },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que bolsa necesita mi aspiradora AEG Vampyr?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La mayoria de aspiradoras AEG Vampyr (series CE, Smart 300-485) utilizan bolsas tipo GR. 201 o compatibles de microfibra. Las bolsas universales de alta filtracion son una excelente alternativa compatible con toda la gama Vampyr." }
+    },
+    {
+      "@type": "Question",
+      "name": "Son compatibles las bolsas de AEG con Electrolux y Philips?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, muchas bolsas son compatibles entre AEG, Electrolux, Volta, Tornado y Philips, ya que estas marcas pertenecen o han pertenecido al mismo grupo. Siempre verifica el modelo exacto antes de comprar." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cada cuanto debo cambiar la bolsa de mi aspiradora AEG o Electrolux?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Se recomienda cambiar la bolsa cada 1-2 meses en uso normal, o cuando notes que la aspiradora pierde potencia de succion. Con un pack de 10 bolsas tendras suficiente para casi un ano de uso." }
+    },
+  ]
+};
+---
+
+<Layout title="Mejores Bolsas Aspiradora AEG y Electrolux 2026" description="Encuentra las mejores bolsas para tu aspiradora AEG, Electrolux, Volta, Tornado y Philips. Comparativa y mejores precios." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas AEG / Electrolux" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Mejores Bolsas de Aspiradora AEG y Electrolux 2026</h1>
+    <p class="text-lg text-text-light mb-10">Comparativa completa de bolsas compatibles con aspiradoras AEG, Electrolux, Volta, Tornado y Philips. Encuentra la bolsa perfecta para tu modelo con la mejor relacion calidad-precio.</p>
+
+    <InfoBox type="tip" title="Consejo rapido">
+      Si tienes una AEG Vampyr o Electrolux Lux, la mejor opcion es el <a href={amazonUrl("B07SGFN26G")} target="_blank" rel="nofollow noopener sponsored" class="text-primary font-semibold hover:underline">pack de 10 bolsas de microfibra premium</a> con valoracion de 4.5 estrellas.
+    </InfoBox>
+
+    <!-- Products -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+      <ProductCard
+        name="10 Bolsas Alta Filtracion Electrolux Lux Royal"
+        image={imgUrl("71McY5YQPML")}
+        rating={4.4}
+        price="13,90 EUR"
+        amazonUrl={amazonUrl("B07Z83ZHKL")}
+        badge="Mejor valorado"
+        features={["Alta filtracion multicapa", "Compatible Electrolux Lux y Royal", "Cierre hermetico anti-polvo", "Pack de 10 unidades"]}
+      />
+      <ProductCard
+        name="10 Bolsas AEG/Electrolux Vampyr"
+        image={imgUrl("71X5T5GNKCL")}
+        rating={4.5}
+        price="14,90 EUR"
+        amazonUrl={amazonUrl("B07SGFN26G")}
+        features={["Compatible AEG Vampyr series", "Microfibra premium", "Maxima retencion", "Pack de 10 unidades"]}
+      />
+    </div>
+
+    <!-- Comparison -->
+    <h2 class="text-2xl font-bold mb-6">Comparativa de Bolsas AEG / Electrolux</h2>
+    <ComparisonTable products={comparisonProducts} />
+
+    <ProsConsBox
+      pros={[
+        "Compatible con multiples marcas: AEG, Electrolux, Volta, Tornado, Philips",
+        "Alta filtracion multicapa que retiene hasta el 99,5% de particulas",
+        "Packs de 10 unidades con excelente relacion calidad-precio",
+        "Cierre hermetico que evita fugas de polvo al retirar la bolsa",
+        "Microfibra premium que mantiene la potencia de succion"
+      ]}
+      cons={[
+        "No son las bolsas originales de la marca",
+        "Verificar siempre el modelo exacto antes de comprar",
+        "Algunos modelos muy antiguos pueden no ser compatibles"
+      ]}
+    />
+
+    <!-- Content -->
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Guia de Compatibilidad AEG / Electrolux</h2>
+      <p class="text-text-light mb-6">AEG, Electrolux, Volta, Tornado y Philips comparten muchos tipos de bolsa debido a su pertenencia al mismo grupo industrial. Aqui tienes los modelos mas comunes compatibles con nuestras bolsas recomendadas:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-semibold text-blue-800 mb-3">AEG</h3>
+          <ul class="text-sm text-blue-900 space-y-1">
+            <li>AEG Vampyr CE (todas las series)</li>
+            <li>AEG Smart 300-485</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-semibold text-blue-800 mb-3">Electrolux</h3>
+          <ul class="text-sm text-blue-900 space-y-1">
+            <li>Electrolux Lux Royal D790</li>
+            <li>Electrolux Mondo EL serie</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-semibold text-blue-800 mb-3">Volta / Tornado</h3>
+          <ul class="text-sm text-blue-900 space-y-1">
+            <li>Volta U serie</li>
+            <li>Tornado TO serie</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-semibold text-blue-800 mb-3">Philips</h3>
+          <ul class="text-sm text-blue-900 space-y-1">
+            <li>Philips FC serie</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold mb-4">Por que elegir bolsas de microfibra?</h2>
+      <p class="text-text-light mb-4">Las bolsas de microfibra ofrecen ventajas significativas frente a las bolsas de papel tradicionales:</p>
+      <ul class="text-text-light mb-6 space-y-2">
+        <li><strong>Mayor filtracion:</strong> Retienen particulas mucho mas pequenas, incluyendo alergenos y acaros</li>
+        <li><strong>Mayor durabilidad:</strong> La microfibra resiste mejor sin romperse, incluso con objetos punzantes</li>
+        <li><strong>Mejor flujo de aire:</strong> Mantienen la potencia de succion durante mas tiempo que las bolsas de papel</li>
+      </ul>
+      <p class="text-text-light mb-6">El resultado es una aspiradora que limpia mejor, mantiene su potencia y libera menos polvo al ambiente. Ideal para hogares con alergias, asma o mascotas.</p>
+
+      <h3 class="text-xl font-semibold mb-3">Como identificar tu modelo AEG o Electrolux</h3>
+      <p class="text-text-light mb-4">El numero de modelo se encuentra en una etiqueta adhesiva en la parte inferior o trasera del aparato. En las AEG Vampyr busca la referencia que empieza por "CE" o "Smart". En Electrolux, busca los codigos "EL", "D" o "Lux". Con ese numero puedes verificar la compatibilidad en nuestras fichas de producto.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas AEG / Electrolux</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que bolsa necesita mi aspiradora AEG Vampyr?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">La mayoria de aspiradoras AEG Vampyr (series CE, Smart 300-485) utilizan bolsas tipo GR. 201 o compatibles de microfibra. Las bolsas universales de alta filtracion son una excelente alternativa compatible con toda la gama Vampyr.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Son compatibles las bolsas de AEG con Electrolux y Philips?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Si, muchas bolsas son compatibles entre AEG, Electrolux, Volta, Tornado y Philips, ya que estas marcas pertenecen o han pertenecido al mismo grupo. Siempre verifica el modelo exacto antes de comprar.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Cada cuanto debo cambiar la bolsa de mi aspiradora AEG o Electrolux?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Se recomienda cambiar la bolsa cada 1-2 meses en uso normal, o cuando notes que la aspiradora pierde potencia de succion. Con un pack de 10 bolsas tendras suficiente para casi un ano de uso.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Consigue las mejores bolsas para tu AEG o Electrolux"
+      description="Pack de 10 bolsas de microfibra premium con envio gratis Prime. Compatible con AEG, Electrolux, Volta, Tornado y Philips."
+      buttonText="Ver oferta en Amazon"
+      buttonUrl={amazonUrl("B07SGFN26G")}
+    />
+  </div>
+
+</Layout>

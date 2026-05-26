@@ -1,0 +1,165 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "espacioseco-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const comparisonProducts = [
+  { name: "10 Bolsas Alta Filtracion Fagor VCE", type: "Microfibra", area: "Fagor VCE series", price: "12,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B09B29YF5P") },
+  { name: "10 Bolsas Fagor/Ufesa Compatible", type: "Microfibra", area: "Fagor y Ufesa", price: "12,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B09B2BL479") },
+  { name: "10 Bolsas Fagor/LG Compatible", type: "Microfibra", area: "Fagor y LG", price: "12,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B09KC3QSQY") },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que bolsa necesita mi aspiradora Fagor VCE?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Las aspiradoras Fagor de la serie VCE (VCE-300, VCE-305, VCE-306, VCE-340, VCE-365) utilizan bolsas de microfibra compatibles. Recomendamos las bolsas de alta filtracion multicapa en pack de 10 unidades por su mejor relacion calidad-precio." }
+    },
+    {
+      "@type": "Question",
+      "name": "Son compatibles las bolsas de Fagor con otras marcas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, algunas bolsas compatibles con Fagor tambien funcionan con aspiradoras Ufesa y LG. Por ejemplo, los modelos LG V-3310 y V-3300 comparten el mismo tipo de bolsa que las Fagor VCE." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cada cuanto debo cambiar la bolsa de mi aspiradora Fagor?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Se recomienda cambiar la bolsa cada 1-2 meses en uso normal, o cuando notes que la aspiradora pierde potencia de succion. Con un pack de 10 bolsas tendras suministro para casi un ano." }
+    },
+  ]
+};
+---
+
+<Layout title="Mejores Bolsas Aspiradora Fagor 2026" description="Encuentra las mejores bolsas para tu aspiradora Fagor: VCE series y compatibles. Comparativa y mejores precios en Amazon." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Fagor" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Mejores Bolsas de Aspiradora Fagor 2026</h1>
+    <p class="text-lg text-text-light mb-10">Comparativa completa de bolsas compatibles con aspiradoras Fagor. Encuentra la bolsa perfecta para tu modelo: VCE-300, VCE-305, VCE-306, VCE-340, VCE-365 y compatibles con Ufesa y LG.</p>
+
+    <InfoBox type="tip" title="Consejo rapido">
+      Si tienes una Fagor de la serie VCE, la mejor opcion es el <a href={amazonUrl("B09B29YF5P")} target="_blank" rel="nofollow noopener sponsored" class="text-primary font-semibold hover:underline">pack de 10 bolsas de alta filtracion</a> con valoracion de 4.3 estrellas y cierre hermetico.
+    </InfoBox>
+
+    <!-- Products -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
+      <ProductCard
+        name="10 Bolsas Alta Filtracion Fagor VCE"
+        image={imgUrl("71Cgjf-cuTL")}
+        rating={4.3}
+        price="12,90 EUR"
+        amazonUrl={amazonUrl("B09B29YF5P")}
+        badge="Mejor valorado"
+        features={["Alta filtracion multicapa", "Compatible Fagor VCE series", "Cierre hermetico", "Pack de 10 unidades"]}
+      />
+      <ProductCard
+        name="10 Bolsas Fagor/Ufesa Compatible"
+        image={imgUrl("71Cgjf-cuTL")}
+        rating={4.3}
+        price="12,90 EUR"
+        amazonUrl={amazonUrl("B09B2BL479")}
+        features={["Compatible Fagor y Ufesa", "Microfibra resistente", "Buen sellado", "Pack de 10 unidades"]}
+      />
+      <ProductCard
+        name="10 Bolsas Fagor/LG Compatible"
+        image={imgUrl("71mcQuQhNKL")}
+        rating={4.3}
+        price="12,90 EUR"
+        amazonUrl={amazonUrl("B09KC3QSQY")}
+        features={["Compatible Fagor y LG", "Material microfibra", "Alta retencion polvo", "Pack de 10 unidades"]}
+      />
+    </div>
+
+    <!-- Comparison -->
+    <h2 class="text-2xl font-bold mb-6">Comparativa de Bolsas Fagor</h2>
+    <ComparisonTable products={comparisonProducts} />
+
+    <ProsConsBox
+      pros={[
+        "Alta filtracion multicapa que retiene particulas finas",
+        "Compatible con multiples modelos Fagor VCE",
+        "Tambien compatible con aspiradoras Ufesa y LG",
+        "Pack de 10 unidades a precio competitivo",
+        "Cierre hermetico que evita fugas de polvo"
+      ]}
+      cons={[
+        "No son las bolsas originales Fagor",
+        "Algunos modelos muy antiguos pueden requerir verificacion",
+        "Disponibles solo en pack de 10 unidades"
+      ]}
+    />
+
+    <!-- Content -->
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Guia de Compatibilidad Fagor</h2>
+      <p class="text-text-light mb-6">Fagor fabrico una amplia gama de aspiradoras de trineo. A continuacion te mostramos los modelos compatibles con las bolsas que recomendamos.</p>
+
+      <h3 class="text-xl font-semibold mb-3">Modelos Fagor VCE Compatibles</h3>
+      <p class="text-text-light mb-4">La serie VCE es la mas popular de Fagor. Todos estos modelos utilizan el mismo tipo de bolsa:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Fagor VCE-300</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Fagor VCE-305</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Fagor VCE-306</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Fagor VCE-340</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Fagor VCE-365</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Modelos LG Compatibles</h3>
+      <p class="text-text-light mb-4">Algunas aspiradoras LG comparten el mismo tipo de bolsa que las Fagor VCE:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> LG V-3310</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> LG V-3300</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Como identificar tu modelo Fagor</h3>
+      <p class="text-text-light mb-4">El numero de modelo de tu aspiradora Fagor se encuentra en una etiqueta adhesiva en la parte inferior del aparato. Busca las siglas "VCE" seguidas de un numero (ej: VCE-305). Con ese numero puedes verificar la compatibilidad en nuestras fichas de producto.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas Fagor</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que bolsa necesita mi aspiradora Fagor VCE?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Las aspiradoras Fagor de la serie VCE (VCE-300, VCE-305, VCE-306, VCE-340, VCE-365) utilizan bolsas de microfibra compatibles. Recomendamos las bolsas de alta filtracion multicapa en pack de 10 unidades por su mejor relacion calidad-precio.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Son compatibles las bolsas de Fagor con otras marcas?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Si, algunas bolsas compatibles con Fagor tambien funcionan con aspiradoras Ufesa y LG. Por ejemplo, los modelos LG V-3310 y V-3300 comparten el mismo tipo de bolsa que las Fagor VCE.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Cada cuanto debo cambiar la bolsa de mi aspiradora Fagor?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Se recomienda cambiar la bolsa cada 1-2 meses en uso normal, o cuando notes que la aspiradora pierde potencia de succion. Con un pack de 10 bolsas tendras suministro para casi un ano.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Consigue las mejores bolsas para tu Fagor"
+      description="Pack de 10 bolsas de alta filtracion con envio gratis Prime. Compatibles con toda la serie VCE y modelos Ufesa/LG."
+      buttonText="Ver oferta en Amazon"
+      buttonUrl={amazonUrl("B09B29YF5P")}
+    />
+  </div>
+
+</Layout>

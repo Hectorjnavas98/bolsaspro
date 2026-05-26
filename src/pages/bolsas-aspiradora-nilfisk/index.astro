@@ -1,0 +1,169 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "espacioseco-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const comparisonProducts = [
+  { name: "10 Bolsas Alta Filtracion Nilfisk Power/Select", type: "Microfibra", area: "Power, Select, Classic", price: "14,90 EUR", rating: 4.5, amazonUrl: amazonUrl("B07HHXS1KS") },
+  { name: "10 Bolsas Nilfisk Bravo/Action", type: "Microfibra", area: "Bravo, Action", price: "12,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B07D567S22") },
+  { name: "10 Bolsas Nilfisk One/Coupe", type: "Microfibra", area: "One Prime, Coupe", price: "12,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B07D56K33G") },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que bolsa necesita mi aspiradora Nilfisk Power o Select?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Las aspiradoras Nilfisk Power (P10, P20, P40) y Select (BLCO14P08A1) utilizan bolsas compatibles de alta filtracion multicapa. Recomendamos el pack de 10 bolsas de alta filtracion por su excelente relacion calidad-precio." }
+    },
+    {
+      "@type": "Question",
+      "name": "Son compatibles las bolsas entre diferentes modelos Nilfisk?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No todas las bolsas Nilfisk son intercambiables. Las lineas Power, Select y Classic comparten el mismo tipo de bolsa, mientras que las lineas Bravo/Action y One/Coupe usan tipos diferentes. Verifica siempre tu modelo antes de comprar." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cada cuanto debo cambiar la bolsa de mi aspiradora Nilfisk?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Se recomienda cambiar la bolsa cada 1-2 meses en uso domestico normal, o cuando notes que la aspiradora pierde potencia de succion. Con un pack de 10 bolsas tendras suficiente para casi un ano de uso." }
+    },
+  ]
+};
+---
+
+<Layout title="Mejores Bolsas Aspiradora Nilfisk 2026" description="Encuentra las mejores bolsas para tu aspiradora Nilfisk: Power, Select, Classic, Bravo, Action, One. Comparativa, compatibilidad y mejores precios." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Nilfisk" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Mejores Bolsas de Aspiradora Nilfisk 2026</h1>
+    <p class="text-lg text-text-light mb-10">Comparativa completa de bolsas compatibles con aspiradoras Nilfisk. Encuentra la bolsa perfecta para tu modelo: Power, Select, Classic, Bravo, Action, One y mas.</p>
+
+    <InfoBox type="tip" title="Consejo rapido">
+      Si tienes una Nilfisk Power o Select, la mejor opcion es el <a href={amazonUrl("B07HHXS1KS")} target="_blank" rel="nofollow noopener sponsored" class="text-primary font-semibold hover:underline">pack de 10 bolsas de alta filtracion</a> con valoracion de 4.5 estrellas.
+    </InfoBox>
+
+    <!-- Products -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
+      <ProductCard
+        name="10 Bolsas Alta Filtracion Nilfisk Power/Select"
+        image={imgUrl("71ECpbjb9NL")}
+        rating={4.5}
+        price="14,90 EUR"
+        amazonUrl={amazonUrl("B07HHXS1KS")}
+        badge="Mejor valorado"
+        features={["Alta filtracion multicapa", "Compatible Power, Select, Classic", "Cierre hermetico anti-polvo", "Pack de 10 unidades"]}
+      />
+      <ProductCard
+        name="10 Bolsas Nilfisk Bravo/Action"
+        image={imgUrl("61+tpQz6LbL")}
+        rating={4.3}
+        price="12,90 EUR"
+        amazonUrl={amazonUrl("B07D567S22")}
+        features={["Microfibra de alta calidad", "Compatible Bravo y Action", "Buena filtracion", "Pack de 10 unidades"]}
+      />
+      <ProductCard
+        name="10 Bolsas Nilfisk One/Coupe"
+        image={imgUrl("61+tpQz6LbL")}
+        rating={4.3}
+        price="12,90 EUR"
+        amazonUrl={amazonUrl("B07D56K33G")}
+        features={["Compatible One Prime y Coupe", "Material microfibra", "Buen sellado", "Pack de 10 unidades"]}
+      />
+    </div>
+
+    <!-- Comparison -->
+    <h2 class="text-2xl font-bold mb-6">Comparativa de Bolsas Nilfisk</h2>
+    <ComparisonTable products={comparisonProducts} />
+
+    <ProsConsBox
+      pros={[
+        "Alta filtracion que retiene hasta el 99,5% de particulas",
+        "Compatible con multiples modelos Nilfisk",
+        "Packs de 10 unidades que duran meses",
+        "Cierre hermetico que evita fugas de polvo",
+        "Buena relacion calidad-precio"
+      ]}
+      cons={[
+        "No son las bolsas originales Nilfisk",
+        "Cada linea de aspiradora usa un tipo diferente",
+        "Algunos modelos antiguos pueden requerir verificacion"
+      ]}
+    />
+
+    <!-- Content -->
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Guia de Compatibilidad Nilfisk</h2>
+      <p class="text-text-light mb-6">Nilfisk fabrica una amplia gama de aspiradoras de trineo. Cada linea utiliza un tipo de bolsa diferente, por lo que es fundamental saber que modelo tienes antes de comprar.</p>
+
+      <h3 class="text-xl font-semibold mb-3">Nilfisk Power / Select / Classic</h3>
+      <p class="text-text-light mb-4">Estas tres lineas comparten el mismo tipo de bolsa de alta filtracion. Son las aspiradoras mas populares de Nilfisk y ofrecen gran potencia de succion. Modelos compatibles:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Nilfisk Power P10, P20, P40</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Nilfisk Select BLCO14P08A1</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Nilfisk Classic C110, C120</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Nilfisk Bravo / Action</h3>
+      <p class="text-text-light mb-4">Las aspiradoras Bravo y Action utilizan un tipo de bolsa propio. Son modelos compactos y ligeros:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Nilfisk Bravo B10, B20</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Nilfisk Action A100, A200</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Nilfisk One / Coupe</h3>
+      <p class="text-text-light mb-4">La linea One y Coupe son aspiradoras compactas que utilizan su propio formato de bolsa:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Nilfisk One Prime</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Como identificar tu modelo Nilfisk</h3>
+      <p class="text-text-light mb-4">El numero de modelo de tu Nilfisk se encuentra en una etiqueta adhesiva en la parte inferior del aparato. Busca el nombre de la linea (Power, Select, Bravo, etc.) junto con el numero de modelo. Con esa informacion puedes elegir la bolsa compatible correcta.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas Nilfisk</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que bolsa necesita mi aspiradora Nilfisk Power o Select?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Las aspiradoras Nilfisk Power (P10, P20, P40) y Select (BLCO14P08A1) utilizan bolsas compatibles de alta filtracion multicapa. Recomendamos el pack de 10 bolsas de alta filtracion por su excelente relacion calidad-precio.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Son compatibles las bolsas entre diferentes modelos Nilfisk?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">No todas las bolsas Nilfisk son intercambiables. Las lineas Power, Select y Classic comparten el mismo tipo de bolsa, mientras que las lineas Bravo/Action y One/Coupe usan tipos diferentes. Verifica siempre tu modelo antes de comprar.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Cada cuanto debo cambiar la bolsa de mi aspiradora Nilfisk?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Se recomienda cambiar la bolsa cada 1-2 meses en uso domestico normal, o cuando notes que la aspiradora pierde potencia de succion. Con un pack de 10 bolsas tendras suficiente para casi un ano de uso.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Consigue las mejores bolsas para tu Nilfisk"
+      description="Pack de 10 bolsas de alta filtracion con envio gratis Prime. La opcion preferida por miles de usuarios."
+      buttonText="Ver oferta en Amazon"
+      buttonUrl={amazonUrl("B07HHXS1KS")}
+    />
+  </div>
+
+</Layout>

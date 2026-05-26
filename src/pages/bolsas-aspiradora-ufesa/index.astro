@@ -1,0 +1,150 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "espacioseco-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const comparisonProducts = [
+  { name: "10 Bolsas Alta Filtracion Ufesa Activa", type: "Microfibra", area: "Ufesa Activa, AT, Cicerone", price: "11,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B07Q3QQBBR") },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que bolsa necesita mi aspiradora Ufesa Activa?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La Ufesa Activa y los modelos AT4210 y AT4220 utilizan bolsas compatibles de alta filtracion multicapa. Recomendamos el pack de 10 bolsas que ofrece la mejor relacion calidad-precio." }
+    },
+    {
+      "@type": "Question",
+      "name": "Son compatibles las bolsas de Ufesa con otras marcas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, muchas bolsas para Ufesa son tambien compatibles con aspiradoras Moulinex Compacteo y Solac AB2723, ya que comparten el mismo tipo de soporte. Verifica siempre el modelo exacto antes de comprar." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cada cuanto debo cambiar la bolsa de mi aspiradora Ufesa?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Se recomienda cambiar la bolsa cada 1-2 meses con uso normal, o cuando notes que la aspiradora pierde potencia de succion. Con un pack de 10 bolsas tendras suficiente para casi un ano." }
+    },
+  ]
+};
+---
+
+<Layout title="Mejores Bolsas Aspiradora Ufesa 2026" description="Encuentra las mejores bolsas para tu aspiradora Ufesa: Activa, Cicerone y mas. Compatibilidad verificada y mejores precios en Amazon." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Ufesa" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Mejores Bolsas de Aspiradora Ufesa 2026</h1>
+    <p class="text-lg text-text-light mb-10">Comparativa completa de bolsas compatibles con aspiradoras Ufesa. Encuentra la bolsa perfecta para tu modelo: Activa, Cicerone, AT4210, AT4220 y mas.</p>
+
+    <InfoBox type="tip" title="Consejo rapido">
+      Si tienes una Ufesa Activa o modelo AT, la mejor opcion es el <a href={amazonUrl("B07Q3QQBBR")} target="_blank" rel="nofollow noopener sponsored" class="text-primary font-semibold hover:underline">pack de 10 bolsas de alta filtracion</a> por solo 11,90 EUR con valoracion de 4.3 estrellas.
+    </InfoBox>
+
+    <!-- Products -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
+      <ProductCard
+        name="10 Bolsas Alta Filtracion Ufesa Activa"
+        image={imgUrl("613quKCq2pL")}
+        rating={4.3}
+        price="11,90 EUR"
+        amazonUrl={amazonUrl("B07Q3QQBBR")}
+        badge="Mejor precio"
+        features={["Alta filtracion multicapa", "Compatible Ufesa Activa y AT", "Cierre hermetico", "Pack de 10 unidades"]}
+      />
+    </div>
+
+    <!-- Comparison -->
+    <h2 class="text-2xl font-bold mb-6">Comparativa de Bolsas Ufesa</h2>
+    <ComparisonTable products={comparisonProducts} />
+
+    <ProsConsBox
+      pros={[
+        "Alta filtracion que retiene particulas finas y alergenos",
+        "Compatible con multiples modelos Ufesa y otras marcas",
+        "Pack de 10 unidades con excelente relacion calidad-precio",
+        "Cierre hermetico que evita fugas de polvo",
+        "Precio muy competitivo: apenas 1,19 EUR por bolsa"
+      ]}
+      cons={[
+        "No son las bolsas originales Ufesa",
+        "Algunos modelos antiguos pueden requerir verificacion",
+        "Solo un tipo de pack disponible"
+      ]}
+    />
+
+    <!-- Content -->
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Guia de Compatibilidad Ufesa</h2>
+      <p class="text-text-light mb-6">Ufesa es una marca muy popular en Espana con una amplia gama de aspiradoras de trineo. A continuacion te indicamos que bolsas son compatibles con cada modelo.</p>
+
+      <h3 class="text-xl font-semibold mb-3">Ufesa Activa AT4210 / AT4220</h3>
+      <p class="text-text-light mb-4">La linea Activa es una de las mas vendidas de Ufesa. Los modelos AT4210 y AT4220 comparten el mismo tipo de bolsa. Modelos compatibles:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Ufesa Activa AT4210</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Ufesa Activa AT4220</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Ufesa Cicerone</h3>
+      <p class="text-text-light mb-4">La gama Cicerone de Ufesa tambien utiliza bolsas del mismo tipo que la linea Activa:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Ufesa Cicerone (todas las versiones)</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Compatibilidad con otras marcas</h3>
+      <p class="text-text-light mb-4">Estas bolsas tambien son compatibles con aspiradoras de otras marcas que utilizan el mismo tipo de soporte:</p>
+      <ul class="text-text-light mb-6 space-y-1">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Moulinex Compacteo</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Solac AB2723</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mb-3">Como identificar tu modelo Ufesa</h3>
+      <p class="text-text-light mb-4">El numero de modelo de tu Ufesa se encuentra en una etiqueta adhesiva en la parte inferior del aparato. Los modelos de la linea Activa empiezan por "AT" seguido de 4 digitos (ej: AT4210). Con ese numero puedes verificar la compatibilidad en nuestras fichas de producto.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas Ufesa</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que bolsa necesita mi aspiradora Ufesa Activa?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">La Ufesa Activa y los modelos AT4210 y AT4220 utilizan bolsas compatibles de alta filtracion multicapa. Recomendamos el pack de 10 bolsas que ofrece la mejor relacion calidad-precio.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Son compatibles las bolsas de Ufesa con otras marcas?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Si, muchas bolsas para Ufesa son tambien compatibles con aspiradoras Moulinex Compacteo y Solac AB2723, ya que comparten el mismo tipo de soporte. Verifica siempre el modelo exacto antes de comprar.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Cada cuanto debo cambiar la bolsa de mi aspiradora Ufesa?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Se recomienda cambiar la bolsa cada 1-2 meses con uso normal, o cuando notes que la aspiradora pierde potencia de succion. Con un pack de 10 bolsas tendras suficiente para casi un ano.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Consigue las mejores bolsas para tu Ufesa"
+      description="Pack de 10 bolsas de alta filtracion con envio gratis Prime. La opcion mas economica y fiable para tu aspiradora Ufesa."
+      buttonText="Ver oferta en Amazon"
+      buttonUrl={amazonUrl("B07Q3QQBBR")}
+    />
+  </div>
+
+</Layout>

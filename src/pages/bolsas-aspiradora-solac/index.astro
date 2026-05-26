@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InfoBox from '../../components/InfoBox.astro';
+import ProsConsBox from '../../components/ProsConsBox.astro';
+
+const tag = "espacioseco-21";
+const amazonUrl = (asin: string) => `https://www.amazon.es/dp/${asin}?tag=${tag}`;
+const imgUrl = (id: string) => `https://m.media-amazon.com/images/I/${id}._AC_SL300_.jpg`;
+
+const comparisonProducts = [
+  { name: "10 Bolsas Alta Filtracion Solac", type: "Microfibra", area: "AB2723, AB2700", price: "11,90 EUR", rating: 4.3, amazonUrl: amazonUrl("B0837TPM53") },
+  { name: "10 Bolsas Solac/Rowenta Compacteo", type: "Microfibra", area: "Solac, Rowenta Compacteo", price: "12,90 EUR", rating: 4.4, amazonUrl: amazonUrl("B07R8JNQ42") },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que bolsa necesita mi aspiradora Solac?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende del modelo. Las aspiradoras Solac AB2723 y AB2700 usan bolsas de microfibra compatibles. Los modelos AB2720 y AB2600 tambien comparten el mismo tipo de bolsa. Verifica el modelo exacto en la etiqueta inferior de tu aspiradora." }
+    },
+    {
+      "@type": "Question",
+      "name": "Son compatibles las bolsas de Solac con Rowenta?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, algunas bolsas Solac son compatibles con aspiradoras Rowenta Compacteo y City Space, ya que comparten el mismo tipo de soporte y tamano de bolsa. Las bolsas Solac/Rowenta Compacteo sirven para ambas marcas." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cuantas bolsas trae cada paquete para Solac?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Los packs mas habituales son de 10 bolsas. Con un uso normal de la aspiradora (una vez por semana), un pack de 10 bolsas puede durar entre 6 y 10 meses, dependiendo del tamano de tu hogar." }
+    },
+  ]
+};
+---
+
+<Layout title="Mejores Bolsas Aspiradora Solac 2026" description="Encuentra las mejores bolsas para tu aspiradora Solac: AB2723, AB2700 y mas. Compatibilidad verificada y mejores precios." schema={schema}>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <Breadcrumb crumbs={[{ label: "Bolsas Solac" }]} />
+
+    <h1 class="text-4xl font-bold mb-4">Mejores Bolsas de Aspiradora Solac 2026</h1>
+    <p class="text-lg text-text-light mb-10">Comparativa completa de bolsas compatibles con aspiradoras Solac. Encuentra la bolsa perfecta para tu modelo: AB2723, AB2700, AB2720, AB2600 y mas. Tambien compatibles con Rowenta Compacteo.</p>
+
+    <InfoBox type="tip" title="Consejo rapido">
+      Si tienes una Solac AB2723 o AB2700, la opcion mas economica es el <a href={amazonUrl("B0837TPM53")} target="_blank" rel="nofollow noopener sponsored" class="text-primary font-semibold hover:underline">pack de 10 bolsas de alta filtracion</a> por solo 11,90 EUR.
+    </InfoBox>
+
+    <!-- Products -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+      <ProductCard
+        name="10 Bolsas Alta Filtracion Solac"
+        image={imgUrl("71vAmCoaGDL")}
+        rating={4.3}
+        price="11,90 EUR"
+        amazonUrl={amazonUrl("B0837TPM53")}
+        badge="Mejor precio"
+        features={["Alta filtracion multicapa", "Compatible Solac AB2723 y AB2700", "Cierre hermetico", "Pack de 10 unidades"]}
+      />
+      <ProductCard
+        name="10 Bolsas Solac/Rowenta Compacteo"
+        image={imgUrl("71mcQuQhNKL")}
+        rating={4.4}
+        price="12,90 EUR"
+        amazonUrl={amazonUrl("B07R8JNQ42")}
+        features={["Compatible Solac y Rowenta Compacteo", "Microfibra de alta calidad", "Buen sellado", "Pack de 10 unidades"]}
+      />
+    </div>
+
+    <!-- Comparison -->
+    <h2 class="text-2xl font-bold mb-6">Comparativa de Bolsas Solac</h2>
+    <ComparisonTable products={comparisonProducts} />
+
+    <ProsConsBox
+      pros={[
+        "Alta filtracion multicapa que retiene particulas finas",
+        "Compatibles con multiples modelos Solac y Rowenta",
+        "Packs de 10 unidades con buena relacion calidad-precio",
+        "Cierre hermetico que evita fugas de polvo al retirar la bolsa",
+        "Precio muy competitivo desde 11,90 EUR por 10 unidades"
+      ]}
+      cons={[
+        "No son las bolsas originales Solac",
+        "Algunos modelos antiguos pueden requerir verificacion adicional",
+        "Menos variedad que otras marcas mas populares"
+      ]}
+    />
+
+    <!-- Content -->
+    <section class="prose max-w-none mt-12">
+      <h2 class="text-2xl font-bold mb-4">Guia de Compatibilidad Solac</h2>
+      <p class="text-text-light mb-6">Solac es una marca espanola con varios modelos de aspiradoras de trineo. Muchos de sus modelos comparten el mismo tipo de bolsa, e incluso son compatibles con aspiradoras Rowenta Compacteo.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">Solac AB2723 / AB2700</h3>
+          <ul class="text-sm text-green-900 space-y-1">
+            <li>Solac AB2723</li>
+            <li>Solac AB2700</li>
+            <li>Solac AB2720</li>
+            <li>Solac AB2600</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-semibold text-green-800 mb-3">Rowenta Compacteo (compatibles)</h3>
+          <ul class="text-sm text-green-900 space-y-1">
+            <li>Rowenta Compacteo RO17xx</li>
+            <li>Rowenta Compacteo RO18xx</li>
+            <li>Rowenta City Space RO26xx</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="text-xl font-semibold mb-3">Solac: Marca Espanola de Confianza</h3>
+      <p class="text-text-light mb-4">Solac es una marca espanola con larga trayectoria en electrodomesticos. Sus aspiradoras de trineo son conocidas por su buena relacion calidad-precio. Las bolsas de microfibra compatibles que recomendamos ofrecen una filtracion superior a las bolsas de papel originales, y al ser compatibles tambien con Rowenta Compacteo, son una opcion muy versatil si tienes aspiradoras de ambas marcas en casa.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes - Bolsas Solac</h2>
+      <div class="space-y-4">
+        <details class="bg-bg rounded-xl p-6 group" open>
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Que bolsa necesita mi aspiradora Solac?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Depende del modelo. Las aspiradoras Solac AB2723 y AB2700 usan bolsas de microfibra compatibles. Los modelos AB2720 y AB2600 tambien comparten el mismo tipo de bolsa. Verifica el modelo exacto en la etiqueta inferior de tu aspiradora.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Son compatibles las bolsas de Solac con Rowenta?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Si, algunas bolsas Solac son compatibles con aspiradoras Rowenta Compacteo y City Space, ya que comparten el mismo tipo de soporte y tamano de bolsa. Las bolsas Solac/Rowenta Compacteo sirven para ambas marcas.</p>
+        </details>
+        <details class="bg-bg rounded-xl p-6 group">
+          <summary class="font-semibold cursor-pointer flex items-center justify-between">
+            Cuantas bolsas trae cada paquete para Solac?
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-text-light text-sm">Los packs mas habituales son de 10 bolsas. Con un uso normal de la aspiradora (una vez por semana), un pack de 10 bolsas puede durar entre 6 y 10 meses, dependiendo del tamano de tu hogar.</p>
+        </details>
+      </div>
+    </section>
+
+    <CtaBanner
+      title="Bolsas para tu Solac desde 11,90 EUR"
+      description="Packs de 10 bolsas de microfibra compatibles con Solac y Rowenta Compacteo. Envio gratis Prime."
+      buttonText="Ver ofertas en Amazon"
+      buttonUrl={amazonUrl("B0837TPM53")}
+    />
+  </div>
+
+</Layout>
